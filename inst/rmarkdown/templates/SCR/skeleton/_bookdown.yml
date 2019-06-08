@@ -1,0 +1,3 @@
+book_filename: "resdoc"
+rmd_files: ["index.Rmd", "01-body.Rmd", "02-references.Rmd", "03-appendix.Rmd"]
+delete_merged_file: true

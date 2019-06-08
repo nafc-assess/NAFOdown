@@ -1,13 +1,18 @@
 Package: NAFOdown
-Title: What the Package Does (One Line, Title Case)
+Title: NAFOdown: an R package for creating NAFO documents
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Authors@R:
+    c(person("Paul", "Regular",
+             email = "Paul.Regular@dfo-mpo.gc.ca",
+             role = c("aut", "cre")),
+      person("Bob", "Rodgers", 
+             email = "Bob.Rogers@dfo-mpo.gc.ca", 
+             role = "aut"),
+      person("Laura", "Wheeland", 
+             email = "Laura.Wheeland@dfo-mpo.gc.ca", 
+             role = "aut"))
+Description: This packages uses the bookdown package to create NAFO documents.
+             The structure of this package is based on csasdown.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

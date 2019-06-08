@@ -1,0 +1,4 @@
+name:  NAFO-SCR
+description: >
+  Template for creating a NAFO SCR using R Markdown using the R
+  bookdown package.

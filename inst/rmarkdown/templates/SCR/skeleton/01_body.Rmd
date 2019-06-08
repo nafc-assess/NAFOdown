@@ -1,0 +1,16 @@
+
+# Introduction
+
+Here is an Rmarkdown template for a NAFO SCR.
+
+# Methods
+
+Describe methods.
+
+# Results
+
+Add results (figures, tables, etc.).
+
+# Discussion
+
+Discuss!
