@@ -1,5 +1,5 @@
 
-#' Creates an R Markdown Word CSAS-formatted document
+#' Creates an R Markdown Word NAFO-formatted SCR document
 #'
 #' This is a function called in output in the YAML of the driver Rmd file
 #' to specify the creation of a Microsoft Word version of an SCR.

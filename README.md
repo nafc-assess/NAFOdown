@@ -3,21 +3,25 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of NAFOdown is to ...
+NAFOdown is an R package that was built to simplify the process of creating NAFO Scientific Council (SC) documents. This package is based on (csasdown)[https://github.com/pbs-assess/csasdown].
 
 ## Installation
 
-You can install NAFOdown ...
+You can install NAFOdown via github:
 
 ``` r
-
+# install.packages("devtools")
+devtools::install_github("PaulRegular/NAFOdown")
 ```
 
 ## Example
 
-This is a basic example ...
+Once the package is installed, this line of code will produce a skeleton of the files and folders for producing a NAFO SCR.
 
 ``` r
-
+NAFOdown::draft("SCR")
 ```
+
+You'll need to edit the individual Rmd files to produce your report. To render your document, open `index.Rmd` in RStudio and click the "knit" button.
+
 

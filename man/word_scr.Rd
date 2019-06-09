@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{word_scr}
 \alias{word_scr}
-\title{Creates an R Markdown Word CSAS-formatted document}
+\title{Creates an R Markdown Word NAFO-formatted SCR document}
 \usage{
 word_scr(...)
 }

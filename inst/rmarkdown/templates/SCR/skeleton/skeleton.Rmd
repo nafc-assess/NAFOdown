@@ -32,14 +32,12 @@ knitr::opts_chunk$set(
   cache.path = "knitr-cache-docx/",
   fig.asp = 0.618,
   fig.width = 9,
-  out.width = "6in",
   echo = FALSE,
   # autodep = TRUE,
   # cache = TRUE,
   cache.comments = FALSE,
   dev = "png",
   dpi = 300,
-  fig.align = "center",
   fig.pos = "htb"
 )
 # options(kableExtra.latex.load_packages = FALSE)
@@ -48,4 +46,6 @@ knitr::opts_chunk$set(
 ```{r load-libraries, cache=FALSE}
 # add other packages here:
 library(NAFOdown)
+library(ggplot2)
+theme_set(theme_NAFO()) # set default ggplot2 theme
 ```

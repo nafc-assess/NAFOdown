@@ -19,6 +19,8 @@ LazyData: true
 Imports: 
     bookdown,
     knitr,
-    rmarkdown
+    rmarkdown,
+    ggplot2,
+    ggthemes
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
