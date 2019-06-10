@@ -16,10 +16,16 @@ devtools::install_github("PaulRegular/NAFOdown")
 
 ## Example
 
-Once the package is installed, this line of code will produce a skeleton of the files and folders for producing a NAFO SCR.
+Once the package is installed, this line of code will produce a skeleton of the files and folders for producing a NAFO SCR:
 
 ``` r
 NAFOdown::draft("SCR")
+```
+
+and this line will produce the skeleton of a STACFIS report:
+
+``` r
+NAFOdown::draft("STACFIS")
 ```
 
 You'll need to edit the individual Rmd files to produce your report. To render your document, open `index.Rmd` in RStudio and click the "knit" button.

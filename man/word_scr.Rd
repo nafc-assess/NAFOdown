@@ -2,9 +2,12 @@
 % Please edit documentation in R/utils.R
 \name{word_scr}
 \alias{word_scr}
-\title{Creates an R Markdown Word NAFO-formatted SCR document}
+\alias{word_stacfis}
+\title{Creates an R Markdown Word NAFO-formatted document}
 \usage{
 word_scr(...)
+
+word_stacfis(...)
 }
 \arguments{
 \item{...}{arguments to pass to \code{\link[bookdown:word_document2]{bookdown::word_document2()}}}
@@ -14,5 +17,6 @@ A Word Document based on the NAFO SCR word template.
 }
 \description{
 This is a function called in output in the YAML of the driver Rmd file
-to specify the creation of a Microsoft Word version of an SCR.
+to specify the creation of a Microsoft Word version of an SCR or a
+STACFIC report.
 }

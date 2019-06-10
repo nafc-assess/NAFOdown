@@ -1,0 +1,32 @@
+>STACFIS  
+>Jane D. E. Doe
+
+# X. Species (*Species name*) in Division XX 
+
+Full assessment report OR Interim monitoring report (list sources)
+
+## a) Introduction
+
+## b) Data Overview
+
+### i) Research survey data 
+
+### ii) Recruitment
+
+### iii) Fishery data
+
+### iv) Biological parameters
+
+## c) Estimation of Parameters
+
+## d) Assessment Results
+
+## e) Retrospective analysis
+
+## f) State of the stock
+
+## g) Reference Points
+
+## h) Stock projections
+
+## i) Research recommendations

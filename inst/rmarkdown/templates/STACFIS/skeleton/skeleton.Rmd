@@ -1,24 +1,6 @@
 ---
-title: "Title Here (*Latin Species Name*)"
-author: "John Doe^1^, John Smith^2^"
-
-# There is currently no affiliation section for Rmarkdown word output, 
-# so augment the date sction with affiliations
-date: | 
-    ^1^Institution One\       
-    ^2^Institution Two\
-    \
-    `r format(Sys.time(), '%d %B, %Y')` 
-abstract: |
-  Here is the abstract text.
-output: NAFOdown::word_scr
-
-# ------------
-# End of options to set
+output: NAFOdown::word_stacfis
 knit: bookdown::render_book
-link-citations: true
-bibliography: bib/refs.bib
-csl: csl/elsevier-harvard.csl
 ---
 
 ```{r setup, echo=FALSE, cache=FALSE, message=FALSE, results='hide', warning=FALSE}
@@ -31,7 +13,7 @@ knitr::opts_chunk$set(
   fig.path = "knitr-figs-docx/",
   cache.path = "knitr-cache-docx/",
   fig.asp = 0.618,
-  fig.width = 9,
+  fig.width = 8,
   echo = FALSE,
   # autodep = TRUE,
   # cache = TRUE,

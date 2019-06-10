@@ -4,10 +4,11 @@
 \alias{draft}
 \title{Create a new NAFO document based on a template}
 \usage{
-draft(type = c("SCR"), create_dir = FALSE, edit = FALSE, ...)
+draft(report_type = c("SCR", "STACFIS"), create_dir = FALSE,
+  edit = FALSE, ...)
 }
 \arguments{
-\item{type}{The type of document to start.}
+\item{report_type}{The type of report to start.}
 
 \item{create_dir}{\code{TRUE} to create a new directory for the document.}
 
@@ -19,8 +20,8 @@ draft(type = c("SCR"), create_dir = FALSE, edit = FALSE, ...)
 Create a draft of an R Markdown NAFO document
 }
 \details{
-This is a light wrapper around \code{\link[rmarkdown:draft]{rmarkdown::draft()}}. Consult that
-function for further details.
+This is a light wrapper around \code{\link[rmarkdown:draft]{rmarkdown::draft()}}.
+Consult that function for further details.
 }
 \examples{
 \dontrun{

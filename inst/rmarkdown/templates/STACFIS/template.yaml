@@ -1,0 +1,4 @@
+name:  NAFO-STACFIC
+description: >
+  Template for creating a NAFO STACFIC Report using R Markdown using the R
+  bookdown package.
