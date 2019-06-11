@@ -14,11 +14,11 @@
    viewBox="0 0 120.76295 138.29677"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.0 r15299"
-   sodipodi:docname="logo.svg"
-   inkscape:export-filename="C:\Users\RegularP\Documents\PROJECTS\NAFOdown\logo.png"
-   inkscape:export-xdpi="150"
-   inkscape:export-ydpi="150">
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="NAFOdown_logo.svg"
+   inkscape:export-filename="C:\Users\wheelandl\Documents\NAFO\NAFOdown\logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -28,20 +28,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="-488.93476"
-     inkscape:cy="51.882276"
+     inkscape:zoom="1.4"
+     inkscape:cx="320.16772"
+     inkscape:cy="257.77411"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4647"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1018"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="1005"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -86,19 +86,23 @@
          style="fill:none;fill-opacity:1;stroke:#1a335c;stroke-width:6.1514163;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          sodipodi:type="star" />
       <text
-         transform="rotate(5.333183)"
-         inkscape:transform-center-y="0.43216633"
-         inkscape:transform-center-x="-0.0017063638"
+         transform="rotate(1.833183)"
+         inkscape:transform-center-y="0.42130453"
+         inkscape:transform-center-x="-0.1347387"
          id="text4575"
-         y="137.53143"
-         x="81.05024"
+         y="144.90849"
+         x="78.249115"
          style="font-style:normal;font-weight:normal;font-size:7.44717932px;line-height:4.65448666px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.18617946"
          xml:space="preserve"><tspan
            style="font-size:13.90140247px;fill:#ffffff;fill-opacity:1;stroke-width:0.18617946"
-           y="137.53143"
-           x="81.05024"
+           y="144.90849"
+           x="78.249115"
            id="tspan4573"
-           sodipodi:role="line">NAFOdown</tspan></text>
+           sodipodi:role="line"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Aharoni;-inkscape-font-specification:Aharoni"
+             id="tspan835">NAFO</tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Tw Cen MT';-inkscape-font-specification:'Tw Cen MT'"
+             id="tspan839">down</tspan></tspan></text>
     </g>
   </g>
 </svg>
