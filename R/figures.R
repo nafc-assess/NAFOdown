@@ -31,6 +31,5 @@ theme_nafo <- function(base_size = 14, base_family = "serif"){
               legend.title = element_blank(),
               legend.justification = c(1, 1),
               legend.position = c(1, 1),
-              legend.key.size = unit(1, "line"),
-              plot.margin = unit(rep(0.7, 4), "cm"))
+              legend.key.size = unit(1, "line"))
 }

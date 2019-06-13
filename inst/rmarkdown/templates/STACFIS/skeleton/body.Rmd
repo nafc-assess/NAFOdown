@@ -1,32 +1,34 @@
 >STACFIS  
 >Jane D. E. Doe
 
+<!-- Note: change X below to the proper number for the STACFIS report. Also change X in the _bookdown.yml file to generate the appropriate figure numbering. -->
+
 # X. Species (*Species name*) in Division XX 
 
 Full assessment report OR Interim monitoring report (list sources)
 
-## a) Introduction
+## Introduction
 
-## b) Data Overview
+## Data Overview
 
-### i) Research survey data 
+### Research survey data 
 
-### ii) Recruitment
+### Recruitment
 
-### iii) Fishery data
+### Fishery data
 
-### iv) Biological parameters
+### Biological parameters
 
-## c) Estimation of Parameters
+## Estimation of Parameters
 
-## d) Assessment Results
+## Assessment Results
 
-## e) Retrospective analysis
+## Retrospective analysis
 
-## f) State of the stock
+## State of the stock
 
-## g) Reference Points
+## Reference Points
 
-## h) Stock projections
+## Stock projections
 
-## i) Research recommendations
+## Research recommendations

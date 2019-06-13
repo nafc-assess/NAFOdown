@@ -3,5 +3,5 @@ rmd_files: ["index.Rmd", "body.Rmd"]
 delete_merged_file: true
 language:
   label:
-   fig: 'Fig '
+   fig: 'Fig. X.'
    tab: 'Table '
