@@ -3,7 +3,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-NAFOdown is an R package that was built to simplify the process of creating NAFO Scientific Council (SC) documents. This package is based on (csasdown)[https://github.com/pbs-assess/csasdown].
+<a href=""><img style="padding: 0 15px; float: right;" src="logo.png" alt="NAFOdown logo" width="150"/></a>
+
+NAFOdown uses the bookdown package to create NAFO documents, such as SCRs or STACFIS reports, in Word format. The goal of this package is to encourage reproducible research using simple Markdown syntax and embedded R code, and facilitate the process of producing or updating  scientific documents that consistently follow NAFO formatting guidelines. This package is based on Sean Anderson's (csasdown)[https://github.com/pbs-assess/csasdown] and Chester Ismay's (thesisdown)[https://github.com/ismayc/thesisdown].
 
 ## Installation
 
