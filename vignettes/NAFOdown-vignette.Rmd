@@ -16,10 +16,11 @@ knitr::opts_chunk$set(
 
 ```{r setup, echo = FALSE}
 library(NAFOdown)
+word_out <- knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx"
 ```
 
 
-```{r logo, echo = FALSE, out.width = "150px", out.height = "150px", out.extra='style="float:right; padding:10px"', eval = knitr::is_html_output()}
+```{r logo, echo = FALSE, fig.height = 0.01, out.width = "150px", out.height = "150px", out.extra='style="float:right; padding:10px"', eval = !word_out}
 knitr::include_graphics("logo.png")
 ```
 

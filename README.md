@@ -1,6 +1,8 @@
 NAFOdown: An R package for Creating NAFO Scientific Council Documents
 ================
 
+<img src="vignettes/logo.png" width="150px" height="150px" style="float:right; padding:10px" />
+
 NAFOdown is an R package designed to simplify the process of creating
 and updating NAFO documents, such as SCRs and STACFIS reports. The
 package utilizes the [bookdown](https://bookdown.org/yihui/bookdown/)
@@ -133,7 +135,7 @@ and GitHub with R and RStudio, see <http://happygitwithr.com/>.
 To render a NAFO report in Word format, open `index.Rmd` in Rstudio and
 click the “knit” button:
 
-<img src="screenshots/knit.png" width="600px" />
+<img src="vignettes/screenshots/knit.png" width="600px" />
 
 Documents can also be rendered in the R console, assuming the working
 directory is set to the directory holding the `index.Rmd` file, using
@@ -147,7 +149,7 @@ The rendered Word file will be saved in the `_book/` directory. When all
 files are populated with the necessary content, the output will look
 similar to past documents:
 
-<img src="screenshots/STACFIS.png" width="100%" />
+<img src="vignettes/screenshots/STACFIS.png" width="100%" />
 
 however, these documents will be much easier to update following the
 addition of new data as all tables and figures should automatically
