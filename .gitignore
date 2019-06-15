@@ -1,3 +1,7 @@
 *.Rhistory
 .Rproj.user
 misc/
+inst/doc
+*.html
+doc
+Meta

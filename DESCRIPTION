@@ -1,12 +1,12 @@
 Package: NAFOdown
-Title: NAFOdown: an R package for creating NAFO documents
+Title: An R Markdown Template for Producing NAFO Scientific Council Documents
 Version: 0.0.1
 Authors@R:
     c(person("Paul", "Regular", email = "Paul.Regular@dfo-mpo.gc.ca",
              role = c("aut", "cre")),
       person("Bob", "Rodgers", role = "aut"),
       person("Laura", "Wheeland", role = "aut"),
-      person("Sean", "Anderson", role = "aut", comment = "Development of csasdown")
+      person("Sean", "Anderson", role = "aut", comment = "Development of csasdown"),
       person("Chester", "Ismay", role = "aut", comment = "Development of thesisdown"),
       person("Nick", "Solomon", role = "aut", comment = "Development of thesisdown"))
 Description: NAFOdown uses the bookdown package to create NAFO documents, such as
@@ -27,3 +27,4 @@ Imports:
     ggthemes
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr
