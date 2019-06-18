@@ -1,7 +1,7 @@
-NAFOdown: An R package for Creating NAFO Scientific Council Documents
-================
 
-<img src="vignettes/logo.png" width="150px" height="150px" style="float:right; padding:10px" />
+# NAFOdown: An R Markdown Template for Producing NAFO Scientific Council Documents
+
+<img src="logo.svg" width="150px" height="150px" style="float:right; padding:10px" />
 
 NAFOdown is an R package designed to simplify the process of creating
 and updating NAFO documents, such as SCRs and STACFIS reports. The
@@ -21,7 +21,7 @@ guidelines. Specifically, NAFOdown includes templates for producing SCR
 and STACFIS documents in Word format. Here we demonstrate how to use
 this package.
 
-# Installation
+## Installation
 
 The statistical computing program [R](https://www.r-project.org/) is
 required to use the NAFOdown package and we highly recommend using the
@@ -40,7 +40,7 @@ NAFOdown can be installed via GitHub using this code:
 remotes::install_github("nafc-assess/NAFOdown")
 ```
 
-# Starting a document
+## Starting a document
 
 A skeleton of a SCR or STACFIS document will be produced by running this
 code:
@@ -55,16 +55,16 @@ The type of skeleton produced can be changed by changing the
 the skeleton are outlined below. Note that all of the files included in
 the skeleton are text based and can be opened and edited using RStudio.
 
-## Components of the skeleton
+### Components of the skeleton
 
-### `index.Rmd`
+#### `index.Rmd`
 
 This is a key file that contains all the meta information that defines
 much of the formatting of the document as well as the information for
 the beginning of the document. Several of these items will need to be
 edited, such as the author, title, etc.
 
-### `01_body.Rmd`, `02_references.Rmd`, etc.
+#### `01_body.Rmd`, `02_references.Rmd`, etc.
 
 These are the .Rmd files for each section of the report. These files
 will hold all the markdown text and R code needed to produce the
@@ -73,7 +73,7 @@ document. Note that the SCR template includes a series of .Rmd files
 reports can be extensive, while the STACFIS template is simpler and only
 includes a `body.Rmd` file.
 
-### `_bookdown.yml`
+#### `_bookdown.yml`
 
 This file outlines the .Rmd files to be combined by bookdown. This is
 also where some options are modified such as the prefix for table and
@@ -82,7 +82,7 @@ case, specific components may not be needed and these files can be
 excluded from the .Rmd file list contained within this file
 (e.g. appendix.Rmd).
 
-### `csl`
+#### `csl`
 
 This folder holds the style files for bibliographies, specified using a
 citation style language file (.csl). Currently, SCR documents will
@@ -100,7 +100,7 @@ to reference specific papers. Also consider using the Rstudio
 [citr](https://github.com/crsh/citr) add-in to simplify the insertion of
 citations.
 
-# Writing
+## Writing
 
 NAFOdown is build upon the
 [bookdown](https://bookdown.org/yihui/bookdown/) package which is build
@@ -117,7 +117,7 @@ on its capabilities (<https://bookdown.org/yihui/bookdown/>).
 
 <!-- Need to mention the ggplot theme somewhere -->
 
-# Meeting-to-meeting writing
+## Meeting-to-meeting writing
 
 As noted above, several of the files need to be populated with content.
 In most cases, the `body.Rmd` file will hold most of the content and
@@ -130,12 +130,12 @@ online repository (i.e. this acts as a back-up and facilitates remote
 collaboration). For a gentle guide to getting starting with using Git
 and GitHub with R and RStudio, see <http://happygitwithr.com/>.
 
-# Rendering
+## Rendering
 
 To render a NAFO report in Word format, open `index.Rmd` in Rstudio and
 click the “knit” button:
 
-<img src="vignettes/screenshots/knit.png" width="600px" />
+<img src="screenshots/knit.png" width="600px" />
 
 Documents can also be rendered in the R console, assuming the working
 directory is set to the directory holding the `index.Rmd` file, using
@@ -149,7 +149,7 @@ The rendered Word file will be saved in the `_book/` directory. When all
 files are populated with the necessary content, the output will look
 similar to past documents:
 
-<img src="vignettes/screenshots/STACFIS.png" width="100%" />
+<img src="screenshots/STACFIS.png" width="100%" />
 
 however, these documents will be much easier to update following the
 addition of new data as all tables and figures should automatically
