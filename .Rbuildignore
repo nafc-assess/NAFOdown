@@ -8,3 +8,4 @@
 ^pkgdown$
 ^SCR$
 ^screenshots$
+^\.travis\.yml$

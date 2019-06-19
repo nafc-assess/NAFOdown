@@ -16,6 +16,8 @@ word_out <- knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx"
 ```
 
 
+[![Travis-CI Build Status](https://travis-ci.org/nafc-assess/NAFOdown.svg?branch=master)](https://travis-ci.org/nafc-assess/NAFOdown)
+
 # NAFOdown
 
 ```{r logo, echo = FALSE, fig.height = 0.01, out.width = "150px", out.height = "150px", out.extra='style="float:right; padding:10px"', eval = !word_out}
