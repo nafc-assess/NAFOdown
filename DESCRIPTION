@@ -7,6 +7,7 @@ Authors@R:
       person("Bob", "Rodgers", role = "aut"),
       person("Laura", "Wheeland", role = "aut"),
       person("Sean", "Anderson", role = "aut", comment = "Development of csasdown"),
+      person("Chris", "Grandin", role = "aut", comment = "Development of csasdown"),
       person("Chester", "Ismay", role = "aut", comment = "Development of thesisdown"),
       person("Nick", "Solomon", role = "aut", comment = "Development of thesisdown"))
 Description: NAFOdown uses the bookdown package to create NAFO documents, such as
