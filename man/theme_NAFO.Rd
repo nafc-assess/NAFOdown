@@ -16,6 +16,7 @@ ggplot2 theme for styling plots for NAFO docuemtns
 }
 \examples{
 
+library(ggplot2)
 d <- data.frame(SSB = rlnorm(20), Recruitment = rlnorm(20))
 ggplot(d) +
 geom_point(aes(x = SSB, y = Recruitment)) +

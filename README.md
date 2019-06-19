@@ -1,5 +1,8 @@
 
-# NAFOdown: An R Markdown Template for Producing NAFO Scientific Council Documents
+[![Travis-CI Build
+Status](https://travis-ci.org/nafc-assess/NAFOdown.svg?branch=master)](https://travis-ci.org/nafc-assess/NAFOdown)
+
+# NAFOdown
 
 <img src="logo.svg" width="150px" height="150px" style="float:right; padding:10px" />
 
