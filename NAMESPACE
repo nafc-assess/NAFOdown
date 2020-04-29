@@ -3,6 +3,7 @@
 export(draft)
 export(theme_nafo)
 export(word_scr)
+export(word_scs)
 export(word_stacfis)
 import(bookdown)
 import(ggplot2)

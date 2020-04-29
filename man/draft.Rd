@@ -4,7 +4,7 @@
 \alias{draft}
 \title{Create a new NAFO document based on a template}
 \usage{
-draft(report_type = c("SCR", "STACFIS"), create_dir = FALSE,
+draft(report_type = c("SCR", "STACFIS", "SCS"), create_dir = FALSE,
   edit = FALSE, ...)
 }
 \arguments{
