@@ -29,7 +29,7 @@ theme_nafo <- function(base_size = 14, base_family = "serif"){
               legend.key = element_blank(),
               legend.background = element_blank(),
               legend.box.background = element_blank(),
-              legend.title = element_blank(),
+              legend.title = element_text(size = base_size - 2, hjust = 0),
               legend.justification = c(1, 1),
               legend.position = c(1, 1),
               legend.key.size = unit(1, "line"))
