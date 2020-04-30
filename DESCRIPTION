@@ -25,7 +25,11 @@ Imports:
     knitr,
     rmarkdown,
     ggplot2,
-    ggthemes
+    ggthemes,
+    magrittr,
+    flextable
+Suggests:
+    officer
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
