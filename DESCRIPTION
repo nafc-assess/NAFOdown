@@ -27,8 +27,7 @@ Imports:
     ggplot2,
     ggthemes,
     magrittr,
-    flextable
-Suggests:
+    flextable,
     officer
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
