@@ -22,8 +22,8 @@
 
 theme_nafo <- function(base_size = 14, base_family = "serif"){
     theme_foundation(base_size = base_size, base_family = base_family) %+replace%
-        theme(rect = element_rect(color = "black", size = 0.2),
-              line = element_line(colour = "black", size = 0.2),
+        theme(rect = element_rect(color = "black", size = 0.3),
+              line = element_line(colour = "black", size = 0.3),
               panel.grid.minor = element_blank(),
               panel.grid.major = element_blank(),
               plot.background = element_blank(),
