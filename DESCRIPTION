@@ -30,7 +30,7 @@ Imports:
     flextable,
     officer
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
 URL: https://github.com/nafc-assess/NAFOdown
 BugReports: https://github.com/nafc-assess/NAFOdown/issues
