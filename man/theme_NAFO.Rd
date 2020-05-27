@@ -4,7 +4,7 @@
 \alias{theme_nafo}
 \title{ggplot2 theme for styling plots for NAFO docuemtns}
 \usage{
-theme_nafo(base_size = 11, base_family = "serif")
+theme_nafo(base_size = 10, base_family = "serif")
 }
 \arguments{
 \item{base_size}{base font size}
