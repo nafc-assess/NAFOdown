@@ -8,7 +8,7 @@ date: |
     ^1^Institution One\       
     ^2^Institution Two\
     \
-    `r format(Sys.time(), '%d %B, %Y')` 
+    `r format(Sys.time(), "%Y-%m-%d")` 
 abstract: |
   Here is the abstract text.
 output: NAFOdown::word_scr

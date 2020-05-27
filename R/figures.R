@@ -21,9 +21,12 @@
 #'
 
 theme_nafo <- function(base_size = 14, base_family = "serif"){
-    theme_foundation(base_size = base_size, base_family = base_family) %+replace%
-        theme(rect = element_rect(color = "black", size = 0.3,linetype="solid",fill=NA),
-              line = element_line(colour = "black", size = 0.3,linetype="solid",lineend="butt"),
+    ggthemes::theme_foundation(base_size = base_size, base_family = base_family) %+replace%
+        theme(rect = element_rect(color = "black", size = 0.3, linetype = "solid", fill = NA),
+              line = element_line(colour = "black", size = 0.3,linetype = "solid", lineend = "butt"),
+              axis.ticks.length = unit(-0.25, "cm"),
+              axis.text.x = element_text(margin = unit(rep(0.4, 4), "cm")),
+              axis.text.y = element_text(margin = unit(rep(0.4, 4), "cm")),
               panel.grid.minor = element_blank(),
               panel.grid.major = element_blank(),
               plot.background = element_blank(),
