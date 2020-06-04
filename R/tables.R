@@ -9,7 +9,6 @@
 #'
 #' @export
 #'
-#' @import tibble
 #' @import flextable
 #' @importFrom magrittr "%>%"
 #' @importFrom officer fp_border
@@ -84,15 +83,16 @@ nafo_summary_table <- function(comments = rep(NA, 5), status = rep(NA, 5)) {
     if (any(status) %in% c("OK", "Intermediate", "Not accomplished", "Unknown")) {
         stop("status must be one of 'OK', 'Intermediate', 'Not accomplished', 'Unknown'")
     }
-    stock_summary_df <- tibble(
-        "Convention General Principles" = c("Restore or maintain at Bmsy",
-                                            "Eliminate overfishing",
-                                            "Apply Percautionary Approach",
-                                            "Minimise harmful impacts on living marine resources and ecosystems",
-                                            "Preserve marine biodiversity"),
+    stock_summary_df <- data.frame(
+        "Principles" = c("Restore or maintain at Bmsy",
+                         "Eliminate overfishing",
+                         "Apply Percautionary Approach",
+                         "Minimise harmful impacts on living marine resources and ecosystems",
+                         "Preserve marine biodiversity"),
         "Status" = status,
-        "Comment/consideration" = comments
+        "Comment" = comments
     )
+    names(stock_summary_df) <- c("Convention General Principles", "Status", "Comment/consideration")
 
     green_light <- system.file("graphics", "green-light.jpg", package = "NAFOdown")
     yellow_light <- system.file("graphics", "yellow-light.jpg", package = "NAFOdown")
