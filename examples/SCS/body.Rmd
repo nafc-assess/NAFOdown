@@ -1,0 +1,36 @@
+<!-- Note: change X below to the proper number for the SCS report. Also change X in the _bookdown.yml file to generate the appropriate figure numbering. -->
+
+# X. Species (*Species name*) in Division XX 
+
+> Recommendation for 	  
+>
+
+## Managment objectives
+
+```{r}
+# nafo_summary_table(status = c("Not accomplished",
+#                               "OK",
+#                               "OK",
+#                               "Intermediate",
+#                               "Unknown"),
+#                    comments = c("Probability of B_2019 < B_msy = 97%",
+#                                 "F < F_msy",
+#                                 "Reference points defined",
+#                                 "VME closures in effect, no specific measures",
+#                                 "Cannot be evaluated"))
+```
+
+
+## Managment unit
+
+## Stock status
+
+## Reference points
+
+## Assessment
+
+## Fishery
+
+## Effects of fishery on the ecosystem
+
+## Sources of information

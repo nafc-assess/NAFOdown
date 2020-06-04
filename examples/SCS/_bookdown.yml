@@ -1,4 +1,4 @@
-book_filename: "SSS Report"
+book_filename: "SCS"
 rmd_files: ["index.Rmd", "body.Rmd"]
 delete_merged_file: true
 language:
