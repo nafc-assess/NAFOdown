@@ -17,7 +17,7 @@
 #' NAFOdown::draft("SCR")
 #' }
 #' @export
-draft <- function(report_type = c("SCR", "STACFIS", "SCS"),
+draft <- function(report_type = c("SCR", "STACFIS", "SCS", "SS"),
                   create_dir = FALSE,
                   edit = FALSE, ...) {
     report_type <- match.arg(report_type)

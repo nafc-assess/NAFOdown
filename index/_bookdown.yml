@@ -1,0 +1,7 @@
+book_filename: "SCR"
+rmd_files: ["index.Rmd", "summarytry.Rmd"]
+delete_merged_file: true
+language:
+  label:
+   fig: 'Fig '
+   ## TODO: figure out how to use a dot as a figure label sufix

@@ -59,3 +59,19 @@ word_scs <- function(...) {
     base
 
 }
+
+#' @rdname word_scr
+#' @export
+#'
+word_sss <- function(...) {
+
+    base <- word_document2(...,
+                           reference_docx = system.file("docx", "SSS_template.docx", package = "NAFOdown")
+    )
+
+    # Mostly copied from knitr::render_sweave
+    base$knitr$opts_chunk$comment <- NA
+    base$knitr$opts_chunk$fig.align <- "center"
+    base
+
+}
