@@ -61,6 +61,39 @@ theme_nafotabs <- function(x, fontsize = 11, fontname = "Cambria"){
 
 
 
+## little helper to create a paragraph for flextable with content formated
+## using markdown like syntax (..but definitly not as fully featured or fool proof)
+.as_markdown_like <- function(txt) {
+
+    ## add spaces around special characters
+    txt <- gsub("\\*\\*", " __ ", txt) # bold
+    txt <- gsub("\\*", " \\* ", txt) # italics
+    txt <- gsub("\\~", " \\~ ", txt) # subscript
+    txt <- gsub("\\^", " \\^ ", txt) # superscript
+
+    ## split text at spaces
+    txt_split <- unlist(strsplit(txt, "\\s+"))
+    txt_as_i <- cumsum(txt_split == "*") %% 2
+    txt_as_bold <- cumsum(txt_split == "__") %% 2
+    txt_as_sub <- cumsum(txt_split == "~") %% 2
+    txt_as_sup <- cumsum(txt_split == "^") %% 2
+
+    ## set-up a paragraph and assign formatting
+    para <- as_paragraph(list_values = as.list(txt_split))
+    p <- para[[1]]
+    p$italic <- as.logical(txt_as_i)
+    p$bold <- as.logical(txt_as_bold)
+    p$vertical.align[as.logical(txt_as_sub)] <- "subscript"
+    p$vertical.align[as.logical(txt_as_sup)] <- "superscript"
+    p <- p[!(p$txt %in% c("*", "__", "~", "^")), ] # drop special characters used to define formatting
+    p$txt <- paste0(p$txt, " ")
+    p$seq_index <- seq(nrow(p))
+    para[[1]] <- p
+    para
+
+}
+
+
 #' Function for producing summary tables for NAFO documents
 #'
 #' @description Produces summary tables for NAFO stock summary sheets
