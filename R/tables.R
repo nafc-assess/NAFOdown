@@ -144,24 +144,28 @@ nafo_summary_table <- function(comments = rep(NA, 5), status = rep(NA, 5)) {
             value = as_paragraph(as_i("B"), as_i(as_sub("MSY")))
         ) %>%
         compose(
-            j = 2, i = which(stock_summary_df$Status == "OK"), part = "body",
-            value = as_paragraph(as_image(src = green_light, width = .20, height = .20))
+            part="body",j=2,value=as_paragraph('\U25CF')
         ) %>%
         compose(
-            j = 2, i = which(stock_summary_df$Status == "Intermediate"), part = "body",
-            value = as_paragraph(as_image(src = yellow_light, width = .20, height = .20))
+            part="body",j=2,i = which(stock_summary_df$Status == "Unknown"),value=as_paragraph('\U2B58')
+        )%>%
+        fontsize(
+            part="body",j=2, size=20
         ) %>%
-        compose(
-            j = 2, i = which(stock_summary_df$Status == "Not accomplished"), part = "body",
-            value = as_paragraph(as_image(src = red_light, width = .20, height = .20))
+        color(
+            part="body",i = which(stock_summary_df$Status == "OK"),j=2, color = "#008450"
         ) %>%
-        compose(
-            j = 2, i = which(stock_summary_df$Status == "Unknown"), part = "body",
-            value = as_paragraph(as_image(src = white_light, width = .20, height = .20))
+        color(
+            part="body",i = which(stock_summary_df$Status == "Intermediate"),j=2, color = "#EFB700"
         ) %>%
-        compose(
-            j = 2, i = which(is.null(stock_summary_df$Status)), part = "body",
-            value = as_paragraph(as_image(src = white_light, width = .20, height = .20))
+        color(
+            part="body",i = which(stock_summary_df$Status == "Not accomplished"),j=2, color = "#B81D13"
+        ) %>%
+        color(
+            part="body",i = which(stock_summary_df$Status == "Unknown"),j=2, color = NA
+        ) %>%
+        color(
+            part="body",i = which(is.null(stock_summary_df$Status)),j=2, color = "white"
         ) %>%
         italic(i = 1, part = "header") %>%
         width(width = c(2.9, 0.65, 2.9))
@@ -169,5 +173,3 @@ nafo_summary_table <- function(comments = rep(NA, 5), status = rep(NA, 5)) {
     summary_table
 
 }
-
-

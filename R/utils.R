@@ -7,14 +7,15 @@
 #'
 #' @param ... arguments to pass to [bookdown::word_document2()]
 #'
-#' @return A Word Document based on the NAFO SCR, STACFIC or SCS word template.
+#' @return A Word Document based on the NAFO SCR, STACFIS or SCS word template.
 #'
-#' @import bookdown
+#' @import bookdown officedown
 #' @rdname word_scr
 #' @export
 #'
 
-word_scr <- function(...) {
+
+word_scr <- function(base_format = officedown::rdocx_document,...) {
 
     base <- word_document2(...,
         reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown")
@@ -31,7 +32,7 @@ word_scr <- function(...) {
 #' @rdname word_scr
 #' @export
 #'
-word_stacfis <- function(...) {
+word_stacfis <- function(base_format = officedown::rdocx_document,...) {
 
     base <- word_document2(...,
                            reference_docx = system.file("docx", "STACFIS_template.docx", package = "NAFOdown")
@@ -47,7 +48,7 @@ word_stacfis <- function(...) {
 #' @rdname word_scr
 #' @export
 #'
-word_scs <- function(...) {
+word_scs <- function(base_format = officedown::rdocx_document,...) {
 
     base <- word_document2(...,
                            reference_docx = system.file("docx", "SCS_template.docx", package = "NAFOdown")
@@ -56,6 +57,7 @@ word_scs <- function(...) {
     # Mostly copied from knitr::render_sweave
     base$knitr$opts_chunk$comment <- NA
     base$knitr$opts_chunk$fig.align <- "center"
+
     base
 
 }
