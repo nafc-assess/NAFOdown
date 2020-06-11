@@ -6,17 +6,17 @@
 \alias{word_scs}
 \title{Creates an R Markdown Word NAFO-formatted document}
 \usage{
-word_scr(base_format = officedown::rdocx_document, ...)
+word_scr(...)
 
-word_stacfis(base_format = officedown::rdocx_document, ...)
+word_stacfis(...)
 
-word_scs(base_format = officedown::rdocx_document, ...)
+word_scs(...)
 }
 \arguments{
 \item{...}{arguments to pass to \code{\link[bookdown:word_document2]{bookdown::word_document2()}}}
 }
 \value{
-A Word Document based on the NAFO SCR, STACFIS or SCS word template.
+A Word Document based on the NAFO SCR, STACFIC or SCS word template.
 }
 \description{
 This is a function called in output in the YAML of the driver Rmd file

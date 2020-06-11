@@ -7,18 +7,17 @@
 #'
 #' @param ... arguments to pass to [bookdown::word_document2()]
 #'
-#' @return A Word Document based on the NAFO SCR, STACFIS or SCS word template.
+#' @return A Word Document based on the NAFO SCR, STACFIC or SCS word template.
 #'
-#' @import bookdown officedown
+#' @import bookdown
 #' @rdname word_scr
 #' @export
 #'
 
-
-word_scr <- function(base_format = officedown::rdocx_document,...) {
+word_scr <- function(...) {
 
     base <- word_document2(...,
-        reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown")
+                           reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown")
     )
 
     # Mostly copied from knitr::render_sweave
@@ -32,7 +31,7 @@ word_scr <- function(base_format = officedown::rdocx_document,...) {
 #' @rdname word_scr
 #' @export
 #'
-word_stacfis <- function(base_format = officedown::rdocx_document,...) {
+word_stacfis <- function(...) {
 
     base <- word_document2(...,
                            reference_docx = system.file("docx", "STACFIS_template.docx", package = "NAFOdown")
@@ -48,7 +47,7 @@ word_stacfis <- function(base_format = officedown::rdocx_document,...) {
 #' @rdname word_scr
 #' @export
 #'
-word_scs <- function(base_format = officedown::rdocx_document,...) {
+word_scs <- function(...) {
 
     base <- word_document2(...,
                            reference_docx = system.file("docx", "SCS_template.docx", package = "NAFOdown")
@@ -57,7 +56,6 @@ word_scs <- function(base_format = officedown::rdocx_document,...) {
     # Mostly copied from knitr::render_sweave
     base$knitr$opts_chunk$comment <- NA
     base$knitr$opts_chunk$fig.align <- "center"
-
     base
 
 }
