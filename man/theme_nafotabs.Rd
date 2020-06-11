@@ -21,6 +21,5 @@ A modification of \link[flextable:theme_booktabs]{flextable::theme_booktabs}
 library(flextable)
 d <- data.frame(SSB = rlnorm(10), Recruitment = rlnorm(10))
 flextable(d) \%>\%
-theme_nafotabs()
-
+  theme_nafotabs()
 }

@@ -13,11 +13,13 @@ nafo_summary_table(status = c("Not accomplished",
                               "OK",
                               "Intermediate",
                               "Unknown"),
-                   comments = c("Probability of B_2019 < B_msy = 97%",
-                                "F < F_msy",
+                   comments = c("Probability of *B~2019~* < *B~MSY~* = 97%",
+                                "*F* < *F~MSY~*",
                                 "Reference points defined",
                                 "VME closures in effect, no specific measures",
-                                "Cannot be evaluated"))
+                                "Cannot be evaluated"), 
+                   parse = TRUE)
+
 ```
 
 

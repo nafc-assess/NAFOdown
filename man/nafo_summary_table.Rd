@@ -4,12 +4,14 @@
 \alias{nafo_summary_table}
 \title{Function for producing summary tables for NAFO documents}
 \usage{
-nafo_summary_table(comments = rep(NA, 5), status = rep(NA, 5))
+nafo_summary_table(comments = rep(NA, 5), status = rep(NA, 5), parse = FALSE)
 }
 \arguments{
 \item{comments}{A vector of length 5 elaborating on the status the status of each 'Convention General Principle'}
 
 \item{status}{A vector of length 5 decribing the status of each 'Convention General Principle'. Must be one of: 'OK', 'Intermediate','Not accomplished', 'Unknown'}
+
+\item{parse}{Parse comments with markdown like syntax (experimental!)}
 }
 \description{
 Produces summary tables for NAFO stock summary sheets
