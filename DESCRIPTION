@@ -4,7 +4,7 @@ Version: 0.0.1
 Authors@R:
     c(person("Paul", "Regular", email = "Paul.Regular@dfo-mpo.gc.ca",
              role = c("aut", "cre")),
-      person("Bob", "Rodgers", role = "aut"),
+      person("Bob", "Rogers", role = "aut"),
       person("Laura", "Wheeland", role = "aut"),
       person("Sean", "Anderson", role = "aut", comment = "Development of csasdown"),
       person("Chris", "Grandin", role = "aut", comment = "Development of csasdown"),
