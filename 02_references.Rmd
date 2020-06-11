@@ -1,5 +1,0 @@
-<!-- In general, you shouldn't need to edit this file -->
-
-# References {-}
-
-<div id="refs"></div>

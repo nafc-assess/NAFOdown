@@ -18,12 +18,10 @@
 #' library(flextable)
 #' d <- data.frame(SSB = rlnorm(10), Recruitment = rlnorm(10))
 #' flextable(d) %>%
-#' theme_nafotabs()
-#'
+#'   theme_nafotabs()
+theme_nafotabs <- function(x, fontsize = 11, fontname = "Cambria") {
 
-theme_nafotabs <- function(x, fontsize = 11, fontname = "Cambria"){
-
-    if ( !inherits(x, "flextable") ) stop("theme_nafotabs supports only flextable objects.")
+    if (!inherits(x, "flextable")) stop("theme_nafotabs supports only flextable objects.")
     big_border <- officer::fp_border(width = 1)
     std_border <- officer::fp_border(width = 0.5)
     h_nrow <- flextable:::nrow_part(x, "header")
@@ -32,22 +30,24 @@ theme_nafotabs <- function(x, fontsize = 11, fontname = "Cambria"){
 
     x <- border_remove(x)
 
-    if (h_nrow > 0 ) {
+    if (h_nrow > 0) {
         x <- hline_top(x, border = big_border, part = "header")
         x <- hline(x, border = std_border, part = "header")
         x <- hline_bottom(x, border = big_border, part = "header")
     }
-    if (f_nrow > 0 ) {
+    if (f_nrow > 0) {
         # x <- hline(x, border = std_border, part = "footer")
         x <- hline_bottom(x, border = big_border, part = "footer")
     }
-    if (b_nrow > 0 ) {
+    if (b_nrow > 0) {
         # x <- hline(x, border = std_border, part = "body")
         x <- hline_bottom(x, border = big_border, part = "body")
     }
 
-    x <- padding(x = x, padding.left = 5, padding.right = 5,
-                 padding.bottom = 2, padding.top = 2, part = "all")
+    x <- padding(
+        x = x, padding.left = 5, padding.right = 5,
+        padding.bottom = 2, padding.top = 2, part = "all"
+    )
     x <- align_text_col(x, align = "left", header = TRUE)
     x <- align_nottext_col(x, align = "right", header = TRUE)
     x <- bg(x = x, bg = "transparent", part = "all")
@@ -63,7 +63,7 @@ theme_nafotabs <- function(x, fontsize = 11, fontname = "Cambria"){
 
 ## little helper to create a paragraph for flextable with content formated
 ## using markdown like syntax (..but definitly not as fully featured or fool proof)
-.as_markdown_like <- function(txt) {
+.parse <- function(txt) {
 
     ## add spaces around special characters
     txt <- gsub("\\*\\*", " __ ", txt) # bold
@@ -113,15 +113,17 @@ nafo_summary_table <- function(comments = rep(NA, 5), status = rep(NA, 5)) {
     if (length(status) != 5) {
         stop("Status must be a vector of length = 5 (for each row in table)")
     }
-    if (any(status) %in% c("OK", "Intermediate", "Not accomplished", "Unknown")) {
+    if (!all(status %in% c("OK", "Intermediate", "Not accomplished", "Unknown"))) {
         stop("status must be one of 'OK', 'Intermediate', 'Not accomplished', 'Unknown'")
     }
     stock_summary_df <- data.frame(
-        "Principles" = c("Restore or maintain at Bmsy",
-                         "Eliminate overfishing",
-                         "Apply Percautionary Approach",
-                         "Minimise harmful impacts on living marine resources and ecosystems",
-                         "Preserve marine biodiversity"),
+        "Principles" = c(
+            "Restore or maintain at Bmsy",
+            "Eliminate overfishing",
+            "Apply Percautionary Approach",
+            "Minimise harmful impacts on living marine resources and ecosystems",
+            "Preserve marine biodiversity"
+        ),
         "Status" = status,
         "Comment" = comments
     )
@@ -134,41 +136,17 @@ nafo_summary_table <- function(comments = rep(NA, 5), status = rep(NA, 5)) {
 
     summary_table <- flextable(stock_summary_df) %>%
         theme_nafotabs() %>%
+        width(width = c(2.9, 0.65, 2.9)) %>%
         align(align = "left", part = "all") %>%
-        compose(
-            j = 1, i = 1, part = "body",
-            value = as_paragraph("Restore or maintain at ", as_i("B"), as_i(as_sub("MSY")))
-        ) %>%
-        compose(
-            j = 3, i = 1, part = "body",
-            value = as_paragraph(as_i("B"), as_i(as_sub("MSY")))
-        ) %>%
-        compose(
-            part="body",j=2,value=as_paragraph('\U25CF')
-        ) %>%
-        compose(
-            part="body",j=2,i = which(stock_summary_df$Status == "Unknown"),value=as_paragraph('\U2B58')
-        )%>%
-        fontsize(
-            part="body",j=2, size=20
-        ) %>%
-        color(
-            part="body",i = which(stock_summary_df$Status == "OK"),j=2, color = "#008450"
-        ) %>%
-        color(
-            part="body",i = which(stock_summary_df$Status == "Intermediate"),j=2, color = "#EFB700"
-        ) %>%
-        color(
-            part="body",i = which(stock_summary_df$Status == "Not accomplished"),j=2, color = "#B81D13"
-        ) %>%
-        color(
-            part="body",i = which(stock_summary_df$Status == "Unknown"),j=2, color = NA
-        ) %>%
-        color(
-            part="body",i = which(is.null(stock_summary_df$Status)),j=2, color = "white"
-        ) %>%
-        italic(i = 1, part = "header") %>%
-        width(width = c(2.9, 0.65, 2.9))
+        compose(j = 1, i = 1, part = "body",
+                value = as_paragraph("Restore or maintain at ", as_i("B"), as_i(as_sub("MSY")))) %>%
+        compose(j = 2, value = as_paragraph("\U25CF")) %>%
+        color(j = 2, i = ~Status == "OK", color = "#008450") %>%
+        color(j = 2, i = ~Status == "Intermediate", color = "#EFB700") %>%
+        color(j = 2, i = ~Status == "Not accomplished", color = "#B81D13") %>%
+        color(j = 2, i = ~Status == "Unknown", color = "#a6a6a6") %>%
+        fontsize(j = 2, size = 15) %>%
+        italic(i = 1, part = "header")
 
     summary_table
 

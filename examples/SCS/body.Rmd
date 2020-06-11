@@ -8,16 +8,16 @@
 ## Managment objectives
 
 ```{r}
-# nafo_summary_table(status = c("Not accomplished",
-#                               "OK",
-#                               "OK",
-#                               "Intermediate",
-#                               "Unknown"),
-#                    comments = c("Probability of B_2019 < B_msy = 97%",
-#                                 "F < F_msy",
-#                                 "Reference points defined",
-#                                 "VME closures in effect, no specific measures",
-#                                 "Cannot be evaluated"))
+nafo_summary_table(status = c("Not accomplished",
+                              "OK",
+                              "OK",
+                              "Intermediate",
+                              "Unknown"),
+                   comments = c("Probability of B_2019 < B_msy = 97%",
+                                "F < F_msy",
+                                "Reference points defined",
+                                "VME closures in effect, no specific measures",
+                                "Cannot be evaluated"))
 ```
 
 

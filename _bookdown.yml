@@ -1,7 +1,0 @@
-book_filename: "SCR"
-rmd_files: ["index.Rmd", "01_body.Rmd", "02_references.Rmd", "03_appendix.Rmd"]
-delete_merged_file: true
-language:
-  label:
-   fig: 'Fig '
-   ## TODO: figure out how to use a dot as a figure label sufix
