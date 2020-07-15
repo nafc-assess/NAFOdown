@@ -4,7 +4,7 @@
 \alias{theme_nafo}
 \title{ggplot2 theme for styling plots for NAFO docuemtns}
 \usage{
-theme_nafo(base_size = 10, base_family = "serif")
+theme_nafo(base_size = 9, base_family = "Cambria")
 }
 \arguments{
 \item{base_size}{base font size}
@@ -12,7 +12,16 @@ theme_nafo(base_size = 10, base_family = "serif")
 \item{base_family}{base font family}
 }
 \description{
-ggplot2 theme for styling plots for NAFO docuemtns
+This theme will produce ggplots that follow NAFO plot guidelines:
+\itemize{
+\item Font: Cambria 9pt.
+\item Plot Border: black 0.5 pt. No borders around entire graph, just plot. Borders around legend (0.5pt) if possible.
+\item Tick Marks to the inside on x & y axis
+\item Graph lines: 0.75 pt, black if possible, otherwise grey
+\item Plot size: Height 6.4 cm, width 11.5 cm.
+}
+
+The helper values \link{.nafo_lwd}, \link{.nafo_height}, and \link{.nafo_width} can be used to impose consistent graph line widths, plot heights, and plot widths, respectively.
 }
 \examples{
 
