@@ -17,13 +17,16 @@ word_out <- knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx"
 
 ---
 title: `r if(word_out) '"NAFOdown: An R Markdown Template for Producing NAFO Scientific Council Documents"'`
-author: `r if(word_out) '"Paul M. Regular, Bob Rodgers, Laura Wheeland, Sean Anderson"'`
+author: `r if(word_out) '"Paul M. Regular^1^, Bob Rodgers^1^, Laura Wheeland^1^, Sean C. Anderson^2^"'`
+date: |
+    `r if(word_out) "^1^Northwest Atlantic Fisheries Centre, Fisheries and Oceans Canada, P.O.Box 5667, St. John’s, NL, A1C 5X1, Canada\\"`
+    `r if(word_out) "^2^Pacific Biological Station, Fisheries and Oceans Canada, 3190 Hammond Bay Rd., Nanaimo, British Columbia, V9T 6N7, Canada"`
 ---
 
 
 `r if (!word_out) "[![Travis-CI Build Status](https://travis-ci.org/nafc-assess/NAFOdown.svg?branch=master)](https://travis-ci.org/nafc-assess/NAFOdown)"`
 
-`r if(!word_out) "# NAFOdown" else "# Abstract"`
+`r if(!word_out) "# NAFOdown" else "# Introduction"`
 
 ```{r logo, echo = FALSE, fig.height = 0.01, out.width = "150px", out.height = "150px", out.extra='style="float:right; padding:10px"', eval = !word_out}
 knitr::include_graphics("logo.svg")
