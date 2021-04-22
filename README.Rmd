@@ -16,7 +16,7 @@ word_out <- knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx"
 ```
 
 
-[![Travis-CI Build Status](https://travis-ci.org/nafc-assess/NAFOdown.svg?branch=master)](https://travis-ci.org/nafc-assess/NAFOdown)
+`r if (!word_out) "[![Travis-CI Build Status](https://travis-ci.org/nafc-assess/NAFOdown.svg?branch=master)](https://travis-ci.org/nafc-assess/NAFOdown)"`
 
 # NAFOdown
 
@@ -109,6 +109,5 @@ knitr::include_graphics("screenshots/STACFIS.png")
 ```
 
 While there is an initial cost to building these documents, they will be much easier to update following the addition of new data as all tables and figures should automatically update. This workflow will also improve the transparency and reproducibility of the work, especially if changes are tracked using git.
-
 
 
