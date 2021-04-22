@@ -96,7 +96,7 @@ citation style language file (.csl). Currently, SCR documents will
 follow the Harvard citation format. This folder is not included in the
 STACFIS or SCS templates as references are rarely used.
 
-### `bib`
+#### `bib`
 
 BibTeX references are to be included in the `refs.bib` file inside this
 folder. BibTeX entries can be exported from most journal web-pages,
