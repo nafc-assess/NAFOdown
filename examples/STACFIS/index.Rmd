@@ -1,0 +1,34 @@
+---
+output: NAFOdown::word_stacfis
+knit: bookdown::render_book
+---
+
+```{r setup, echo=FALSE, cache=FALSE, message=FALSE, results='hide', warning=FALSE}
+## adjust as desired:
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  comment = "#>",
+  fig.path = "knitr-figs-docx/",
+  cache.path = "knitr-cache-docx/",
+  fig.height = NAFOdown::.nafo_height,
+  fig.width = NAFOdown::.nafo_width, 
+  fig.showtext = TRUE,
+  echo = FALSE,
+  # autodep = TRUE,
+  # cache = TRUE,
+  cache.comments = FALSE,
+  dev = "png",
+  dpi = 300
+)
+showtext::showtext_opts(dpi = knitr::opts_chunk$get()$dpi) # force showtext dpi to match chunk dpi to preserve proper font size (9 pt)
+```
+
+```{r load-libraries, cache=FALSE}
+# add other packages here:
+library(NAFOdown)
+library(ggplot2)
+library(flextable)
+theme_set(theme_nafo()) # set default ggplot2 theme
+```
