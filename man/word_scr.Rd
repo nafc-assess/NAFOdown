@@ -13,7 +13,7 @@ word_stacfis(...)
 word_scs(...)
 }
 \arguments{
-\item{...}{arguments to pass to \code{\link[bookdown:word_document2]{bookdown::word_document2()}}}
+\item{...}{arguments to pass to \code{\link[bookdown:html_document2]{bookdown::word_document2()}}}
 }
 \value{
 A Word Document based on the NAFO SCR, STACFIC or SCS word template.

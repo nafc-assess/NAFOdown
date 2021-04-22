@@ -8,6 +8,7 @@
 ## Managment objectives
 
 ```{r}
+
 nafo_summary_table(status = c("Not accomplished",
                               "OK",
                               "OK",
