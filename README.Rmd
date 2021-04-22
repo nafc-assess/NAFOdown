@@ -108,8 +108,7 @@ The rendered Word file will be saved in the `_book/` directory. When all files a
 knitr::include_graphics("screenshots/STACFIS.png")
 ```
 
-however, these documents will be much easier to update following the addition of new data as all tables and figures should automatically update.
+While there is an initial cost to building these documents, they will be much easier to update following the addition of new data as all tables and figures should automatically update. This workflow will also improve the transparency and reproducibility of the work, especially if changes are tracked using git.
 
-<!-- Should note that there is a cost to building these documents but the effort is worth it if they are updated on an annual basis -->
 
 
