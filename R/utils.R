@@ -20,9 +20,7 @@ word_scr <- function(...) {
                            reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown")
     )
 
-    # Mostly copied from knitr::render_sweave
     base$knitr$opts_chunk$comment <- NA
-    base$knitr$opts_chunk$fig.align <- "center"
     base
 
 }
@@ -37,9 +35,7 @@ word_stacfis <- function(...) {
                            reference_docx = system.file("docx", "STACFIS_template.docx", package = "NAFOdown")
     )
 
-    # Mostly copied from knitr::render_sweave
     base$knitr$opts_chunk$comment <- NA
-    base$knitr$opts_chunk$fig.align <- "center"
     base
 
 }
@@ -53,9 +49,7 @@ word_scs <- function(...) {
                            reference_docx = system.file("docx", "SCS_template.docx", package = "NAFOdown")
     )
 
-    # Mostly copied from knitr::render_sweave
     base$knitr$opts_chunk$comment <- NA
-    base$knitr$opts_chunk$fig.align <- "center"
     base
 
 }
