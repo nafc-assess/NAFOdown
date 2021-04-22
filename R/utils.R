@@ -17,6 +17,7 @@
 word_scr <- function(...) {
 
     base <- word_document2(...,
+                           number_sections = FALSE,
                            reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown")
     )
 
@@ -32,6 +33,7 @@ word_scr <- function(...) {
 word_stacfis <- function(...) {
 
     base <- word_document2(...,
+                           number_sections = FALSE,
                            reference_docx = system.file("docx", "STACFIS_template.docx", package = "NAFOdown")
     )
 
@@ -46,6 +48,7 @@ word_stacfis <- function(...) {
 word_scs <- function(...) {
 
     base <- word_document2(...,
+                           number_sections = FALSE,
                            reference_docx = system.file("docx", "SCS_template.docx", package = "NAFOdown")
     )
 
