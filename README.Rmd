@@ -76,7 +76,13 @@ BibTeX references are to be included in the `refs.bib` file inside this folder. 
 
 NAFOdown is build upon the [bookdown](https://bookdown.org/yihui/bookdown/) package which is build upon [R markdown](http://rmarkdown.rstudio.com). In short, R markdown provides a reproducible authoring framework for scientist as a single file can be used to embed chunks of code from R, and other languages, into a Markdown document. Markdown is a simple plain text formatting syntax that can be converted to a wide range of outputs, such as HTML. The format is easy-to-read and the fact that it detaches writing from formatting allows authors to focus on writing. Pairing R with Markdown creates a very flexible and efficient platform for producing a wide range of documents. See the bookdown book on bookdown for more details on its capabilities (https://bookdown.org/yihui/bookdown/).
 
-<!-- Need to mention the ggplot theme somewhere -->
+### Tables
+
+Tables included in NAFO documents are often extensive and, as such, we recommend the use of the [flextable](https://davidgohel.github.io/flextable/index.html) package. Tables produced using this package are highly customizable and a theme function, `NAFOdown::theme_nafotabs()`, has been added to this package to facilitate consistent formatting of tables in NAFO documents.
+
+### Figures
+
+NAFOdown also includes a [ggplot2](https://ggplot2.tidyverse.org/) theme, `NAFOdown::theme_nafo()` to aid the consistent formatting of figures. The theme is specific to the ggplot2 package because it is a widely used package that is extremely flexible and capable of producing figures typically used in NAFO documents.
 
 ## Meeting-to-meeting writing
 
