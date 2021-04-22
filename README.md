@@ -11,7 +11,7 @@ and updating NAFO documents, such as SCRs and STACFIS reports. The
 package utilizes the [bookdown](https://bookdown.org/yihui/bookdown/)
 package which facilitates the integration of Markdown syntax and R code
 and, as such, effectively provides a “one-stop-shop” tool through which
-text, analyses, plots and tables can be written in parallel and knit
+analyses, plots, tables, and text can be written in parallel and knit
 into a stand-alone and reproducible document. Such a workflow minimizes
 the significant amount of manual effort associated with coping and
 pasting data, summary statistics and plots from one program to another.
@@ -27,7 +27,7 @@ this package.
 ## Installation
 
 The statistical computing program [R](https://www.r-project.org/) is
-required to use the NAFOdown package and we highly recommend using the
+required to use the NAFOdown package and we highly recommend using
 [RStudio](https://www.rstudio.com/products/RStudio/) to manage an R
 projects. With RStudio installed a project can be started in an existing
 or new directory using the drop-down menus in Rstudio. After setting up
@@ -45,18 +45,19 @@ remotes::install_github("nafc-assess/NAFOdown")
 
 ## Starting a document
 
-A skeleton of a SCR or STACFIS document will be produced by running this
-code:
+A skeleton of a SCR or STACFIS document will be produced and stored in
+your working directory by running this code:
 
 ``` r
-getwd() # FYI - this is where files and folders of the skeleton will be saved
+getwd() # this is where files and folders of the skeleton will be saved
 NAFOdown::draft(report_type = "SCR")
 ```
 
 The type of skeleton produced can be changed by changing the
-`report_type` argument from `"SCR"` to `"STACFIS"`. The components of
-the skeleton are outlined below. Note that all of the files included in
-the skeleton are text based and can be opened and edited using RStudio.
+`report_type` argument from `"SCR"` to `"STACFIS"` or `"SCS"`. The
+components of the skeleton are outlined below. Note that all of the
+files included in the skeleton are text based and can be opened and
+edited using RStudio.
 
 ### Components of the skeleton
 
@@ -70,11 +71,11 @@ edited, such as the author, title, etc.
 #### `01_body.Rmd`, `02_references.Rmd`, etc.
 
 These are the .Rmd files for each section of the report. These files
-will hold all the markdown text and R code needed to produce the
-document. Note that the SCR template includes a series of .Rmd files
-(`01_body.Rmd`, `02_references.Rmd`, and `03_appendix.Rmd`), as these
-reports can be extensive, while the STACFIS template is simpler and only
-includes a `body.Rmd` file.
+will hold all the markdown text and R code (e.g. tables and figures)
+needed to produce the document. Note that the SCR template includes a
+series of .Rmd files (`01_body.Rmd`, `02_references.Rmd`, and
+`03_appendix.Rmd`), as these reports can be extensive, while the STACFIS
+and SCS templates are simpler and only includes a `body.Rmd` file.
 
 #### `_bookdown.yml`
 
@@ -83,14 +84,17 @@ also where some options are modified such as the prefix for table and
 figure captions (e.g. Figure instead of Fig.). Depending on the use
 case, specific components may not be needed and these files can be
 excluded from the .Rmd file list contained within this file
-(e.g. appendix.Rmd).
+(e.g. `appendix.Rmd`). Alternatively, for extensive SCR documents, it
+may be useful to create and specify separate `01_introduction.Rmd`,
+`02_methods.Rmd`, `03_results.Rmd`, and `04_discussion.Rmd` files in
+lieu of one large `01_body.Rmd`.
 
 #### `csl`
 
 This folder holds the style files for bibliographies, specified using a
 citation style language file (.csl). Currently, SCR documents will
 follow the Harvard citation format. This folder is not included in the
-STACFIS template as references are rarely used.
+STACFIS or SCS templates as references are rarely used.
 
 ### `bib`
 
@@ -105,6 +109,8 @@ citations.
 
 ## Writing
 
+### Markdown
+
 NAFOdown is build upon the
 [bookdown](https://bookdown.org/yihui/bookdown/) package which is build
 upon [R markdown](http://rmarkdown.rstudio.com). In short, R markdown
@@ -118,7 +124,22 @@ creates a very flexible and efficient platform for producing a wide
 range of documents. See the bookdown book on bookdown for more details
 on its capabilities (<https://bookdown.org/yihui/bookdown/>).
 
-<!-- Need to mention the ggplot theme somewhere -->
+### Tables
+
+Tables included in NAFO documents are often extensive and, as such, we
+recommend the use of the
+[flextable](https://davidgohel.github.io/flextable/index.html) package.
+Tables produced using this package are highly customizable and a theme
+function, `NAFOdown::theme_nafotabs()`, has been added to this package
+to facilitate consistent formatting of tables in NAFO documents.
+
+### Figures
+
+NAFOdown also includes a [ggplot2](https://ggplot2.tidyverse.org/)
+theme, `NAFOdown::theme_nafo()` to aid the consistent formatting of
+figures. The theme is specific to the ggplot2 package because it is a
+widely used package that is extremely flexible and capable of producing
+figures typically used in NAFO documents.
 
 ## Meeting-to-meeting writing
 
@@ -154,8 +175,8 @@ similar to past documents:
 
 <img src="screenshots/STACFIS.png" width="100%" />
 
-however, these documents will be much easier to update following the
-addition of new data as all tables and figures should automatically
-update.
-
-<!-- Should note that there is a cost to building these documents but the effort is worth it if they are updated on an annual basis -->
+While there is an initial cost to building these documents, they will be
+much easier to update following the addition of new data as all tables
+and figures should automatically update. This workflow will also improve
+the transparency and reproducibility of the work, especially if changes
+are tracked using git.
