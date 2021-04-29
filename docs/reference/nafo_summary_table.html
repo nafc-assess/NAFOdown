@@ -148,6 +148,34 @@
     </table>
 
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='fu'>nafo_summary_table</span><span class='op'>(</span>status <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Not accomplished"</span>, <span class='st'>"OK"</span>, <span class='st'>"OK"</span>, <span class='st'>"Intermediate"</span>, <span class='st'>"Unknown"</span><span class='op'>)</span>,
+                   comments <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Probability of *B~2019~* &lt; *B~MSY~* = 97%"</span>,
+                                <span class='st'>"*F* &lt; *F~MSY~*"</span>,
+                                <span class='st'>"Reference points defined"</span>,
+                                <span class='st'>"VME closures in effect, no specific measures"</span>,
+                                <span class='st'>"Cannot be evaluated"</span><span class='op'>)</span>,
+                   parse <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; a flextable object.
+#&gt; col_keys: `Convention General Principles`, `Status`, `Comment/consideration`, ` `, `  ` 
+#&gt; header has 1 row(s) 
+#&gt; body has 5 row(s) 
+#&gt; original dataset sample: 
+#&gt;                                        Convention General Principles
+#&gt; 1                                        Restore or maintain at Bmsy
+#&gt; 2                                              Eliminate overfishing
+#&gt; 3                                       Apply Percautionary Approach
+#&gt; 4 Minimise harmful impacts on living marine resources and ecosystems
+#&gt; 5                                       Preserve marine biodiversity
+#&gt;             Status                        Comment/consideration     
+#&gt; 1 Not accomplished    Probability of *B~2019~* &lt; *B~MSY~* = 97%     
+#&gt; 2               OK                               *F* &lt; *F~MSY~*     
+#&gt; 3               OK                     Reference points defined     
+#&gt; 4     Intermediate VME closures in effect, no specific measures     
+#&gt; 5          Unknown                          Cannot be evaluated     </div><div class='input'>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
