@@ -16,3 +16,15 @@ nafo_summary_table(comments = rep(NA, 5), status = rep(NA, 5), parse = FALSE)
 \description{
 Produces summary tables for NAFO stock summary sheets
 }
+\examples{
+
+nafo_summary_table(status = c("Not accomplished", "OK", "OK", "Intermediate", "Unknown"),
+                   comments = c("Probability of *B~2019~* < *B~MSY~* = 97\%",
+                                "*F* < *F~MSY~*",
+                                "Reference points defined",
+                                "VME closures in effect, no specific measures",
+                                "Cannot be evaluated"),
+                   parse = TRUE)
+
+
+}

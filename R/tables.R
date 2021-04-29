@@ -105,6 +105,16 @@ theme_nafotabs <- function(x, fontsize = 11, fontname = "Cambria") {
 #'
 #' @export
 #'
+#' @examples
+#'
+#' nafo_summary_table(status = c("Not accomplished", "OK", "OK", "Intermediate", "Unknown"),
+#'                    comments = c("Probability of *B~2019~* < *B~MSY~* = 97%",
+#'                                 "*F* < *F~MSY~*",
+#'                                 "Reference points defined",
+#'                                 "VME closures in effect, no specific measures",
+#'                                 "Cannot be evaluated"),
+#'                    parse = TRUE)
+#'
 #'
 
 nafo_summary_table <- function(comments = rep(NA, 5), status = rep(NA, 5),
