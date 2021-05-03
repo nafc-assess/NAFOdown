@@ -1,4 +1,3 @@
-
 [![Travis-CI Build
 Status](https://travis-ci.org/nafc-assess/NAFOdown.svg?branch=master)](https://travis-ci.org/nafc-assess/NAFOdown)
 
