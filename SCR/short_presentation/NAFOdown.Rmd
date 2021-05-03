@@ -1,0 +1,51 @@
+---
+title: "NAFOdown"
+subtitle: "An R Markdown Template for Producing NAFO Scientific Council Documents"
+author: "Paul M. Regular, Bob Rodgers, Laura Wheeland, Sean C. Anderson"
+date: "`r Sys.Date()`"
+output:
+  ioslides_presentation:
+    incremental: true
+    widescreen: true
+    logo: logo.png
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(here)
+```
+
+## NAFOdown
+
+- R package designed to simplify the process of creating and updating NAFO documents 
+    - SCR, STACFIS, and SCS documents
+- Based on [csasdown](https://github.com/pbs-assess/csasdown/) and [thesisdown](https://github.com/ismayc/thesisdown/) | utilizes [bookdown](https://bookdown.org/yihui/bookdown/)
+    - Use R + Markdown for analyses, plots, tables, and text
+    - Renders to word documents using standard templates
+
+## Why use it?
+
+- Improve reproducibility
+    - Explicit data to document workflow
+- Reduce human-error
+    - Automated updates curtail copy-paste efforts
+- Facilitate consistent formatting
+    - Built-in styles allows users to focus on writing
+
+## Getting started
+
+1) Review documentation: https://nafc-assess.github.io/NAFOdown/
+2) Install from GitHub: `remotes::install_github("nafc-assess/NAFOdown")`
+3) Create document skeleton: e.g., `NAFOdown::draft(report_type = "SCR")`
+4) Modify core files; write chunks of code and text
+5) Render document
+
+## Contributing
+
+- We are open to feedback
+    - Please report issues here: https://github.com/nafc-assess/NAFOdown/issues
+    - And feel free to suggest changes here: https://github.com/nafc-assess/NAFOdown/pulls
+
+
+
+
