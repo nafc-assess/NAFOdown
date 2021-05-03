@@ -88,7 +88,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#nafodown" class="anchor"></a>NAFOdown</h1></div>
 <p><img src="logo.svg" width="150px" height="150px" style="float:right; padding:10px"></p>
-<p>NAFOdown is an R package designed to simplify the process of creating and updating NAFO documents, such as SCRs and STACFIS reports. The package utilizes the <a href="https://bookdown.org/yihui/bookdown/">bookdown</a> package which facilitates the integration of Markdown syntax and R code and, as such, effectively provides a “one-stop-shop” tool through which analyses, plots, tables, and text can be written in parallel and knit into a stand-alone and reproducible document. Such a workflow minimizes the significant amount of manual effort associated with coping and pasting data, summary statistics and plots from one program to another. This approach also minimizes the amount of time spent on formatting documents as the NAFOdown package, like the <a href="https://github.com/pbs-assess/csasdown/">csasdown</a> and <a href="https://github.com/ismayc/thesisdown/">thesisdown</a> packages which this package is based on, includes templates that conform to formatting guidelines. Specifically, NAFOdown includes templates for producing SCR and STACFIS documents in Word format. Here we demonstrate how to use this package.</p>
+<p>NAFOdown is an R package designed to simplify the process of creating and updating NAFO documents. The package utilizes the <a href="https://bookdown.org/yihui/bookdown/">bookdown</a> package which facilitates the integration of Markdown syntax and R code and, as such, effectively provides a “one-stop-shop” tool through which analyses, plots, tables, and text can be written in parallel and knit into a stand-alone and reproducible document. Such a workflow minimizes the significant amount of manual effort associated with coping and pasting data, summary statistics and plots from one program to another. This approach also minimizes the amount of time spent on formatting documents as the NAFOdown package, like the <a href="https://github.com/pbs-assess/csasdown/">csasdown</a> and <a href="https://github.com/ismayc/thesisdown/">thesisdown</a> packages which this package is based on, includes templates that conform to formatting guidelines. Specifically, NAFOdown includes templates for producing SCR, STACFIS, and SCS documents in Word format. Here we demonstrate how to use this package.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -101,7 +101,7 @@
 <div id="starting-a-document" class="section level2">
 <h2 class="hasAnchor">
 <a href="#starting-a-document" class="anchor"></a>Starting a document</h2>
-<p>A skeleton of a SCR or STACFIS document will be produced and stored in your working directory by running this code:</p>
+<p>A skeleton of a NAFO document will be produced and stored in your working directory by running this code:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># this is where files and folders of the skeleton will be saved</span>
 <span class="fu">NAFOdown</span><span class="fu">::</span><span class="fu"><a href="reference/draft.html">draft</a></span><span class="op">(</span>report_type <span class="op">=</span> <span class="st">"SCR"</span><span class="op">)</span></code></pre></div>
@@ -175,6 +175,11 @@
 <p>The rendered Word file will be saved in the <code>_book/</code> directory. When all files are populated with the necessary content, the output will look similar to past documents:</p>
 <p><img src="screenshots/STACFIS.png" width="100%"></p>
 <p>While there is an initial cost to building these documents, they will be much easier to update following the addition of new data as all tables and figures should automatically update. This workflow will also improve the transparency and reproducibility of the work, especially if changes are tracked using git.</p>
+</div>
+<div id="contributing" class="section level2">
+<h2 class="hasAnchor">
+<a href="#contributing" class="anchor"></a>Contributing</h2>
+<p>This is an open project and we welcome constructive feedback. Please report problems and/or make suggestions under the <a href="https://github.com/nafc-assess/NAFOdown/issues">issues</a> page. Also feel free to activity contribute to the package by submitting changes under the <a href="https://github.com/nafc-assess/NAFOdown/pulls">pull requests</a> page.</p>
 </div>
 </div>
 
