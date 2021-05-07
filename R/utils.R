@@ -10,6 +10,7 @@
 #' @return A Word Document based on the NAFO SCR, STACFIC or SCS word template.
 #'
 #' @import officedown
+#' @import officer
 #' @rdname word_scr
 #' @export
 #'
@@ -18,6 +19,8 @@ word_scr <- function(...) {
         base_format = "bookdown::word_document2",
         number_sections = FALSE,
         reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown"),
+        page_margins = officer::page_mar(),
+        page_size = officer::page_size(width = 8.5, height = 11),
         ...
     )
     base$knitr$opts_chunk$comment <- NA
