@@ -9,21 +9,19 @@
 #'
 #' @return A Word Document based on the NAFO SCR, STACFIC or SCS word template.
 #'
-#' @import bookdown
+#' @import officedown
 #' @rdname word_scr
 #' @export
 #'
-
 word_scr <- function(...) {
-
-    base <- word_document2(...,
-                           number_sections = FALSE,
-                           reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown")
+    base <- officedown::rdocx_document(
+        base_format = "bookdown::word_document2",
+        number_sections = FALSE,
+        reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown"),
+        ...
     )
-
     base$knitr$opts_chunk$comment <- NA
     base
-
 }
 
 
@@ -31,28 +29,26 @@ word_scr <- function(...) {
 #' @export
 #'
 word_stacfis <- function(...) {
-
-    base <- word_document2(...,
-                           number_sections = FALSE,
-                           reference_docx = system.file("docx", "STACFIS_template.docx", package = "NAFOdown")
+    base <- officedown::rdocx_document(
+        base_format = "bookdown::word_document2",
+        number_sections = FALSE,
+        reference_docx = system.file("docx", "STACFIS_template.docx", package = "NAFOdown"),
+        ...
     )
-
     base$knitr$opts_chunk$comment <- NA
     base
-
 }
 
 #' @rdname word_scr
 #' @export
 #'
 word_scs <- function(...) {
-
-    base <- word_document2(...,
-                           number_sections = FALSE,
-                           reference_docx = system.file("docx", "SCS_template.docx", package = "NAFOdown")
+    base <- officedown::rdocx_document(
+        base_format = "bookdown::word_document2",
+        number_sections = FALSE,
+        reference_docx = system.file("docx", "SCS_template.docx", package = "NAFOdown"),
+        ...
     )
-
     base$knitr$opts_chunk$comment <- NA
     base
-
 }
