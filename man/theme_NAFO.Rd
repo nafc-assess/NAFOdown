@@ -26,9 +26,11 @@ The helper values \link{.nafo_lwd}, \link{.nafo_height}, and \link{.nafo_width} 
 \examples{
 
 library(ggplot2)
-d <- data.frame(SSB = rlnorm(20), Recruitment = rlnorm(20))
+set.seed(123)
+d <- data.frame(SSB = rlnorm(40), Recruitment = rlnorm(40),
+                Species = c(rep("Cod", 20), rep("Plaice", 20)))
 ggplot(d) +
-geom_point(aes(x = SSB, y = Recruitment)) +
+geom_point(aes(x = SSB, y = Recruitment, shape = Species)) +
 theme_nafo()
 
 }

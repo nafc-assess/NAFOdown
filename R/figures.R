@@ -26,9 +26,11 @@
 #' @examples
 #'
 #' library(ggplot2)
-#' d <- data.frame(SSB = rlnorm(20), Recruitment = rlnorm(20))
+#' set.seed(123)
+#' d <- data.frame(SSB = rlnorm(40), Recruitment = rlnorm(40),
+#'                 Species = c(rep("Cod", 20), rep("Plaice", 20)))
 #' ggplot(d) +
-#' geom_point(aes(x = SSB, y = Recruitment)) +
+#' geom_point(aes(x = SSB, y = Recruitment, shape = Species)) +
 #' theme_nafo()
 #'
 
@@ -53,8 +55,8 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
               legend.justification = c(1, 1),
               legend.position = c(0.98, 0.98),
               legend.key.size = unit(1, "line"),
-              legend.margin = margin(l = 1, r = 1, b = 0.5, unit = "mm"),
-              legend.box.margin = margin(l = 1, r = 1, b = 0.5, unit = "mm"))
+              legend.margin = margin(l = 1, r = 1, b = 0.5, t = 0.5, unit = "mm"),
+              legend.box.margin = margin(l = 1, r = 1, b = 0.5, t = 0.5, unit = "mm"))
 }
 
 
