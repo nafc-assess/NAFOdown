@@ -9,3 +9,4 @@
 ^SCR$
 ^screenshots$
 ^\.travis\.yml$
+^\.github$

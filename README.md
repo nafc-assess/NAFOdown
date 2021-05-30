@@ -1,5 +1,4 @@
-[![Travis-CI Build
-Status](https://travis-ci.org/nafc-assess/NAFOdown.svg?branch=master)](https://travis-ci.org/nafc-assess/NAFOdown)
+[![R-CMD-check](https://github.com/nafc-assess/NAFOdown/workflows/R-CMD-check/badge.svg)](https://github.com/nafc-assess/NAFOdown/actions)
 
 # NAFOdown
 
