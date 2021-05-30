@@ -2,7 +2,7 @@
 
 # NAFOdown
 
-<img src="logo.svg" width="150px" height="150px" style="float:right; padding:10px" />
+<img src="man/figures/logo.svg" width="150px" height="150px" style="float:right; padding:10px" />
 
 NAFOdown is an R package designed to simplify the process of creating
 and updating NAFO documents. The package utilizes the
