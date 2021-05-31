@@ -2,6 +2,8 @@
 output:
   md_document:
     variant: markdown_github
+bibliography: bib/refs.bib
+csl: bib/apa-no-ampersand.csl
 ---
 
 ```{r, include = FALSE}
@@ -125,6 +127,16 @@ knitr::include_graphics("man/figures/STACFIS.png")
 ```
 
 While there is an initial cost to building these documents, they will be much easier to update following the addition of new data as all tables and figures should automatically update. This workflow will also improve the transparency and reproducibility of the work, especially if changes are tracked using git.
+
+`r if(!word_out) "##" else "#"` Documents prepared using NAFOdown
+
+---
+nocite: | 
+  @scr20-005, @scr20-042, @scr20-050, @scs20-14a, @scs20-14b, @scs20-011
+...
+
+<div id="refs"></div>
+
 
 `r if(!word_out) "##" else "#"` Contributing
 

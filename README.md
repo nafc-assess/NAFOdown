@@ -188,6 +188,70 @@ and figures should automatically update. This workflow will also improve
 the transparency and reproducibility of the work, especially if changes
 are tracked using git.
 
+## Documents prepared using NAFOdown
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-scs20-14a" class="csl-entry">
+
+NAFO. (2020a). <span class="nocase">Greenland halibut in SA2 + Divs.
+3KLMNO: conduct an update assessment, compute the TAC using the agreed
+HCR and determine whether exceptional circumstances are occurring (COM
+request \#2). In *Report of the Scientific Council, 28 May -12 June
+2020, By correspondence*</span>. *NAFO SCS Doc*, *20/14*, Pages 19–31.
+<https://www.nafo.int/Portals/0/PDFs/sc/2020/scs20-14.pdf>
+
+</div>
+
+<div id="ref-scs20-14b" class="csl-entry">
+
+NAFO. (2020b). <span class="nocase">Greenland Halibut (*Reinhardtius
+hippoglossoides*) in Subarea 2 + Divisions 3KLMNO. In *Report of the
+Scientific Council, 28 May -12 June 2020, By correspondence*</span>.
+*NAFO SCS Doc*, *20/14*, Pages 221–223.
+<https://www.nafo.int/Portals/0/PDFs/sc/2020/scs20-14.pdf>
+
+</div>
+
+<div id="ref-scr20-050" class="csl-entry">
+
+Regular, P. M. (2020). <span class="nocase">Update of Base Case SSM for
+Greenland Halibut in NAFO Subarea 2 and Divisions 3KLMNO</span>. *NAFO
+SCR Doc*, *20/050*.
+<https://www.nafo.int/Portals/0/PDFs/sc/2020/scr20-050.pdf>
+
+</div>
+
+<div id="ref-scr20-042" class="csl-entry">
+
+Regular, P. M., Rademeyr, R., D., V., D., B., and C., F. (2020). <span
+class="nocase">Correcting mis-calculated values of
+*J*<sub>*t**a**r**g**e**t*</sub> for use in the Greenland halibut
+HCR</span>. *NAFO SCR Doc*, *20/042*.
+<https://www.nafo.int/Portals/0/PDFs/sc/2020/scr20-042%20.pdf>
+
+</div>
+
+<div id="ref-scr20-005" class="csl-entry">
+
+Regular, P. M., Rideout, R. M., and W., I. D. (2020). <span
+class="nocase">Impact of missed strata on abundance-at-age estimates of
+Greenland halibut from the Canadian fall 2J3K and spring 3LNO surveys in
+2018</span>. *NAFO SCR Doc*, *20/005 REV*.
+<https://www.nafo.int/Portals/0/PDFs/sc/2020/scr20-005REV.pdf>
+
+</div>
+
+<div id="ref-scs20-011" class="csl-entry">
+
+Rogers, B., and Simpson, M. (2020). <span class="nocase">Canadian
+Research Report for 2019</span>. *NAFO SCS Doc*, *20/11*.
+<https://www.nafo.int/Portals/0/PDFs/sc/2020/scs20-11.pdf>
+
+</div>
+
+</div>
+
 ## Contributing
 
 This is an open project and we welcome constructive feedback. Please
