@@ -168,12 +168,12 @@
 <h2 class="hasAnchor">
 <a href="#rendering" class="anchor"></a>Rendering</h2>
 <p>To render a NAFO report in Word format, open <code>index.Rmd</code> in Rstudio and click the “knit” button:</p>
-<p><img src="screenshots/knit.png" width="600px"></p>
+<p><img src="reference/figures/knit.png" width="600px"></p>
 <p>Documents can also be rendered in the R console, assuming the working directory is set to the directory holding the <code>index.Rmd</code> file, using bookdown’s <code>render</code> function:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">bookdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/bookdown/reference/render_book.html">render_book</a></span><span class="op">(</span><span class="st">"index.Rmd"</span><span class="op">)</span></code></pre></div>
 <p>The rendered Word file will be saved in the <code>_book/</code> directory. When all files are populated with the necessary content, the output will look similar to past documents:</p>
-<p><img src="screenshots/STACFIS.png" width="100%"></p>
+<p><img src="reference/figures/STACFIS.png" width="100%"></p>
 <p>While there is an initial cost to building these documents, they will be much easier to update following the addition of new data as all tables and figures should automatically update. This workflow will also improve the transparency and reproducibility of the work, especially if changes are tracked using git.</p>
 </div>
 <div id="contributing" class="section level2">
