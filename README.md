@@ -1,8 +1,6 @@
 [![R-CMD-check](https://github.com/nafc-assess/NAFOdown/workflows/R-CMD-check/badge.svg)](https://github.com/nafc-assess/NAFOdown/actions)
 
-# NAFOdown
-
-<img src="man/figures/logo.svg" width="150px" height="150px" style="float:right; padding:10px" />
+# NAFOdown <img src="man/figures/logo.png" align="right" width="120" />
 
 NAFOdown is an R package designed to simplify the process of creating
 and updating NAFO documents. The package utilizes the

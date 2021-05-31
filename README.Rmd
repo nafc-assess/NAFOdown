@@ -39,11 +39,7 @@ cat(
 
 `r if (!word_out) "[![R-CMD-check](https://github.com/nafc-assess/NAFOdown/workflows/R-CMD-check/badge.svg)](https://github.com/nafc-assess/NAFOdown/actions)"`
 
-`r if(!word_out) "# NAFOdown" else "# Introduction"`
-
-```{r logo, echo = FALSE, fig.height = 0.01, out.width = "150px", out.height = "150px", out.extra='style="float:right; padding:10px"', eval = !word_out}
-knitr::include_graphics("man/figures/logo.svg")
-```
+`r if(!word_out) '# NAFOdown <img src="man/figures/logo.png" align="right" width="120" />' else "# Introduction"`
 
 NAFOdown is an R package designed to simplify the process of creating and updating NAFO documents. The package utilizes the [bookdown](https://bookdown.org/yihui/bookdown/) package which facilitates the integration of Markdown syntax and R code and, as such, effectively provides a "one-stop-shop" tool through which analyses, plots, tables, and text can be written in parallel and knit into a stand-alone and reproducible document. Such a workflow minimizes the significant amount of manual effort associated with copying and pasting data, summary statistics and plots from one program to another. By linking input data directly with the body of the text and to figures and tables, documents can be automatically updated to include additional years of data; this may be of particular value to Designated Experts as they update interim monitoring reports and other assessment documents. This approach also minimizes the amount of time spent on formatting documents as the NAFOdown package, like the [csasdown](https://github.com/pbs-assess/csasdown/) and [thesisdown](https://github.com/ismayc/thesisdown/) packages which this package is based on, includes templates that conform to formatting guidelines. Specifically, NAFOdown includes templates for producing SCR, STACFIS, and SCS documents in Word format. Here we demonstrate how to use this package.
 
