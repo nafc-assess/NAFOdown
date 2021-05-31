@@ -128,6 +128,7 @@ While there is an initial cost to building these documents, they will be much ea
 
 `r if(!word_out) "##" else "#"` Contributing
 
-This is an open project and we welcome constructive feedback. Please report problems and/or make suggestions under the [issues](https://github.com/nafc-assess/NAFOdown/issues) page. Also feel free to activity contribute to the package by submitting changes under the [pull requests](https://github.com/nafc-assess/NAFOdown/pulls) page.
+This is an open project and we welcome constructive feedback. Please report problems and/or make suggestions under the [issues](https://github.com/nafc-assess/NAFOdown/issues) page. Also feel free to activity contribute to the package by submitting changes under the [pull requests](https://github.com/nafc-assess/NAFOdown/pulls) page. Please note that the NAFOdown project is released with a [Contributor Code of Conduct](https://nafc-assess.github.io/NAFOdown/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
 
 

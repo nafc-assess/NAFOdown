@@ -186,3 +186,7 @@ report problems and/or make suggestions under the
 [issues](https://github.com/nafc-assess/NAFOdown/issues) page. Also feel
 free to activity contribute to the package by submitting changes under
 the [pull requests](https://github.com/nafc-assess/NAFOdown/pulls) page.
+Please note that the NAFOdown project is released with a [Contributor
+Code of
+Conduct](https://nafc-assess.github.io/NAFOdown/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
