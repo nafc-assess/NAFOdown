@@ -4,6 +4,9 @@ output:
     variant: markdown_github
 bibliography: bib/refs.bib
 csl: bib/apa-no-ampersand.csl
+resource_files:
+    - bib/refs.bib
+    - apa-no-ampersand.csl
 ---
 
 ```{r, include = FALSE}
