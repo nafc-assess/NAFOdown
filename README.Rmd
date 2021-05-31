@@ -109,7 +109,7 @@ As noted above, several of the files need to be populated with content. In most 
 To render a NAFO report in Word format, open `index.Rmd` in Rstudio and click the "knit" button:
 
 ```{r knit, echo = FALSE, out.width = "600px"}
-knitr::include_graphics("screenshots/knit.png")
+knitr::include_graphics("man/figures/knit.png")
 ```
 
 Documents can also be rendered in the R console, assuming the working directory is set to the directory holding the `index.Rmd` file, using bookdown's `render` function:
@@ -121,7 +121,7 @@ The rendered Word file will be saved in the `_book/` directory. When all files a
 
 
 ```{r stacfis, echo = FALSE, out.width = "100%"}
-knitr::include_graphics("screenshots/STACFIS.png")
+knitr::include_graphics("man/figures/STACFIS.png")
 ```
 
 While there is an initial cost to building these documents, they will be much easier to update following the addition of new data as all tables and figures should automatically update. This workflow will also improve the transparency and reproducibility of the work, especially if changes are tracked using git.

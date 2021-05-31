@@ -157,7 +157,7 @@ and GitHub with R and RStudio, see <http://happygitwithr.com/>.
 To render a NAFO report in Word format, open `index.Rmd` in Rstudio and
 click the “knit” button:
 
-<img src="screenshots/knit.png" width="600px" />
+<img src="man/figures/knit.png" width="600px" />
 
 Documents can also be rendered in the R console, assuming the working
 directory is set to the directory holding the `index.Rmd` file, using
@@ -171,7 +171,7 @@ The rendered Word file will be saved in the `_book/` directory. When all
 files are populated with the necessary content, the output will look
 similar to past documents:
 
-<img src="screenshots/STACFIS.png" width="100%" />
+<img src="man/figures/STACFIS.png" width="100%" />
 
 While there is an initial cost to building these documents, they will be
 much easier to update following the addition of new data as all tables
