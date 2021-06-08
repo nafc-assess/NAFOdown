@@ -211,6 +211,15 @@ Scientific Council, 28 May -12 June 2020, By correspondence*</span>.
 
 </div>
 
+<div id="ref-scr21-020" class="csl-entry">
+
+Perreault, A. M. J., Wheeland, L., and Cadigan, N. G. (2021). <span
+class="nocase">Updated state-space model for American plaice
+(*Hippoglossoides platessoides*) in Div. 3LNO</span>. *NAFO SCR Doc*,
+*21/020*. <https://www.nafo.int/Portals/0/PDFs/sc/2021/scr21-020.pdf>
+
+</div>
+
 <div id="ref-scr20-050" class="csl-entry">
 
 Regular, P. M. (2020). <span class="nocase">Update of Base Case SSM for
