@@ -131,7 +131,7 @@ While there is an initial cost to building these documents, they will be much ea
 
 ---
 nocite: | 
-  @scr20-005, @scr20-042, @scr20-050, @scs20-14a, @scs20-14b, @scs20-011, @scr21-020
+  @scr20-005, @scr20-042, @scr20-050, @scs20-14a, @scs20-14b, @scs20-011, @scr21-020, @scr21-026,
 ...
 
 <div id="refs"></div>

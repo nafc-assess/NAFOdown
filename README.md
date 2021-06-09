@@ -249,6 +249,16 @@ Greenland halibut from the Canadian fall 2J3K and spring 3LNO surveys in
 
 </div>
 
+<div id="ref-scr21-026" class="csl-entry">
+
+Regular, P. M., Rogers, B., and Morgan, M. J. (2021). <span
+class="nocase">Greenland halibut (*Reinhardtius hippoglossoides*) in
+NAFO Subarea 2 and Divisions 3KLMNO: stock trends based on annual
+Canadian research vessel survey results</span>. *NAFO SCR Doc*,
+*21/026*. <https://www.nafo.int/Portals/0/PDFs/sc/2021/scr21-026.pdf>
+
+</div>
+
 <div id="ref-scs20-011" class="csl-entry">
 
 Rogers, B., and Simpson, M. (2020). <span class="nocase">Canadian
