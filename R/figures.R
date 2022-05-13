@@ -1,5 +1,5 @@
 
-#' ggplot2 theme for styling plots for NAFO docuemtns
+#' ggplot2 theme for styling plots for NAFO documents
 #'
 #' @param base_size      base font size
 #' @param base_family    base font family
