@@ -115,6 +115,8 @@ NULL
 #'
 #' @examples
 #'
+#' library(ggplot2)
+#'
 #' ## Simulate some data
 #' set.seed(3)
 #' samples_per_year <- 1000
