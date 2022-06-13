@@ -49,6 +49,8 @@ Function for producing a faceted ridge plot of annual length frequencies using t
 }
 \examples{
 
+library(ggplot2)
+
 ## Simulate some data
 set.seed(3)
 samples_per_year <- 1000
