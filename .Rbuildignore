@@ -11,3 +11,4 @@
 ^\.github$
 ^CODE_OF_CONDUCT\.md$
 ^bib$
+^shiny_app_dev$

@@ -3,7 +3,9 @@
 \docType{data}
 \name{nafo-vals}
 \alias{nafo-vals}
+\alias{.nafo_pts}
 \alias{.nafo_lwd}
+\alias{.nafo_stroke}
 \alias{.nafo_height}
 \alias{.nafo_width}
 \alias{.nafo_asp}
@@ -16,9 +18,17 @@ An object of class \code{numeric} of length 1.
 An object of class \code{numeric} of length 1.
 
 An object of class \code{numeric} of length 1.
+
+An object of class \code{numeric} of length 1.
+
+An object of class \code{numeric} of length 1.
 }
 \usage{
+.nafo_pts
+
 .nafo_lwd
+
+.nafo_stroke
 
 .nafo_height
 
@@ -28,7 +38,9 @@ An object of class \code{numeric} of length 1.
 }
 \description{
 \itemize{
+\item \code{.nafo_pts}: this value is to be used in geom_point to define point size (it is 3 pt converted to mm)
 \item \code{.nafo_lwd}: this value is to be used in geom_line to define line width (it is 0.75 pt converted to mm)
+\item \code{.nafo_stroke}: this value is to be used in geom_point to define stroke width (it is 0.75 pt converted to 1/96 inches)
 \item \code{.nafo_height}: this value is to be used to define plot height in inches (it is 6.4 cm converted to inches)
 \item \code{.nafo_width}: this value is to be used to define plot width in inches (it is 11.5 cm converted to inches)
 \item \code{.nafo_asp}: this value is to be used to define the aspect ratio of a plot

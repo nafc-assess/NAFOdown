@@ -30,7 +30,11 @@ set.seed(123)
 d <- data.frame(SSB = rlnorm(40), Recruitment = rlnorm(40),
                 Species = c(rep("Cod", 20), rep("Plaice", 20)))
 ggplot(d) +
-geom_point(aes(x = SSB, y = Recruitment, shape = Species)) +
+geom_point(aes(x = SSB, y = Recruitment, shape = Species),
+               fill = "white", color = "black", shape = 21,
+               size = .nafo_pts, stroke = .nafo_stroke) +
+geom_hline(aes(yintercept = mean(Recruitment)),
+           linetype = 2, size = .nafo_lwd) +
 theme_nafo()
 
 }

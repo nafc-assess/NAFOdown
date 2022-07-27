@@ -30,7 +30,11 @@
 #' d <- data.frame(SSB = rlnorm(40), Recruitment = rlnorm(40),
 #'                 Species = c(rep("Cod", 20), rep("Plaice", 20)))
 #' ggplot(d) +
-#' geom_point(aes(x = SSB, y = Recruitment, shape = Species)) +
+#' geom_point(aes(x = SSB, y = Recruitment, shape = Species),
+#'                fill = "white", color = "black", shape = 21,
+#'                size = .nafo_pts, stroke = .nafo_stroke) +
+#' geom_hline(aes(yintercept = mean(Recruitment)),
+#'            linetype = 2, size = .nafo_lwd) +
 #' theme_nafo()
 #'
 
@@ -40,11 +44,14 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
                                   linetype = "solid", fill = NA),
               line = element_line(colour = "black", size = 0.5 / ggplot2::.pt,
                                   linetype = "solid", lineend = "butt"),
+              axis.ticks = element_line(colour = "black"),
               axis.ticks.length = unit(-0.15, "cm"),
               axis.text.x = element_text(margin = unit(c(0.25, 0.1, 0.1, 0.1), "cm")),
               axis.text.y = element_text(margin = unit(c(0.1, 0.25, 0.1, 0.1), "cm"), hjust = 1),
+              axis.line = element_line(colour = "black"),
               panel.grid.minor = element_blank(),
               panel.grid.major = element_blank(),
+              panel.background = element_rect(colour = "black"),
               plot.background = element_blank(),
               strip.background = element_blank(),
               legend.key = element_blank(),
@@ -64,7 +71,9 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
 #' Helper values for consistent plot settings
 #'
 #' @description
+#' - `.nafo_pts`: this value is to be used in geom_point to define point size (it is 3 pt converted to mm)
 #' - `.nafo_lwd`: this value is to be used in geom_line to define line width (it is 0.75 pt converted to mm)
+#' - `.nafo_stroke`: this value is to be used in geom_point to define stroke width (it is 0.75 pt converted to 1/96 inches)
 #' - `.nafo_height`: this value is to be used to define plot height in inches (it is 6.4 cm converted to inches)
 #' - `.nafo_width`: this value is to be used to define plot width in inches (it is 11.5 cm converted to inches)
 #' - `.nafo_asp`: this value is to be used to define the aspect ratio of a plot
@@ -74,7 +83,15 @@ NULL
 
 #' @export
 #' @rdname nafo-vals
+.nafo_pts <- 3 / ggplot2::.pt
+
+#' @export
+#' @rdname nafo-vals
 .nafo_lwd <- 0.75 / ggplot2::.pt
+
+#' @export
+#' @rdname nafo-vals
+.nafo_stroke <- .nafo_lwd * ggplot2::.stroke / 2
 
 #' @export
 #' @rdname nafo-vals
