@@ -90,16 +90,16 @@
 <p>The statistical computing program <a href="https://www.r-project.org/" class="external-link">R</a> is required to use the NAFOdown package and we highly recommend using <a href="https://www.rstudio.com/products/RStudio/" class="external-link">RStudio</a> to manage R projects. With RStudio installed a project can be started in an existing or new directory using the drop-down menus in Rstudio. After setting up a project, Rstudio will generate a .Rproj file which will automatically set the working directory to the project folder when this file is opened. This will simplify the process of telling R where to find the files needed for the report.</p>
 <p>NAFOdown can be installed via GitHub using this code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"nafc-assess/NAFOdown"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"nafc-assess/NAFOdown"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="starting-a-document">Starting a document<a class="anchor" aria-label="anchor" href="#starting-a-document"></a>
 </h2>
 <p>A skeleton of a NAFO document will be produced and stored in your working directory by running this code:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># this is where files and folders of the skeleton will be saved</span>
-<span class="fu">NAFOdown</span><span class="fu">::</span><span class="fu"><a href="reference/draft.html">draft</a></span><span class="op">(</span>report_type <span class="op">=</span> <span class="st">"SCR"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># this is where files and folders of the skeleton will be saved</span></span>
+<span><span class="fu">NAFOdown</span><span class="fu">::</span><span class="fu"><a href="reference/draft.html">draft</a></span><span class="op">(</span>report_type <span class="op">=</span> <span class="st">"SCR"</span><span class="op">)</span></span></code></pre></div>
 <p>The type of skeleton produced can be changed by changing the <code>report_type</code> argument from <code>"SCR"</code> to <code>"STACFIS"</code> or <code>"SCS"</code>. The components of the skeleton are outlined below. Note that all of the files included in the skeleton are text based and can be opened and edited using RStudio.</p>
 <div class="section level3">
 <h3 id="components-of-the-skeleton">Components of the skeleton<a class="anchor" aria-label="anchor" href="#components-of-the-skeleton"></a>
@@ -167,7 +167,7 @@
 <p><img src="reference/figures/knit.png" width="600px"></p>
 <p>Documents can also be rendered in the R console, assuming the working directory is set to the directory holding the <code>index.Rmd</code> file, using bookdown’s <code>render</code> function:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">bookdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/bookdown/reference/render_book.html" class="external-link">render_book</a></span><span class="op">(</span><span class="st">"index.Rmd"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">bookdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/bookdown/reference/render_book.html" class="external-link">render_book</a></span><span class="op">(</span><span class="st">"index.Rmd"</span><span class="op">)</span></span></code></pre></div>
 <p>The rendered Word file will be saved in the <code>_book/</code> directory. When all files are populated with the necessary content, the output will look similar to past documents:</p>
 <p><img src="reference/figures/STACFIS.png" width="100%"></p>
 <p>While there is an initial cost to building these documents, they will be much easier to update following the addition of new data as all tables and figures should automatically update. This workflow will also improve the transparency and reproducibility of the work, especially if changes are tracked using git.</p>
@@ -254,7 +254,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
