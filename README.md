@@ -2,7 +2,7 @@
 
 # NAFOdown <img src="man/figures/logo.png" align="right" width="120" />
 
-NAFOdown is an R package designed to simplify the process of creating
+TEST NAFOdown is an R package designed to simplify the process of creating
 and updating NAFO documents. The package utilizes the
 [bookdown](https://bookdown.org/yihui/bookdown/) package which
 facilitates the integration of Markdown syntax and R code and, as such,
