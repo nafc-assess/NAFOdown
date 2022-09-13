@@ -2,13 +2,13 @@
 
 # NAFOdown <img src="man/figures/logo.png" align="right" width="120" />
 
-TEST NAFOdown is an R package designed to simplify the process of creating
+NAFOdown is an R package designed to simplify the process of creating
 and updating NAFO documents. The package utilizes the
 [bookdown](https://bookdown.org/yihui/bookdown/) package which
 facilitates the integration of Markdown syntax and R code and, as such,
 effectively provides a “one-stop-shop” tool through which analyses,
 plots, tables, and text can be written in parallel and knit into a
-stand-alone and reproducible document. Such a workflow minimizes the
+stand-alone and reproducible document. NAFOdown also creates a folder and script structure (based on the [ICES Transparent Assessment Framework](https://github.com/ices-taf/doc/wiki)) that allows for reproducible analyses to be undertaken. Such a workflow minimizes the
 significant amount of manual effort associated with copying and pasting
 data, summary statistics and plots from one program to another. By
 linking input data directly with the body of the text and to figures and
@@ -59,6 +59,11 @@ components of the skeleton are outlined below. Note that all of the
 files included in the skeleton are text based and can be opened and
 edited using RStudio.
 
+The `draft` function will create a `data.R`, `analysis.R`, `figures.R`, `tables.R`, and `report.R` file as well as folders with the same name structure. the `draft` function will also prompt you to import data from a previous assessment's `data` folder. This data will be copied into the `data` folder created above. The user can choose to not import data. 
+
+<img src="man/figures/NAFOdown_import.png" width="300px" />
+
+
 ### Components of the skeleton
 
 #### `index.Rmd`
@@ -106,6 +111,18 @@ file and note the tag used for each entry as this is what will be used
 to reference specific papers. Also consider using the Rstudio
 [citr](https://github.com/crsh/citr) add-in to simplify the insertion of
 citations.
+
+#### `data`
+
+This folder contains the data required to complete the assessment portrayed in the SCS or SCR document. Ideally, the script `data.R` would be used to organize and manipulate the data in to the format required for analysis. Data resulting from manipulations in `data.R` would be stored in `analysis`.
+
+#### `analysis`
+
+This folder would be used for transient or temporary data created from the `data.R` script and used in the `analysis.R` script. The `analysis.R` script should be used primarily for model running or similar analyses. Model or analysis outputs can also be stored here for use in the `tables.R` and `figures.R`scripts. 
+
+#### `figures and tables`
+
+These folders will be used for the outputting of tables (in csv, xlsx, or html) and figures for later use. These figures and tables can then be used in the rendering of the overall document. The scripts `figures.R` and `tables.R` can be added to the `_bookdown.yml` to be included in the knitting by `index.Rmd`. 
 
 ## Writing
 
