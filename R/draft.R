@@ -33,7 +33,7 @@ draft <- function(report_type = c("SCR", "STACFIS", "SCS"),
     headers <- list(data = "Preparation of data for model input",
                     analysis = "Run analysis/model, output model results",
                     figures = "Grab results and produce figures. Remember to use theme_nafo()!",
-                    tables = "Grab results and produce table Remember to use theme_nafotab()!",
+                    tables = "Grab results and produce table. Remember to use theme_nafotab()!",
                     report = "This file will basically just run the index.Rmd file. Remember that index.Rmd controls the generation of the document via the _bookdown.yml file. ")
     for (section in names(headers)) {
         if(!dir.exists(file.path(section))){

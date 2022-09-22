@@ -21,7 +21,7 @@ draft(
 \item{...}{Other arguments to pass to \code{\link[rmarkdown:draft]{rmarkdown::draft()}}.}
 }
 \description{
-Create a draft of an R Markdown NAFO document
+Create a draft of an R Markdown NAFO document. This function will also import data from a specified directory if the user chooses.
 }
 \details{
 This is a light wrapper around \code{\link[rmarkdown:draft]{rmarkdown::draft()}}.
