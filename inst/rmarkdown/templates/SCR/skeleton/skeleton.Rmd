@@ -41,6 +41,7 @@ knitr::opts_chunk$set(
   dpi = 300
 )
 showtext::showtext_opts(dpi = knitr::opts_chunk$get()$dpi) # force showtext dpi to match chunk dpi to preserve proper font size (9 pt)
+flextable::set_flextable_defaults(font.family = "Cambria") # ensure that all parts of flextable tables use Cambria font
 ```
 
 ```{r load-libraries, cache=FALSE}
