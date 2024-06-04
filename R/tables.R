@@ -133,7 +133,7 @@ nafo_summary_table <- function(comments = rep(NA, 5), status = rep(NA, 5),
         "Principles" = c(
             "Restore or maintain at Bmsy",
             "Eliminate overfishing",
-            "Apply Percautionary Approach",
+            "Apply Precautionary Approach",
             "Minimise harmful impacts on living marine resources and ecosystems",
             "Preserve marine biodiversity"
         ),
