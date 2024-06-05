@@ -1,4 +1,16 @@
 
+.make_word_function <- function(format_function, reference_docx) {
+    function(...) {
+        base <- format_function(...,
+                                number_sections = FALSE,
+                                reference_docx = system.file("docx", reference_docx, package = "NAFOdown")
+        )
+        base$knitr$opts_chunk$comment <- NA
+        base
+    }
+}
+
+
 #' Creates an R Markdown Word NAFO-formatted document
 #'
 #' This is a function called in output in the YAML of the driver Rmd file
@@ -13,46 +25,15 @@
 #' @rdname word_scr
 #' @export
 #'
-
-word_scr <- function(...) {
-
-    base <- word_document2(...,
-                           number_sections = FALSE,
-                           reference_docx = system.file("docx", "SCR_template.docx", package = "NAFOdown")
-    )
-
-    base$knitr$opts_chunk$comment <- NA
-    base
-
-}
-
+word_scr <- .make_word_function(bookdown::word_document2, "SCR_template.docx")
 
 #' @rdname word_scr
 #' @export
 #'
-word_stacfis <- function(...) {
-
-    base <- word_document2(...,
-                           number_sections = FALSE,
-                           reference_docx = system.file("docx", "STACFIS_template.docx", package = "NAFOdown")
-    )
-
-    base$knitr$opts_chunk$comment <- NA
-    base
-
-}
+word_stacfis <- .make_word_function(bookdown::word_document2, "STACFIS_template.docx")
 
 #' @rdname word_scr
 #' @export
 #'
-word_scs <- function(...) {
+word_scs <- .make_word_function(bookdown::word_document2, "SCS_template.docx")
 
-    base <- word_document2(...,
-                           number_sections = FALSE,
-                           reference_docx = system.file("docx", "SCS_template.docx", package = "NAFOdown")
-    )
-
-    base$knitr$opts_chunk$comment <- NA
-    base
-
-}
