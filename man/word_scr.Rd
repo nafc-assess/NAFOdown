@@ -2,18 +2,28 @@
 % Please edit documentation in R/utils.R
 \name{word_scr}
 \alias{word_scr}
+\alias{word_scr2}
 \alias{word_stacfis}
+\alias{word_stacfis2}
 \alias{word_scs}
+\alias{word_scs2}
 \title{Creates an R Markdown Word NAFO-formatted document}
 \usage{
 word_scr(...)
 
+word_scr2(...)
+
 word_stacfis(...)
 
+word_stacfis2(...)
+
 word_scs(...)
+
+word_scs2(...)
 }
 \arguments{
-\item{...}{arguments to pass to \code{\link[bookdown:html_document2]{bookdown::word_document2()}}}
+\item{...}{arguments to pass to \code{\link[bookdown:html_document2]{bookdown::word_document2()}} or \code{\link[officedown:rdocx_document]{officedown::rdocx_document()}}
+for functions with 2 as a suffix.}
 }
 \value{
 A Word Document based on the NAFO SCR, STACFIC or SCS word template.
@@ -21,5 +31,7 @@ A Word Document based on the NAFO SCR, STACFIC or SCS word template.
 \description{
 This is a function called in output in the YAML of the driver Rmd file
 to specify the creation of a Microsoft Word version of an SCR, STACFIC
-or SCS report.
+or SCS report. Functions with 2 as a suffix are built using
+\code{\link[officedown:rdocx_document]{officedown::rdocx_document()}}, allowing users to leverage more in depth
+customization of Word output.
 }
