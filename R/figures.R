@@ -11,7 +11,7 @@
 #' This theme will produce ggplots that follow NAFO plot guidelines:
 #' - Font: Cambria 9pt.
 #' - Plot Border: black 0.5 pt. No borders around entire graph, just plot. Borders around legend (0.5pt) if possible.
-#' - Tick Marks to the inside on x & y axis
+#' - Tick Marks to the outside on x & y axis
 #' - Graph lines: 0.75 pt, black if possible, otherwise grey
 #' - Plot size: Height 6.4 cm, width 11.5 cm.
 #'
@@ -27,14 +27,15 @@
 #'
 #' library(ggplot2)
 #' set.seed(123)
+#' showtext::showtext_opts(dpi = 96)
 #' d <- data.frame(SSB = rlnorm(40), Recruitment = rlnorm(40),
 #'                 Species = c(rep("Cod", 20), rep("Plaice", 20)))
 #' ggplot(d) +
 #' geom_point(aes(x = SSB, y = Recruitment, shape = Species),
-#'                fill = "white", color = "black", shape = 21,
+#'                fill = "white", color = "black",
 #'                size = .nafo_pts, stroke = .nafo_stroke) +
 #' geom_hline(aes(yintercept = mean(Recruitment)),
-#'            linetype = 2, size = .nafo_lwd) +
+#'            linetype = 2, linewidth = .nafo_lwd) +
 #' theme_nafo()
 #'
 
@@ -45,7 +46,7 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
               line = element_line(colour = "black", size = 0.5 / ggplot2::.pt,
                                   linetype = "solid", lineend = "butt"),
               axis.ticks = element_line(colour = "black"),
-              axis.ticks.length = unit(-0.15, "cm"),
+              axis.ticks.length = unit(0.15, "cm"),
               axis.text.x = element_text(margin = unit(c(0.25, 0.1, 0.1, 0.1), "cm")),
               axis.text.y = element_text(margin = unit(c(0.1, 0.25, 0.1, 0.1), "cm"), hjust = 1),
               axis.line = element_line(colour = "black"),

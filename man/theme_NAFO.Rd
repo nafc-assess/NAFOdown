@@ -16,7 +16,7 @@ This theme will produce ggplots that follow NAFO plot guidelines:
 \itemize{
 \item Font: Cambria 9pt.
 \item Plot Border: black 0.5 pt. No borders around entire graph, just plot. Borders around legend (0.5pt) if possible.
-\item Tick Marks to the inside on x & y axis
+\item Tick Marks to the outside on x & y axis
 \item Graph lines: 0.75 pt, black if possible, otherwise grey
 \item Plot size: Height 6.4 cm, width 11.5 cm.
 }
@@ -27,14 +27,15 @@ The helper values \link{.nafo_lwd}, \link{.nafo_height}, and \link{.nafo_width} 
 
 library(ggplot2)
 set.seed(123)
+showtext::showtext_opts(dpi = 96)
 d <- data.frame(SSB = rlnorm(40), Recruitment = rlnorm(40),
                 Species = c(rep("Cod", 20), rep("Plaice", 20)))
 ggplot(d) +
 geom_point(aes(x = SSB, y = Recruitment, shape = Species),
-               fill = "white", color = "black", shape = 21,
+               fill = "white", color = "black",
                size = .nafo_pts, stroke = .nafo_stroke) +
 geom_hline(aes(yintercept = mean(Recruitment)),
-           linetype = 2, size = .nafo_lwd) +
+           linetype = 2, linewidth = .nafo_lwd) +
 theme_nafo()
 
 }
