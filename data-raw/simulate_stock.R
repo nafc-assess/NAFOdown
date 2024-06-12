@@ -52,37 +52,63 @@ stock <- sim_stock(
     r = 0.3,
     K = 1000,
     B0 = 500,
-    q1 = 0.5,
-    q2 = 0.4,
-    q3 = 0.3,
+    q1 = 0.03,
+    q2 = 0.02,
+    q3 = 0.01,
     a = 5,
     b = 0.001,
     years = 40,
     TAC_interval = 5,
-    sigma_biomass = 0.1,
-    sigma_TAC = 0.2,
-    sigma_catch = 0.0005,
-    sigma_index = 0.05,
-    sigma_rec = 0.2
+    sigma_biomass = 0.2,
+    sigma_TAC = 100,
+    sigma_catch = 0.2,
+    sigma_index = 0.1,
+    sigma_rec = 0.1
 )
 stock$year <- stock$year + 1980
 
-stock$relB <- stock$biomass / (stock$Bmsy)
+stock$relB <- stock$biomass / (0.3 * stock$Bmsy)
 stock$relB_lwr <- exp(log(stock$relB) - 0.2)
 stock$relB_upr <- exp(log(stock$relB) + 0.2)
 stock$relF <- (stock$catch / stock$biomass) / stock$Fmsy
 stock$relF_lwr <- exp(log(stock$relF) - 0.2)
 stock$relF_upr <- exp(log(stock$relF) + 0.2)
 
-plot(biomass ~ year, data = stock, type = "l", xlab = "Year", ylab = "Biomass")
-lines(stock$year, stock$biomass_lwr, lty = 3)
-lines(stock$year, stock$biomass_upr, lty = 3)
-plot(TAC ~ year, data = stock, type = "l", xlab = "Year", ylab = "Catch/TAC")
-points(stock$year, stock$catch)
-plot(relF ~ year, data = stock, type = "l", xlab = "Year", ylab = "F/Fmsy")
-plot(rec_index1 ~ year, data = stock, type = "l", xlab = "Year", ylab = "Recruitment index")
-lines(stock$year, stock$rec_index2, lty = 2)
-lines(stock$year, stock$rec_index3, lty = 3)
-
 toy_stock <- stock
+
+library(NAFOdown)
+library(ggplot2)
+library(patchwork)
+showtext::showtext_opts(dpi = 96) # Adjust dpi to match your plotting device (e.g., set to 300 if using ggsave with dpi set to 300)
+theme_set(theme_nafo()) # set default ggplot2 theme
+
+C_plot <- ggplot(aes(x = year), data = toy_stock) +
+    geom_bar(aes(y = catch, fill = "Catch"), stat = "identity") +
+    geom_line(aes(y = TAC, linetype = "TAC")) +
+    scale_y_continuous(n.breaks = 10, name = "Catch / TAC") +
+    scale_x_continuous(n.breaks = 10, name = "") +
+    theme(legend.title = element_blank())
+
+B_plot <- ggplot(aes(x = year), data = toy_stock) +
+    geom_ribbon(aes(ymin = relB_lwr, ymax = relB_upr)) +
+    geom_line(aes(y = relB)) +
+    scale_y_continuous(limits = c(0, NA), n.breaks = 10, name = "B/Blim") +
+    scale_x_continuous(n.breaks = 10, name = "")
+
+F_plot <- ggplot(aes(x = year), data = toy_stock) +
+    geom_ribbon(aes(ymin = relF_lwr, ymax = relF_upr)) +
+    geom_line(aes(y = relF)) +
+    scale_y_continuous(limits = c(0, NA), n.breaks = 10, name = "F/Flim") +
+    scale_x_continuous(n.breaks = 10, name = "")
+
+R_plot <- ggplot(aes(x = year), data = toy_stock) +
+    geom_line(aes(y = rec_index1, color = "Survey 1")) +
+    geom_line(aes(y = rec_index2, color = "Survey 2")) +
+    geom_line(aes(y = rec_index3, color = "Survey 3")) +
+    scale_y_continuous(limits = c(0, NA), name = "Recruitment index") +
+    scale_x_continuous(n.breaks = 10, name = "") +
+    theme(legend.title = element_blank())
+
+(C_plot + B_plot) / (F_plot + R_plot)
+
 usethis::use_data(toy_stock, overwrite = TRUE)

@@ -13,7 +13,7 @@
 #'   \item{catch}{Simulated catch of the fish stock.}
 #'   \item{Fmsy}{Fishing mortality rate at maximum sustainable yield.}
 #'   \item{Bmsy}{Biomass at maximum sustainable yield.}
-#'   \item{relB}{Relative biomass compared to Bmsy.}
+#'   \item{relB}{Relative biomass compared to 30% of Bmsy.}
 #'   \item{relB_lwr}{Lower bound of relative biomass confidence interval.}
 #'   \item{relB_upr}{Upper bound of relative biomass confidence interval.}
 #'   \item{relF}{Relative fishing mortality rate compared to Fmsy.}
