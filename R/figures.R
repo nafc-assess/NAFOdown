@@ -48,24 +48,24 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
                                   linetype = "solid", lineend = "butt"),
               axis.ticks = element_line(colour = "black"),
               axis.ticks.length = unit(0.15, "cm"),
-              axis.text.x = element_text(margin = unit(c(0.25, 0.1, 0.1, 0.1), "cm")),
-              axis.text.y = element_text(margin = unit(c(0.1, 0.25, 0.1, 0.1), "cm"), hjust = 1),
+              axis.text.x = element_text(margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm")),
+              axis.text.y = element_text(margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm"), hjust = 1),
               axis.line = element_line(colour = "black"),
               panel.grid.minor = element_blank(),
-              panel.grid.major = element_blank(),
+              panel.grid.major = element_line(colour = "lightgrey"),
               panel.background = element_rect(colour = "black"),
               plot.background = element_blank(),
               strip.background = element_blank(),
               legend.key = element_blank(),
               legend.background = element_blank(),
-              legend.box.background = element_rect(color = "black", size = 0.5 / ggplot2::.pt, # 0.5 pt to mm
-                                                   linetype = "solid", fill = NA),
+              legend.box.background = element_rect(color = "black", size = 0.5 / ggplot2::.pt,
+                                                   linetype = "solid", fill = "white"),
               legend.title = element_text(size = base_size - 2, hjust = 0),
               legend.justification = c(1, 1),
-              legend.position = c(0.98, 0.98),
+              legend.position = c(1, 1),
               legend.key.size = unit(1, "line"),
-              legend.margin = margin(l = 1, r = 1, b = 0.5, t = 0.5, unit = "mm"),
-              legend.box.margin = margin(l = 1, r = 1, b = 0.5, t = 0.5, unit = "mm"))
+              legend.margin = margin(l = 1, r = 1, b = 0.1, t = 0.1, unit = "mm"),
+              legend.box.margin = margin(l = 1, r = 1, b = 0.1, t = 0.1, unit = "mm"))
 }
 
 
