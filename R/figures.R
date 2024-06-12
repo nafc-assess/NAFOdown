@@ -1,5 +1,5 @@
 
-#' ggplot2 theme for styling plots for NAFO documents
+#' NAFO plotting theme for ggplot2
 #'
 #' @param base_size      base font size
 #' @param base_family    base font family
@@ -22,6 +22,7 @@
 #'
 #' @import ggplot2
 #' @import ggthemes
+#' @import scales
 #'
 #' @examples
 #'
@@ -68,6 +69,31 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
 }
 
 
+#' NAFO color palette for ggplot2
+#'
+#' These functions provide custom color and fill scales for ggplot2 plots, based on a NAFO color palette.
+#'
+#' @param ... Additional arguments passed to the scale functions.
+#'
+#' @return A ggplot2 scale function.
+#' @export
+#'
+#' @rdname scale_nafo
+scale_color_nafo <- function(...) {
+    ggplot2::discrete_scale("colour", "nafo", scales::manual_pal(values = .nafo_cols), ...)
+}
+
+#' @rdname scale_nafo
+#' @export
+scale_colour_nafo <- scale_color_nafo
+
+#' @rdname scale_nafo
+#' @export
+scale_fill_nafo <- function(...) {
+    ggplot2::discrete_scale("fill", "nafo", scales::manual_pal(values = .nafo_cols), ...)
+}
+
+
 
 #' Helper values for consistent plot settings
 #'
@@ -106,7 +132,9 @@ NULL
 #' @rdname nafo-vals
 .nafo_asp <- 6.4 / 11.5
 
-
+#' @export
+#' @rdname nafo-vals
+.nafo_cols <- c("#0079C0", "#00A64F", "#2B3991", "#767676")
 
 
 #' Generate ridges plot from annual length frequency data

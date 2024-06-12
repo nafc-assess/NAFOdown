@@ -2,7 +2,7 @@
 % Please edit documentation in R/figures.R
 \name{theme_nafo}
 \alias{theme_nafo}
-\title{ggplot2 theme for styling plots for NAFO documents}
+\title{NAFO plotting theme for ggplot2}
 \usage{
 theme_nafo(base_size = 9, base_family = "Cambria")
 }

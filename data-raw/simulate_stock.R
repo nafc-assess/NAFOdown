@@ -87,17 +87,18 @@ C_plot <- ggplot(aes(x = year), data = toy_stock) +
     geom_line(aes(y = TAC, linetype = "TAC")) +
     scale_y_continuous(n.breaks = 10, name = "Catch / TAC") +
     scale_x_continuous(n.breaks = 10, name = "") +
+    scale_fill_nafo() +
     theme(legend.title = element_blank())
 
 B_plot <- ggplot(aes(x = year), data = toy_stock) +
-    geom_ribbon(aes(ymin = relB_lwr, ymax = relB_upr)) +
-    geom_line(aes(y = relB)) +
+    geom_ribbon(aes(ymin = relB_lwr, ymax = relB_upr), fill = .nafo_cols[1], alpha = 0.4) +
+    geom_line(aes(y = relB), color = .nafo_cols[1]) +
     scale_y_continuous(limits = c(0, NA), n.breaks = 10, name = "B/Blim") +
     scale_x_continuous(n.breaks = 10, name = "")
 
 F_plot <- ggplot(aes(x = year), data = toy_stock) +
-    geom_ribbon(aes(ymin = relF_lwr, ymax = relF_upr)) +
-    geom_line(aes(y = relF)) +
+    geom_ribbon(aes(ymin = relF_lwr, ymax = relF_upr), fill = .nafo_cols[1], alpha = 0.4) +
+    geom_line(aes(y = relF), color = .nafo_cols[1]) +
     scale_y_continuous(limits = c(0, NA), n.breaks = 10, name = "F/Flim") +
     scale_x_continuous(n.breaks = 10, name = "")
 
@@ -107,6 +108,7 @@ R_plot <- ggplot(aes(x = year), data = toy_stock) +
     geom_line(aes(y = rec_index3, color = "Survey 3")) +
     scale_y_continuous(limits = c(0, NA), name = "Recruitment index") +
     scale_x_continuous(n.breaks = 10, name = "") +
+    scale_color_nafo() +
     theme(legend.title = element_blank())
 
 (C_plot + B_plot) / (F_plot + R_plot)

@@ -9,6 +9,7 @@
 \alias{.nafo_height}
 \alias{.nafo_width}
 \alias{.nafo_asp}
+\alias{.nafo_cols}
 \title{Helper values for consistent plot settings}
 \format{
 An object of class \code{numeric} of length 1.
@@ -22,6 +23,8 @@ An object of class \code{numeric} of length 1.
 An object of class \code{numeric} of length 1.
 
 An object of class \code{numeric} of length 1.
+
+An object of class \code{character} of length 4.
 }
 \usage{
 .nafo_pts
@@ -35,6 +38,8 @@ An object of class \code{numeric} of length 1.
 .nafo_width
 
 .nafo_asp
+
+.nafo_cols
 }
 \description{
 \itemize{

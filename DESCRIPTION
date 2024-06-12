@@ -29,6 +29,7 @@ Imports:
     ggplot2,
     ggthemes,
     ggridges,
+    scales,
     magrittr,
     flextable,
     officer,
