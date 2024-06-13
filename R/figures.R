@@ -61,26 +61,84 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
 #'
 #' These functions provide custom color and fill scales for ggplot2 plots, based on a NAFO color palette.
 #'
-#' @param ... Additional arguments passed to the scale functions.
+#' @param type Either "continuous" or "discrete" to specify the scale type.
+#' @inheritParams nafo_pal
+#' @param ... Additional arguments passed to ggplot scale functions.
 #'
 #' @return A ggplot2 scale function.
 #' @export
 #'
+#' @example inst/examples/scale_colour_nafo.R
+#'
 #' @rdname scale_nafo
-scale_color_nafo <- function(...) {
-    ggplot2::discrete_scale("colour", "nafo", scales::manual_pal(values = .nafo_cols), ...)
+scale_colour_nafo <- function(type = "discrete", palette = "logo", ...) {
+    pal <- nafo_pal(palette)
+    if (type == "continuous") {
+        f <- ggplot2::continuous_scale("colour", "nafo", palette = scales::gradient_n_pal(pal), ...)
+    } else if (type == "discrete") {
+        f <- ggplot2::discrete_scale("colour", "nafo", scales::manual_pal(values = pal), ...)
+    } else {
+        stop("Unknown scale type. Use 'continuous' or 'discrete'.")
+    }
+    f
 }
 
 #' @rdname scale_nafo
 #' @export
-scale_colour_nafo <- scale_color_nafo
+scale_color_nafo <- scale_colour_nafo
 
 #' @rdname scale_nafo
 #' @export
-scale_fill_nafo <- function(...) {
-    ggplot2::discrete_scale("fill", "nafo", scales::manual_pal(values = .nafo_cols), ...)
+scale_fill_nafo <- function(type = "discrete", palette = "logo", ...) {
+    pal <- nafo_pal(palette)
+    if (type == "continuous") {
+        f <- ggplot2::continuous_scale("fill", "nafo", palette = scales::gradient_n_pal(pal), ...)
+    } else if (type == "discrete") {
+        f <- ggplot2::discrete_scale("fill", "nafo", scales::manual_pal(values = pal), ...)
+    } else {
+        stop("Unknown scale type. Use 'continuous' or 'discrete'.")
+    }
+    f
 }
 
+## Simple function for making a colour lighter
+lighten_colour <- function(col, percent) {
+    colorRampPalette(c(col, "#ffffff"))(100)[percent]
+}
+
+#' NAFO Colour Palettes
+#'
+#' This function returns a colour palette function based on the specified type.
+#'
+#' @param palette Type of palette. Options are "logo", "blues", "greens", "blue2green", and "hot_cold".
+#' @param n Number of colours to return.
+#'
+#' @return A function that generates the specified palette.
+#' @export
+#'
+#' @examples
+#' nafo_pal("logo")
+#' nafo_pal("blues", 10)
+#' nafo_pal("hot_cold", 10)
+#'
+nafo_pal <- function(palette = "logo", n = length(.nafo_cols)) {
+
+    values <- switch(
+        palette,
+        "logo" = .nafo_cols,
+        "blues" = c(lighten_colour(.nafo_cols[1], 80), .nafo_cols[1]),
+        "greens" = c(lighten_colour(.nafo_cols[2], 80), .nafo_cols[2]),
+        "blue2green" = c(.nafo_cols[3], lighten_colour(.nafo_cols[1], 50), lighten_colour(.nafo_cols[2], 70)),
+        "hot_cold" = c(.nafo_cols[5], "#ffffff", .nafo_cols[1]),
+        stop("Unknown palette type. Available options are 'logo', 'blues', 'greens', 'blue2green', and 'hot_cold'.")
+    )
+
+    if (palette == "logo" && n > length(values)) {
+        stop("Requested more colors than are available in the qualitative palette.")
+    }
+
+    colorRampPalette(values)(n)
+}
 
 
 #' Helper values for consistent plot settings
@@ -92,6 +150,7 @@ scale_fill_nafo <- function(...) {
 #' - `.nafo_height`: this value is to be used to define plot height in inches (it is 6.4 cm converted to inches)
 #' - `.nafo_width`: this value is to be used to define plot width in inches (it is 11.5 cm converted to inches)
 #' - `.nafo_asp`: this value is to be used to define the aspect ratio of a plot
+#' - `.nafo_cols`: vector of colours to use in plots
 #'
 #' @name nafo-vals
 NULL
@@ -122,7 +181,7 @@ NULL
 
 #' @export
 #' @rdname nafo-vals
-.nafo_cols <- c("#0079C0", "#00A64F", "#2B3991", "#767676")
+.nafo_cols <- c("#0079C0", "#00A64F", "#2B3991", "#00CED1", "#FF4500", "#FFD700", "#767676")
 
 
 #' Generate ridges plot from annual length frequency data

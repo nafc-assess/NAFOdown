@@ -24,7 +24,7 @@ An object of class \code{numeric} of length 1.
 
 An object of class \code{numeric} of length 1.
 
-An object of class \code{character} of length 4.
+An object of class \code{character} of length 7.
 }
 \usage{
 .nafo_pts
@@ -49,6 +49,7 @@ An object of class \code{character} of length 4.
 \item \code{.nafo_height}: this value is to be used to define plot height in inches (it is 6.4 cm converted to inches)
 \item \code{.nafo_width}: this value is to be used to define plot width in inches (it is 11.5 cm converted to inches)
 \item \code{.nafo_asp}: this value is to be used to define the aspect ratio of a plot
+\item \code{.nafo_cols}: vector of colours to use in plots
 }
 }
 \keyword{datasets}
