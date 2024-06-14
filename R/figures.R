@@ -41,6 +41,7 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
               panel.grid.minor = element_blank(),
               panel.grid.major = element_line(colour = "lightgrey"),
               panel.background = element_rect(colour = "black"),
+              panel.spacing = unit(0.5, unit = "cm"),
               plot.background = element_rect(color = NA, fill = "white"),
               plot.margin = margin(l = 0.2, r = 0.2, b = 0.2, t = 0.2, unit = "cm"),
               strip.background = element_blank(),
