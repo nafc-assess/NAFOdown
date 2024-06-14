@@ -1,0 +1,34 @@
+---
+output: NAFOdown::word_scs
+knit: bookdown::render_book
+---
+
+```{r setup, echo=FALSE, cache=FALSE, message=FALSE, results='hide', warning=FALSE}
+## adjust as desired:
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  comment = "#>",
+  fig.path = "knitr-figs-docx/",
+  cache.path = "knitr-cache-docx/",
+  fig.height = NAFOdown::.nafo_height,
+  fig.width = NAFOdown::.nafo_width, 
+  fig.showtext = TRUE,
+  echo = FALSE,
+  # autodep = TRUE,
+  # cache = TRUE,
+  cache.comments = FALSE,
+  dev = "svg",
+  dpi = 300
+)
+```
+
+```{r load-libraries, cache=FALSE}
+library(NAFOdown)
+library(ggplot2)
+library(flextable)
+source(here::here("inst/examples/theme_nafo.R"))
+source(here::here("inst/examples/scale_colour_nafo.R"))
+showtext::showtext_opts(dpi = knitr::opts_chunk$get()$dpi) # force showtext dpi to match chunk dpi to preserve proper font size (9 pt)
+```

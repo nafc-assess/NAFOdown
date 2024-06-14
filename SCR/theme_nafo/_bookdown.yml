@@ -1,0 +1,7 @@
+book_filename: "NAFO_plot_themes"
+rmd_files: ["index.Rmd", "theme_1.Rmd", "theme_2.Rmd", "theme_3.Rmd"]
+delete_merged_file: true
+language:
+  label:
+    fig: !expr function(x) sprintf("**Figure %s.** ", x)
+    tab: !expr function(x) sprintf("**Table %s.** ", x)
