@@ -54,7 +54,7 @@ theme_nafotabs <- function(x, fontsize = 11, fontname = "Cambria") {
     x <- font(x, fontname = fontname, part = "all")
     x <- fontsize(x, size = fontsize, part = "all")
     x <- bold(x, part = "header")
-    x <- set_formatter_type(x, fmt_double = "%.02f")
+    x <- colformat_double(x, digits = 2)
     x
 
 }
