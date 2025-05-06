@@ -30,7 +30,6 @@ These functions provide custom color and fill scales for ggplot2 plots, based on
 \examples{
 
 library(ggplot2)
-showtext::showtext_opts(dpi = 96) # Adjust dpi to match your plotting device (e.g., set to 300 if using ggsave with dpi set to 300)
 theme_set(theme_nafo()) # set default ggplot2 theme
 
 set.seed(123)

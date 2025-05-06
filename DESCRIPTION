@@ -1,6 +1,6 @@
 Package: NAFOdown
 Title: An R Markdown Template for Producing NAFO Scientific Council Documents
-Version: 0.0.1
+Version: 0.0.2
 Authors@R:
     c(person("Paul", "Regular", email = "Paul.Regular@dfo-mpo.gc.ca",
              role = c("aut", "cre")),

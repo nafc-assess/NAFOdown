@@ -15,7 +15,7 @@ nafo_pal(palette = "logo", n = length(.nafo_cols))
 A function that generates the specified palette.
 }
 \description{
-This function returns a colour palette function based on the specified type./
+This function returns a colour palette function based on the specified type.
 
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
