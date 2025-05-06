@@ -16,7 +16,7 @@ This theme will produce ggplots that follow NAFO plot guidelines:
 \itemize{
 \item Font: Cambria 9pt.
 \item Plot Border: black 0.5 pt. No borders around entire graph, just plot. Borders around legend (0.5pt) if possible.
-\item Tick Marks to the outside on x & y axis
+\item Tick Marks to the inside on x & y axis
 \item Graph lines: 0.75 pt, black if possible, otherwise grey
 \item Plot size: Height 6.4 cm, width 11.5 cm.
 }
