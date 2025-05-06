@@ -11,7 +11,7 @@
 #' This theme will produce ggplots that follow NAFO plot guidelines:
 #' - Font: Cambria 9pt.
 #' - Plot Border: black 0.5 pt. No borders around entire graph, just plot. Borders around legend (0.5pt) if possible.
-#' - Tick Marks to the outside on x & y axis
+#' - Tick Marks to the inside on x & y axis
 #' - Graph lines: 0.75 pt, black if possible, otherwise grey
 #' - Plot size: Height 6.4 cm, width 11.5 cm.
 #'
@@ -34,33 +34,32 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
               line = element_line(colour = "black", size = 0.5 / ggplot2::.pt,
                                   linetype = "solid", lineend = "butt"),
               axis.ticks = element_line(colour = "black"),
-              axis.ticks.length = unit(0.15, "cm"),
-              axis.text.x = element_text(margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm")),
-              axis.text.y = element_text(margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm"), hjust = 1),
+              axis.ticks.length = unit(-0.15, "cm"),
+              axis.text.x = element_text(margin = unit(c(0.25, 0.1, 0.1, 0.1), "cm")),
+              axis.text.y = element_text(margin = unit(c(0.1, 0.25, 0.1, 0.1), "cm"), hjust = 1),
               axis.line = element_line(colour = "black"),
               panel.grid.minor = element_blank(),
-              panel.grid.major = element_line(colour = "lightgrey"),
+              panel.grid.major = element_blank(),
               panel.background = element_rect(colour = "black"),
-              panel.spacing = unit(0.5, unit = "cm"),
-              plot.background = element_rect(color = NA, fill = "white"),
-              plot.margin = margin(l = 0.2, r = 0.2, b = 0.2, t = 0.2, unit = "cm"),
+              plot.background = element_blank(),
               strip.background = element_blank(),
               legend.key = element_blank(),
               legend.background = element_blank(),
-              legend.box.background = element_rect(color = "black", size = 0.5 / ggplot2::.pt,
-                                                   linetype = "solid", fill = "white"),
+              legend.box.background = element_rect(color = "black", size = 0.5 / ggplot2::.pt, # 0.5 pt to mm
+                                                   linetype = "solid", fill = NA),
               legend.title = element_text(size = base_size - 2, hjust = 0),
               legend.justification = c(1, 1),
-              legend.position = c(1, 1),
+              legend.position = c(0.98, 0.98),
               legend.key.size = unit(1, "line"),
-              legend.margin = margin(l = 1, r = 1, b = 0.1, t = 0.1, unit = "mm"),
-              legend.box.margin = margin(l = 1, r = 1, b = 0.1, t = 0.1, unit = "mm"))
+              legend.margin = margin(l = 1, r = 1, b = 0.5, t = 0.5, unit = "mm"),
+              legend.box.margin = margin(l = 1, r = 1, b = 0.5, t = 0.5, unit = "mm"))
 }
 
 
 #' NAFO color palette for ggplot2
 #'
 #' These functions provide custom color and fill scales for ggplot2 plots, based on a NAFO color palette.
+#' `r lifecycle::badge("experimental")`
 #'
 #' @param type Either "continuous" or "discrete" to specify the scale type.
 #' @inheritParams nafo_pal
@@ -110,6 +109,7 @@ lighten_colour <- function(col, percent) {
 #' NAFO Colour Palettes
 #'
 #' This function returns a colour palette function based on the specified type.
+#' `r lifecycle::badge("experimental")`
 #'
 #' @param palette Type of palette. Options are "logo", "blues", "greens", "blue2green", and "hot_cold".
 #' @param n Number of colours to return.
