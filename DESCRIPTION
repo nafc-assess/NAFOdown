@@ -34,7 +34,8 @@ Imports:
     flextable,
     officer,
     sysfonts,
-    showtext
+    showtext,
+    lifecycle
 Suggests:
     patchwork
 Roxygen: list(markdown = TRUE)

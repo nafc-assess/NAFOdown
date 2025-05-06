@@ -58,7 +58,8 @@ theme_nafo <- function(base_size = 9, base_family = "Cambria"){
 
 #' NAFO color palette for ggplot2
 #'
-#' These functions provide custom color and fill scales for ggplot2 plots, based on a NAFO color palette.
+#' @description These functions provide custom color and fill scales for ggplot2 plots, based on a NAFO color palette.
+#'
 #' `r lifecycle::badge("experimental")`
 #'
 #' @param type Either "continuous" or "discrete" to specify the scale type.
@@ -108,7 +109,8 @@ lighten_colour <- function(col, percent) {
 
 #' NAFO Colour Palettes
 #'
-#' This function returns a colour palette function based on the specified type.
+#' @description This function returns a colour palette function based on the specified type.
+#'
 #' `r lifecycle::badge("experimental")`
 #'
 #' @param palette Type of palette. Options are "logo", "blues", "greens", "blue2green", and "hot_cold".
