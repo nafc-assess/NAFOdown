@@ -1,48 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/404.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/draft.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/nafo-vals.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/nafo_summary_table.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/plot_lengths.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/theme_NAFO.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/theme_nafotabs.html</loc>
-  </url>
-  <url>
-    <loc>https://nafc-assess.github.io/NAFOdown/reference/word_scr.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://nafc-assess.github.io/NAFOdown/404.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/LICENSE-text.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/authors.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/index.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/news/index.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/draft.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/index.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/nafo-vals.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/nafo_pal.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/nafo_summary_table.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/pipe.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/plot_lengths.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/scale_nafo.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/theme_nafo.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/theme_nafotabs.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/toy_stock.html</loc></url>
+<url><loc>https://nafc-assess.github.io/NAFOdown/reference/word_scr.html</loc></url>
 </urlset>
+
