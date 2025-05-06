@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.2
 pkgdown_sha: ~
 articles: {}
-last_built: 2025-05-06T16:22Z
+last_built: 2025-05-06T16:40Z
 urls:
   reference: https://nafc-assess.github.io/NAFOdown/reference
   article: https://nafc-assess.github.io/NAFOdown/articles
