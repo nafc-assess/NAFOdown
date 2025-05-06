@@ -7,6 +7,7 @@
     if ("cambria.ttc" %in% fonts) {
         sysfonts::font_add("Cambria", "cambria.ttc") # font used for NAFO plots
     }
+    showtext::showtext_auto()
 }
 
 
