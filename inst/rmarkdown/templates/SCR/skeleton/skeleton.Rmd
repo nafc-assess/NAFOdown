@@ -1,7 +1,6 @@
 ---
 title: "Title Here (*Latin Species Name*)"
 author: "John Doe^1^, John Smith^2^"
-
 # There is currently no affiliation section for Rmarkdown word output, 
 # so augment the date sction with affiliations
 date: | 
@@ -9,8 +8,7 @@ date: |
     ^2^Institution Two\
     \
     `r format(Sys.time(), "%Y-%m-%d")` 
-abstract: |
-  Here is the abstract text.
+citation: "DOE, J., SMITH, J. 2025. Title Here (*Latin Species Name*). Scientific Council Research Document, SCR Doc. 25/XXX: 1-XX."
 output: NAFOdown::word_scr
 
 # ------------
@@ -43,6 +41,7 @@ knitr::opts_chunk$set(
 showtext::showtext_opts(dpi = knitr::opts_chunk$get()$dpi) # force showtext dpi to match chunk dpi to preserve proper font size (9 pt)
 flextable::set_flextable_defaults(font.family = "Cambria") # ensure that all parts of flextable tables use Cambria font
 ```
+
 
 ```{r load-libraries, cache=FALSE}
 # add other packages here:

@@ -1,4 +1,10 @@
 
+`r rmarkdown::metadata$citation`
+
+# Abstract
+ 
+Here is the abstract text.
+
 # Introduction
 
 Here is an Rmarkdown template for a NAFO SCR.
