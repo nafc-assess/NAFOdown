@@ -16,14 +16,14 @@ C_plot <- ggplot(aes(x = year), data = toy_stock) +
           legend.spacing.y = unit(0.1, "cm"))
 
 B_plot <- ggplot(aes(x = year), data = toy_stock) +
-    geom_ribbon(aes(ymin = relB_lwr, ymax = relB_upr), fill = .nafo_cols[1], alpha = 0.4) +
-    geom_line(aes(y = relB), color = .nafo_cols[1]) +
+    geom_ribbon(aes(ymin = Brel_lwr, ymax = Brel_upr), fill = .nafo_cols[1], alpha = 0.4) +
+    geom_line(aes(y = Brel), color = .nafo_cols[1]) +
     scale_y_continuous(limits = c(0, NA), n.breaks = 10, name = "B/Blim", expand = expansion(c(0.01, 0.05))) +
     scale_x_continuous(n.breaks = 10, name = "", expand = expansion(c(0.01, 0.01)))
 
 F_plot <- ggplot(aes(x = year), data = toy_stock) +
-    geom_ribbon(aes(ymin = relF_lwr, ymax = relF_upr), fill = .nafo_cols[1], alpha = 0.4) +
-    geom_line(aes(y = relF), color = .nafo_cols[1]) +
+    geom_ribbon(aes(ymin = Frel_lwr, ymax = Frel_upr), fill = .nafo_cols[1], alpha = 0.4) +
+    geom_line(aes(y = Frel), color = .nafo_cols[1]) +
     scale_y_continuous(limits = c(0, NA), n.breaks = 10, name = "F/Flim", expand = expansion(c(0.01, 0.05))) +
     scale_x_continuous(n.breaks = 10, name = "", expand = expansion(c(0.01, 0.01)))
 

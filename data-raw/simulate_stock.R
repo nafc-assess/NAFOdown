@@ -67,12 +67,12 @@ stock <- sim_stock(
 )
 stock$year <- stock$year + 1980
 
-stock$relB <- stock$biomass / (0.3 * stock$Bmsy)
-stock$relB_lwr <- exp(log(stock$relB) - 0.2)
-stock$relB_upr <- exp(log(stock$relB) + 0.2)
-stock$relF <- (stock$catch / stock$biomass) / stock$Fmsy
-stock$relF_lwr <- exp(log(stock$relF) - 0.2)
-stock$relF_upr <- exp(log(stock$relF) + 0.2)
+stock$Brel <- stock$biomass / (0.3 * stock$Bmsy)
+stock$Brel_lwr <- exp(log(stock$Brel) - 0.2)
+stock$Brel_upr <- exp(log(stock$Brel) + 0.2)
+stock$Frel <- (stock$catch / stock$biomass) / stock$Fmsy
+stock$Frel_lwr <- exp(log(stock$Frel) - 0.2)
+stock$Frel_upr <- exp(log(stock$Frel) + 0.2)
 
 toy_stock <- stock
 

@@ -16,12 +16,12 @@ A data frame with 40 rows and 13 variables:
 \item{catch}{Simulated catch of the fish stock.}
 \item{Fmsy}{Fishing mortality rate at maximum sustainable yield.}
 \item{Bmsy}{Biomass at maximum sustainable yield.}
-\item{relB}{Relative biomass compared to 30\% of Bmsy.}
-\item{relB_lwr}{Lower bound of relative biomass confidence interval.}
-\item{relB_upr}{Upper bound of relative biomass confidence interval.}
-\item{relF}{Relative fishing mortality rate compared to Fmsy.}
-\item{relF_lwr}{Lower bound of relative fishing mortality rate confidence interval.}
-\item{relF_upr}{Upper bound of relative fishing mortality rate confidence interval.}
+\item{Brel}{Relative biomass compared to 30\% of Bmsy.}
+\item{Brel_lwr}{Lower bound of relative biomass confidence interval.}
+\item{Brel_upr}{Upper bound of relative biomass confidence interval.}
+\item{Frel}{Relative fishing mortality rate compared to Fmsy.}
+\item{Frel_lwr}{Lower bound of relative fishing mortality rate confidence interval.}
+\item{Frel_upr}{Upper bound of relative fishing mortality rate confidence interval.}
 }
 }
 \usage{
