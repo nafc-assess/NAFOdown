@@ -10,7 +10,7 @@ sim_stock <- function(r, K, B0, q1, q2, q3, a, b, years, TAC_interval,
     TAC_year <- seq(1, years, TAC_interval)
     biomass <- catch <- TAC <- numeric(years)
     biomass[1] <- B0
-    TAC[1] <- 0.85 * Fmsy * biomass[1] # Initialize TAC at MSY
+    TAC[1] <- 0.9 * Fmsy * biomass[1] # Initialize TAC at MSY
     catch[1] <- rlnorm(1, log(TAC[1]), sigma_catch)
 
     for (t in 2:years) {
@@ -67,7 +67,7 @@ stock <- sim_stock(
 )
 stock$year <- stock$year + 1980
 
-stock$Brel <- stock$biomass / (0.3 * stock$Bmsy)
+stock$Brel <- stock$biomass / stock$Bmsy
 stock$Brel_lwr <- exp(log(stock$Brel) - 0.2)
 stock$Brel_upr <- exp(log(stock$Brel) + 0.2)
 stock$Frel <- (stock$catch / stock$biomass) / stock$Fmsy
@@ -78,3 +78,16 @@ toy_stock <- stock
 
 write.csv(toy_stock, file = "data-raw/toy_stock.csv", row.names = FALSE)
 usethis::use_data(toy_stock, overwrite = TRUE)
+
+# plot(Frel ~ Brel, data = toy_stock, xlim = c(0, 4), ylim = c(0, 4), type = "o", pch = 16)
+# plot(Brel ~ year, data = toy_stock, type = "o", pch = 16)
+# plot(Frel ~ year, data = toy_stock, type = "o", pch = 16)
+
+
+
+
+
+
+
+
+
