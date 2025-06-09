@@ -180,7 +180,7 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
             NAFOdown::theme_nafo() +
             theme(
                 plot.margin = margin(t = 20, r = 20, b = 20, l = 20),
-                plot.background = element_rect(fill = "white"),
+                plot.background = element_rect(fill = "white", colour = "white"),
                 legend.title = element_blank(),
                 legend.box.background = element_rect(fill = "white")
             )
