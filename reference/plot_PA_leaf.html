@@ -1640,16 +1640,19 @@ overlays of biomass and fishing mortality trends or projections across years.</p
 <span class="r-out co"><span class="r-pr">#&gt;</span>             geom_rect(aes(xmin = Btrigger, xmax = xhigh, ymin = 0, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 ymax = yhigh), fill = "palegreen", alpha = 0.4) + </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             geom_ribbon(aes(x = Bseq, ymin = leaf_low, ymax = leaf_high), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 fill = "ivory") + geom_line(aes(x = Bseq, y = leaf_linear), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             color = "grey75") + geom_line(aes(x = Bseq, y = leaf_low), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             color = "grey75") + geom_line(aes(x = Bseq, y = leaf_high), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             color = "grey75") + geom_hline(aes(yintercept = Flim), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             color = "grey75") + geom_hline(aes(yintercept = Ftarget), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             linetype = 2, color = "grey75") + geom_vline(aes(xintercept = Blim), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             color = "indianred", linewidth = 0.7) + geom_vline(aes(xintercept = Btrigger), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             color = "khaki", linewidth = 0.7) + annotate("text", </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             x = Blim/2, y = I(0.97), label = "Critical Zone", </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             vjust = 1, size = 3, family = "Cambria") + annotate("text", </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 fill = "ivory", linewidth = .nafo_lwd) + geom_line(aes(x = Bseq, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             y = leaf_linear), color = "grey75", linewidth = .nafo_lwd) + </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             geom_line(aes(x = Bseq, y = leaf_low), color = "grey75", </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 linewidth = .nafo_lwd) + geom_line(aes(x = Bseq, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             y = leaf_high), color = "grey75", linewidth = .nafo_lwd) + </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             geom_hline(aes(yintercept = Flim), color = "grey75", </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 linewidth = .nafo_lwd) + geom_hline(aes(yintercept = Ftarget), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             linetype = 2, color = "grey75", linewidth = .nafo_lwd) + </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             geom_vline(aes(xintercept = Blim), color = "indianred", </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 , linewidth = .nafo_lwd * 1.5) + geom_vline(aes(xintercept = Btrigger), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             color = "khaki", , linewidth = .nafo_lwd * 1.5) + </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             annotate("text", x = Blim/2, y = I(0.97), label = "Critical Zone", </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 vjust = 1, size = 3, family = "Cambria") + annotate("text", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             x = mean(c(Blim, Btrigger)), y = I(0.97), label = "Cautious Zone", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             vjust = 1, size = 3, family = "Cambria") + annotate("text", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             x = mean(c(Btrigger, xhigh)), y = I(0.97), label = "Healthy Zone", </span>
@@ -1665,32 +1668,32 @@ overlays of biomass and fishing mortality trends or projections across years.</p
 <span class="r-out co"><span class="r-pr">#&gt;</span>             annotate("text", x = I(0.99), y = Ftarget, label = expression(F[target]), </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 vjust = -0.2, hjust = 1, size = 3, family = "Cambria") + </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             geom_path(data = data[is.na(data$scenario), ], aes(x = Btrend, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 y = Ftrend), color = "grey40", size = 0.4) + </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 y = Ftrend), color = "grey40", linewidth = .nafo_lwd) + </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             geom_point(data = data[is.na(data$scenario), ], aes(x = Btrend, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 y = Ftrend), color = "grey40", size = 0.75) + </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             geom_path(data = data[!is.na(data$scenario), ], aes(x = Btrend, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 y = Ftrend, linetype = scenario), color = "black", </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                 size = 0.4) + geom_point(data = data[!is.na(data$scenario), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 y = Ftrend), color = "grey40", size = .nafo_pts * </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 0.5) + geom_path(data = data[!is.na(data$scenario), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             ], aes(x = Btrend, y = Ftrend, linetype = scenario), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             color = "black", linewidth = .nafo_lwd) + geom_point(data = data[!is.na(data$scenario), </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             ], aes(x = Btrend, y = Ftrend), color = "black", </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             size = 0.75) + geom_text(data = data[data$year == </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             size = .nafo_pts * 0.5) + geom_text(data = data[data$year == </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             min(data$year), ], aes(x = Btrend, y = Ftrend, label = unique(year)), </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             vjust = 1.5, hjust = 1.1, size = 2) + geom_text(data = data[data$year == </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             max(data$year), ], aes(x = Btrend, y = Ftrend, label = unique(year)), </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             vjust = -0.5, hjust = -0.1, size = 2) + geom_segment(data = data[data$year == </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             max(data$year), ], aes(x = Blwr, y = Ftrend, xend = Bupr, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             yend = Ftrend), linewidth = 0.6) + geom_segment(data = data[data$year == </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             yend = Ftrend), linewidth = .nafo_lwd * 1.5) + geom_segment(data = data[data$year == </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             max(data$year), ], aes(x = Btrend, y = Flwr, xend = Btrend, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             yend = Fupr), linewidth = 0.6) + labs(x = "Biomass", </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             yend = Fupr), linewidth = .nafo_lwd * 1.5) + labs(x = "Biomass", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             y = "Fishing mortality") + scale_x_continuous(limits = c(0, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             xhigh), expand = c(0, 0)) + scale_y_continuous(limits = c(0, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             yhigh), expand = c(0, 0)) + scale_linetype_manual(values = c(5, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             2, 3)) + NAFOdown::theme_nafo() + theme(plot.margin = margin(t = 20, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             r = 20, b = 20, l = 20), plot.background = element_rect(fill = "white", </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             2, 3)) + NAFOdown::theme_nafo() + theme(plot.margin = margin(t = 10, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             r = 10, b = 10, l = 10), plot.background = element_rect(fill = "white", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             colour = "white"), legend.title = element_blank(), </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             legend.box.background = element_rect(fill = "white"))</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     })</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x5593240c91a0&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x559038b27f00&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: namespace:NAFOdown&gt;</span>
 </code></pre></div>
     </div>
