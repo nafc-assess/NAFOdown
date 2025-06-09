@@ -95,7 +95,13 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim) {
     if (is.null(data$Bupr)) data$Bupr <- -1
     if (is.null(data$Flwr)) data$Flwr <- -1
     if (is.null(data$Fupr)) data$Fupr <- -1
-    if (is.null(data$scenario)) data$scenario <- NA
+    if (is.null(data$scenario)) {
+        data$scenario <- NA
+    } else {
+        if (length(unique(data$scenario)) > 3) {
+            stop("The PA plot was not built to display more than three projection scenarios.")
+        }
+    }
 
     xhigh <- max(max(data$Btrend, na.rm = TRUE) * 1.2, Btrigger * 1.5)
     yhigh <- max(max(data$Ftrend, na.rm = TRUE) * 1.2, Flim * 1.5)
