@@ -133,19 +133,22 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
             geom_rect(aes(xmin = Blim, xmax = Btrigger, ymin = 0, ymax = yhigh), fill = "khaki", alpha = 0.4) +
             geom_rect(aes(xmin = Btrigger, xmax = xhigh, ymin = 0, ymax = yhigh), fill = "palegreen", alpha = 0.4) +
 
-            geom_ribbon(aes(x = Bseq, ymin = leaf_low, ymax = leaf_high), fill = "ivory") +
-            geom_line(aes(x = Bseq, y = leaf_linear), color = "grey75") +
-            geom_line(aes(x = Bseq, y = leaf_low), color = "grey75") +
-            geom_line(aes(x = Bseq, y = leaf_high), color = "grey75") +
+            geom_ribbon(aes(x = Bseq, ymin = leaf_low, ymax = leaf_high), fill = "ivory", linewidth = .nafo_lwd) +
+            geom_line(aes(x = Bseq, y = leaf_linear), color = "grey75", linewidth = .nafo_lwd) +
+            geom_line(aes(x = Bseq, y = leaf_low), color = "grey75", linewidth = .nafo_lwd) +
+            geom_line(aes(x = Bseq, y = leaf_high), color = "grey75", linewidth = .nafo_lwd) +
 
-            geom_hline(aes(yintercept = Flim), color = "grey75") +
-            geom_hline(aes(yintercept = Ftarget), linetype = 2, color = "grey75") +
-            geom_vline(aes(xintercept = Blim), color = "indianred", linewidth = 0.7) +
-            geom_vline(aes(xintercept = Btrigger), color = "khaki", linewidth = 0.7) +
+            geom_hline(aes(yintercept = Flim), color = "grey75", linewidth = .nafo_lwd) +
+            geom_hline(aes(yintercept = Ftarget), linetype = 2, color = "grey75", linewidth = .nafo_lwd) +
+            geom_vline(aes(xintercept = Blim), color = "indianred", , linewidth = .nafo_lwd * 1.5) +
+            geom_vline(aes(xintercept = Btrigger), color = "khaki", , linewidth = .nafo_lwd * 1.5) +
 
-            annotate("text", x = Blim / 2, y = I(0.97), label = "Critical Zone", vjust = 1, size = 3, family = "Cambria") +
-            annotate("text", x = mean(c(Blim, Btrigger)), y = I(0.97), label = "Cautious Zone", vjust = 1, size = 3, family = "Cambria") +
-            annotate("text", x = mean(c(Btrigger, xhigh)), y = I(0.97), label = "Healthy Zone", vjust = 1, size = 3, family = "Cambria") +
+            annotate("text", x = Blim / 2, y = I(0.97), label = "Critical Zone",
+                     vjust = 1, size = 3, family = "Cambria") +
+            annotate("text", x = mean(c(Blim, Btrigger)), y = I(0.97), label = "Cautious Zone",
+                     vjust = 1, size = 3, family = "Cambria") +
+            annotate("text", x = mean(c(Btrigger, xhigh)), y = I(0.97), label = "Healthy Zone",
+                     vjust = 1, size = 3, family = "Cambria") +
 
             annotate("text", x = Blim, y = I(0.97), label = expression(B[lim]~~~phantom("x")),
                      vjust = -0.2, hjust = 1, size = 3, family = "Cambria", angle = 90) +
@@ -156,10 +159,14 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
             annotate("text", x = I(0.99), y = Ftarget, label = expression(F[target]),
                      vjust = -0.2, hjust = 1, size = 3, family = "Cambria") +
 
-            geom_path(data = data[is.na(data$scenario), ], aes(x = Btrend, y = Ftrend), color = "grey40", size = 0.4) +
-            geom_point(data = data[is.na(data$scenario), ], aes(x = Btrend, y = Ftrend), color = "grey40", size = 0.75) +
-            geom_path(data = data[!is.na(data$scenario), ], aes(x = Btrend, y = Ftrend, linetype = scenario), color = "black", size = 0.4) +
-            geom_point(data = data[!is.na(data$scenario), ], aes(x = Btrend, y = Ftrend), color = "black", size = 0.75) +
+            geom_path(data = data[is.na(data$scenario), ], aes(x = Btrend, y = Ftrend),
+                      color = "grey40", linewidth = .nafo_lwd) +
+            geom_point(data = data[is.na(data$scenario), ], aes(x = Btrend, y = Ftrend),
+                       color = "grey40", size = .nafo_pts * 0.5) +
+            geom_path(data = data[!is.na(data$scenario), ], aes(x = Btrend, y = Ftrend, linetype = scenario),
+                      color = "black", linewidth = .nafo_lwd) +
+            geom_point(data = data[!is.na(data$scenario), ], aes(x = Btrend, y = Ftrend),
+                       color = "black", size = .nafo_pts * 0.5) +
 
             geom_text(data = data[data$year == min(data$year), ],
                       aes(x = Btrend, y = Ftrend, label = unique(year)),
@@ -169,9 +176,9 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
                       vjust = -0.5, hjust = -0.1, size = 2) +
 
             geom_segment(data = data[data$year == max(data$year), ],
-                         aes(x = Blwr, y = Ftrend, xend = Bupr, yend = Ftrend), linewidth = 0.6) +
+                         aes(x = Blwr, y = Ftrend, xend = Bupr, yend = Ftrend), linewidth = .nafo_lwd * 1.5) +
             geom_segment(data = data[data$year == max(data$year), ],
-                         aes(x = Btrend, y = Flwr, xend = Btrend, yend = Fupr), linewidth = 0.6) +
+                         aes(x = Btrend, y = Flwr, xend = Btrend, yend = Fupr), linewidth = .nafo_lwd * 1.5) +
 
             labs(x = "Biomass", y = "Fishing mortality") +
             scale_x_continuous(limits = c(0, xhigh), expand = c(0, 0)) +
@@ -179,7 +186,7 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
             scale_linetype_manual(values = c(5, 2, 3)) +
             NAFOdown::theme_nafo() +
             theme(
-                plot.margin = margin(t = 20, r = 20, b = 20, l = 20),
+                plot.margin = margin(t = 10, r = 10, b = 10, l = 10),
                 plot.background = element_rect(fill = "white", colour = "white"),
                 legend.title = element_blank(),
                 legend.box.background = element_rect(fill = "white")
