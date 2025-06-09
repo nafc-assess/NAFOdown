@@ -167,6 +167,9 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
                       color = "black", linewidth = .nafo_lwd) +
             geom_point(data = data[!is.na(data$scenario), ], aes(x = Btrend, y = Ftrend),
                        color = "black", size = .nafo_pts * 0.5) +
+            geom_path(data = data[!is.na(data$scenario) & data$year <= (min(data$year) + 1), ],
+                      aes(x = Btrend, y = Ftrend),
+                      color = "black", linewidth = .nafo_lwd * 0.5) +
 
             geom_text(data = data[data$year == min(data$year), ],
                       aes(x = Btrend, y = Ftrend, label = unique(year)),
@@ -188,6 +191,8 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
             theme(
                 plot.margin = margin(t = 10, r = 10, b = 10, l = 10),
                 plot.background = element_rect(fill = "white", colour = "white"),
+                legend.position.inside = c(0.95, 0.05),
+                legend.justification = c(1, 0),
                 legend.title = element_blank(),
                 legend.box.background = element_rect(fill = "white")
             )
