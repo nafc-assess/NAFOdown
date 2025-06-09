@@ -105,15 +105,7 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim) {
     leaf_low <- F_lower(Bseq, Blim, Btrigger, Ftarget)
     leaf_high <- F_upper(Bseq, Blim, Btrigger, Ftarget)
 
-    list(
-        data = data,
-        Bseq = Bseq,
-        leaf_linear = leaf_linear,
-        leaf_low = leaf_low,
-        leaf_high = leaf_high,
-        xhigh = xhigh,
-        yhigh = yhigh
-    )
+    as.list(environment())
 }
 
 #' Plot the Precautionary Approach (PA) Leaf with Historical or Projection Scenario Data
