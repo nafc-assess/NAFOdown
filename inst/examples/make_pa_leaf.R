@@ -1,0 +1,64 @@
+
+## PA calculation and plotting code was developed by Andie Perreault (NAFO Secretariat),
+## Laura Wheeland, Paul Regular, and Mariano Koen-Alonso
+
+library(ggplot2)
+library(NAFOdown)
+showtext::showtext_opts(dpi = 300)
+
+## Basic leaf plot ----------
+
+Bmsy <- 1
+Blim <- 0.3 * Bmsy
+Btrigger <- 0.75 * Bmsy
+Fmsy <- 1
+Flim <- Fmsy
+Ftarget <- 0.85 * Fmsy
+
+pa_leaf <- plot_PA_leaf(data = NULL, Blim = Blim, Btrigger = Btrigger,
+                        Ftarget = Ftarget, Flim = Flim)
+pa_leaf
+ggsave("PA_leaf.png", width = 6, height = 4, dpi = 300)
+
+
+## Leaf plot with stock trends ----------
+
+## Using simulated data built into NAFOdown (see ?NAFOdown::toy_stock)
+sim_data <- with(toy_stock, data.frame(year = year, Btrend = Brel, Ftrend = Frel,
+                                       Blwr = Brel_lwr, Bupr = Brel_upr,
+                                       Flwr = Frel_lwr, Fupr = Frel_upr))
+
+trends_leaf <- plot_PA_leaf(sim_data, Blim = Blim, Btrigger = Btrigger,
+                            Ftarget = Ftarget, Flim = Flim)
+trends_leaf
+ggsave("PA_leaf_with_history.png", width = 6, height = 4, dpi = 300)
+
+
+## Leaf plot with projections ----------
+
+## Build idealized path following leaf
+years <- 2020:2024
+Bseq <- seq(0.4, 0.6, length.out = 5)
+Fmid <- F_linear(Bseq, Blim, Btrigger, Ftarget)
+Flower <- F_lower(Bseq, Blim, Btrigger, Ftarget)
+Fupper <- F_upper(Bseq, Blim, Btrigger, Ftarget)
+proj_data <- data.frame(year = rep(years, 3), Btrend = rep(Bseq, 3),
+                        Ftrend = c(Fmid, Flower, Fupper),
+                        scenario = c(rep("Mid", 5), rep("Lower", 5), rep("Upper", 5)))
+proj_data$Ftrend[proj_data$year == 2020][] <- proj_data$Ftrend[proj_data$year == 2020 & proj_data$scenario == "Mid"]
+proj_data$Ftrend[proj_data$year == 2021][] <- proj_data$Ftrend[proj_data$year == 2021 & proj_data$scenario == "Mid"]
+proj_data$scenario <- factor(proj_data$scenario, levels = c("Lower", "Mid", "Upper"))
+proj_data
+
+proj_leaf <- plot_PA_leaf(proj_data, Blim = Blim, Btrigger = Btrigger,
+                          Ftarget = Ftarget, Flim = Flim)
+proj_leaf
+ggsave("PA_leaf_with_projections.png", width = 6, height = 4, dpi = 300)
+
+
+## Manual editing required? ----------
+
+## To modify the full plot structure, type `plot_PA_leaf` and press Enter to view formatted code.
+## Then copy and paste that code into your R script, modify the names used in the `make_pa_data`
+## function to match the names you've used, then manually edit the ggplot code to suit your needs.
+plot_PA_leaf

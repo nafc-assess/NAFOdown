@@ -9,3 +9,4 @@
 
 - Uses 2025 NAFO SCR template with new logo
 - Enable the use of bookdown::word_document2 or officedown::rdocx_document to build Word documents (see ?word_scr)
+- Functions added to generate stylized Precautionary Approach (PA) "leaf" plots following the NAFO Precautionary Approach Framework (COM Doc. 24-25).

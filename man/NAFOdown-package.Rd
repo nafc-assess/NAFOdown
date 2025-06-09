@@ -30,6 +30,7 @@ Other contributors:
 \itemize{
   \item Laura Wheeland [contributor]
   \item Andrea Perreault [contributor]
+  \item Mariano Koen-Alonso [contributor]
   \item Sean Anderson (Development of csasdown) [contributor]
   \item Chris Grandin (Development of csasdown) [contributor]
   \item Chester Ismay (Development of thesisdown) [contributor]
