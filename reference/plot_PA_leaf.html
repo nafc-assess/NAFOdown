@@ -70,7 +70,8 @@ overlays of biomass and fishing mortality trends or projections across years.</p
 <li><p><code>Ftrend</code>: numeric fishing mortality values</p></li>
 </ul><p>Optional columns:</p><ul><li><p><code>Blwr</code>, <code>Bupr</code>: biomass uncertainty bounds</p></li>
 <li><p><code>Flwr</code>, <code>Fupr</code>: F uncertainty bounds</p></li>
-<li><p><code>scenario</code>: optional projection scenario ID (for linetype distinction)</p></li>
+<li><p><code>scenario</code>: projection scenario for linetype distinction and legend</p></li>
+<li><p><code>label_just</code>: justification for year label ("left", "center", "right")</p></li>
 </ul></dd>
 
 
@@ -130,9 +131,9 @@ overlays of biomass and fishing mortality trends or projections across years.</p
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_point()`).</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_text()`).</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_text_repel()`).</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_text()`).</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_text_repel()`).</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_segment()`).</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
@@ -433,9 +434,9 @@ overlays of biomass and fishing mortality trends or projections across years.</p
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_point()`).</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_text()`).</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_text_repel()`).</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_text()`).</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_text_repel()`).</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> (`geom_segment()`).</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Removed 1 row containing missing values or values outside the scale range</span>
@@ -1119,23 +1120,24 @@ overlays of biomass and fishing mortality trends or projections across years.</p
 <span class="r-in"><span><span class="va">proj_data</span><span class="op">$</span><span class="va">Ftrend</span><span class="op">[</span><span class="va">proj_data</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span><span class="op">]</span><span class="op">[</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">proj_data</span><span class="op">$</span><span class="va">Ftrend</span><span class="op">[</span><span class="va">proj_data</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span> <span class="op">&amp;</span> <span class="va">proj_data</span><span class="op">$</span><span class="va">scenario</span> <span class="op">==</span> <span class="st">"Mid"</span><span class="op">]</span></span></span>
 <span class="r-in"><span><span class="va">proj_data</span><span class="op">$</span><span class="va">Ftrend</span><span class="op">[</span><span class="va">proj_data</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2021</span><span class="op">]</span><span class="op">[</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">proj_data</span><span class="op">$</span><span class="va">Ftrend</span><span class="op">[</span><span class="va">proj_data</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2021</span> <span class="op">&amp;</span> <span class="va">proj_data</span><span class="op">$</span><span class="va">scenario</span> <span class="op">==</span> <span class="st">"Mid"</span><span class="op">]</span></span></span>
 <span class="r-in"><span><span class="va">proj_data</span><span class="op">$</span><span class="va">scenario</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">proj_data</span><span class="op">$</span><span class="va">scenario</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Lower"</span>, <span class="st">"Mid"</span>, <span class="st">"Upper"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">proj_data</span><span class="op">$</span><span class="va">label_just</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">proj_data</span><span class="op">$</span><span class="va">year</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">proj_data</span><span class="op">$</span><span class="va">year</span><span class="op">)</span>, <span class="st">"left"</span>, <span class="st">"right"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">proj_data</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    year Btrend    Ftrend scenario</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2020   0.40 0.1888889      Mid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2021   0.45 0.2833333      Mid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2022   0.50 0.3777778      Mid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2023   0.55 0.4722222      Mid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2024   0.60 0.5666667      Mid</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2020   0.40 0.1888889    Lower</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2021   0.45 0.2833333    Lower</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2022   0.50 0.1789474    Lower</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2023   0.55 0.2500000    Lower</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2024   0.60 0.3400000    Lower</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2020   0.40 0.1888889    Upper</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2021   0.45 0.2833333    Upper</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 2022   0.50 0.6000000    Upper</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2023   0.55 0.6710526    Upper</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 2024   0.60 0.7285714    Upper</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    year Btrend    Ftrend scenario label_just</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2020   0.40 0.1888889      Mid       left</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2021   0.45 0.2833333      Mid      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2022   0.50 0.3777778      Mid      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2023   0.55 0.4722222      Mid      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  2024   0.60 0.5666667      Mid      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2020   0.40 0.1888889    Lower       left</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2021   0.45 0.2833333    Lower      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2022   0.50 0.1789474    Lower      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2023   0.55 0.2500000    Lower      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2024   0.60 0.3400000    Lower      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 2020   0.40 0.1888889    Upper       left</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 2021   0.45 0.2833333    Upper      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 2022   0.50 0.6000000    Upper      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 2023   0.55 0.6710526    Upper      right</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 2024   0.60 0.7285714    Upper      right</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">proj_leaf</span> <span class="op">&lt;-</span> <span class="fu">plot_PA_leaf</span><span class="op">(</span><span class="va">proj_data</span>, Blim <span class="op">=</span> <span class="va">Blim</span>, Btrigger <span class="op">=</span> <span class="va">Btrigger</span>,</span></span>
 <span class="r-in"><span>                          Ftarget <span class="op">=</span> <span class="va">Ftarget</span>, Flim <span class="op">=</span> <span class="va">Flim</span><span class="op">)</span></span></span>
@@ -3129,13 +3131,15 @@ overlays of biomass and fishing mortality trends or projections across years.</p
 <span class="r-out co"><span class="r-pr">#&gt;</span>             size = .nafo_pts * 0.5) + geom_path(data = data[!is.na(data$scenario) &amp; </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             data$year &lt;= (min(data$year) + 1), ], aes(x = Btrend, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             y = Ftrend), color = "black", linewidth = .nafo_lwd * </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             0.5) + geom_text(data = data[data$year == min(data$year), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             ], aes(x = Btrend, y = Ftrend, label = unique(year)), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             vjust = 1.5, hjust = 1.1, size = 2) + geom_text(data = data[data$year == </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             max(data$year), ], aes(x = Btrend, y = Ftrend, label = unique(year)), </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             vjust = -0.5, hjust = -0.1, size = 2) + geom_segment(data = data[data$year == </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             max(data$year), ], aes(x = Blwr, y = Ftrend, xend = Bupr, </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             yend = Ftrend), linewidth = .nafo_lwd * 1.5) + geom_segment(data = data[data$year == </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             0.5) + ggrepel::geom_text_repel(data = head(data[data$year == </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             min(data$year), ], 1), aes(x = Btrend, y = Ftrend, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             label = unique(year), hjust = label_just), size = 2) + </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             ggrepel::geom_text_repel(data = data[data$year == </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 max(data$year), ], aes(x = Btrend, y = Ftrend, </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 label = unique(year), hjust = label_just), size = 2) + </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             geom_segment(data = data[data$year == max(data$year), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 ], aes(x = Blwr, y = Ftrend, xend = Bupr, yend = Ftrend), </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                 linewidth = .nafo_lwd * 1.5) + geom_segment(data = data[data$year == </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             max(data$year), ], aes(x = Btrend, y = Flwr, xend = Btrend, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             yend = Fupr), linewidth = .nafo_lwd * 1.5) + labs(x = "Biomass", </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             y = "Fishing mortality") + scale_x_continuous(limits = c(0, </span>
@@ -3148,7 +3152,7 @@ overlays of biomass and fishing mortality trends or projections across years.</p
 <span class="r-out co"><span class="r-pr">#&gt;</span>             legend.box.background = element_rect(fill = "white"))</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     })</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> }</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x5653ad900248&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;bytecode: 0x55f7354fe300&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;environment: namespace:NAFOdown&gt;</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
