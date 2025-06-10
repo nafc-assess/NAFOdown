@@ -18,7 +18,8 @@ Optional columns:
 \itemize{
 \item \code{Blwr}, \code{Bupr}: biomass uncertainty bounds
 \item \code{Flwr}, \code{Fupr}: F uncertainty bounds
-\item \code{scenario}: optional projection scenario ID (for linetype distinction)
+\item \code{scenario}: projection scenario for linetype distinction and legend
+\item \code{label_just}: justification for year label ("left", "center", "right")
 }}
 
 \item{Blim}{Biomass limit reference point}

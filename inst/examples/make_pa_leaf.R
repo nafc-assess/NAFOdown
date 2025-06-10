@@ -50,6 +50,7 @@ proj_data <- data.frame(year = rep(years, 3), Btrend = rep(Bseq, 3),
 proj_data$Ftrend[proj_data$year == 2020][] <- proj_data$Ftrend[proj_data$year == 2020 & proj_data$scenario == "Mid"]
 proj_data$Ftrend[proj_data$year == 2021][] <- proj_data$Ftrend[proj_data$year == 2021 & proj_data$scenario == "Mid"]
 proj_data$scenario <- factor(proj_data$scenario, levels = c("Lower", "Mid", "Upper"))
+proj_data$label_just <- ifelse(proj_data$year == min(proj_data$year), "left", "right")
 proj_data
 
 proj_leaf <- plot_PA_leaf(proj_data, Blim = Blim, Btrigger = Btrigger,

@@ -78,7 +78,8 @@ F_upper <- function(B, Blim, Btrigger, Ftarget, k = 1, Fmin = 0) {
 #' Optional columns:
 #'   - `Blwr`, `Bupr`: biomass uncertainty bounds
 #'   - `Flwr`, `Fupr`: F uncertainty bounds
-#'   - `scenario`: optional projection scenario ID (for linetype distinction)
+#'   - `scenario`: projection scenario for linetype distinction and legend
+#'   - `label_just`: justification for year label ("left", "center", "right")
 #'
 #' @inheritParams F_linear
 #' @param Flim Fishing mortality limit
@@ -86,6 +87,7 @@ F_upper <- function(B, Blim, Btrigger, Ftarget, k = 1, Fmin = 0) {
 #' @seealso [plot_PA_leaf], [F_linear], [F_upper], [F_lower], [F_sigmoid]
 #'
 #' @return A list with components: `data`, `Bseq`, `leaf_linear`, `leaf_low`, `leaf_high`, `xhigh`, `yhigh`
+#'
 #' @export
 make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim) {
     if (is.null(data)) {
@@ -95,6 +97,7 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim) {
     if (is.null(data$Bupr)) data$Bupr <- -1
     if (is.null(data$Flwr)) data$Flwr <- -1
     if (is.null(data$Fupr)) data$Fupr <- -1
+    if (is.null(data$label_just)) data$label_just <- "center"
     if (is.null(data$scenario)) {
         data$scenario <- NA
     } else {
@@ -127,6 +130,8 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim) {
 #' @example inst/examples/make_pa_leaf.R
 #'
 #' @seealso [make_PA_data], [F_linear], [F_upper], [F_lower], [F_sigmoid]
+#'
+#' @import ggrepel
 #'
 #' @export
 plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
@@ -177,12 +182,14 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
                       aes(x = Btrend, y = Ftrend),
                       color = "black", linewidth = .nafo_lwd * 0.5) +
 
-            geom_text(data = data[data$year == min(data$year), ],
-                      aes(x = Btrend, y = Ftrend, label = unique(year)),
-                      vjust = 1.5, hjust = 1.1, size = 2) +
-            geom_text(data = data[data$year == max(data$year), ],
-                      aes(x = Btrend, y = Ftrend, label = unique(year)),
-                      vjust = -0.5, hjust = -0.1, size = 2) +
+            ggrepel::geom_text_repel(data = head(data[data$year == min(data$year), ], 1),
+                                     aes(x = Btrend, y = Ftrend, label = unique(year),
+                                         hjust = label_just),
+                                     size = 2) +
+            ggrepel::geom_text_repel(data = data[data$year == max(data$year), ],
+                                     aes(x = Btrend, y = Ftrend, label = unique(year),
+                                         hjust = label_just),
+                                     size = 2) +
 
             geom_segment(data = data[data$year == max(data$year), ],
                          aes(x = Blwr, y = Ftrend, xend = Bupr, yend = Ftrend), linewidth = .nafo_lwd * 1.5) +

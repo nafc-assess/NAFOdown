@@ -18,7 +18,8 @@ Optional columns:
 \itemize{
 \item \code{Blwr}, \code{Bupr}: biomass uncertainty bounds
 \item \code{Flwr}, \code{Fupr}: F uncertainty bounds
-\item \code{scenario}: optional projection scenario ID (for linetype distinction)
+\item \code{scenario}: projection scenario for linetype distinction and legend
+\item \code{label_just}: justification for year label ("left", "center", "right")
 }}
 
 \item{Blim}{Biomass limit reference point}
@@ -90,6 +91,7 @@ proj_data <- data.frame(year = rep(years, 3), Btrend = rep(Bseq, 3),
 proj_data$Ftrend[proj_data$year == 2020][] <- proj_data$Ftrend[proj_data$year == 2020 & proj_data$scenario == "Mid"]
 proj_data$Ftrend[proj_data$year == 2021][] <- proj_data$Ftrend[proj_data$year == 2021 & proj_data$scenario == "Mid"]
 proj_data$scenario <- factor(proj_data$scenario, levels = c("Lower", "Mid", "Upper"))
+proj_data$label_just <- ifelse(proj_data$year == min(proj_data$year), "left", "right")
 proj_data
 
 proj_leaf <- plot_PA_leaf(proj_data, Blim = Blim, Btrigger = Btrigger,

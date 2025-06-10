@@ -30,6 +30,7 @@ Imports:
     ggplot2,
     ggthemes,
     ggridges,
+    ggrepel,
     scales,
     magrittr,
     flextable,
