@@ -110,11 +110,12 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim,
         }
     }
 
+    ind_last <- which(data$year == max(data$year))
     xhigh <- max(max(data$Btrend, na.rm = TRUE) * 1.2,
-                 max(data$Bupr, na.rm = TRUE) * 1.2,
+                 max(data$Bupr[ind_last], na.rm = TRUE) * 1.2,
                  Btrigger * 1.5)
     yhigh <- max(max(data$Ftrend, na.rm = TRUE) * 1.2,
-                 max(data$Fupr, na.rm = TRUE) * 1.2,
+                 max(data$Fupr[ind_last], na.rm = TRUE) * 1.2,
                  Flim * 1.5)
 
     Bseq <- seq(Blim, Btrigger, length.out = 100)
