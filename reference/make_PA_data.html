@@ -57,7 +57,14 @@ Used internally by <code><a href="plot_PA_leaf.html">plot_PA_leaf()</a></code> b
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">make_PA_data</span><span class="op">(</span><span class="va">data</span>, <span class="va">Blim</span>, <span class="va">Btrigger</span>, <span class="va">Ftarget</span>, <span class="va">Flim</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">make_PA_data</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">Blim</span>,</span>
+<span>  <span class="va">Btrigger</span>,</span>
+<span>  <span class="va">Ftarget</span>,</span>
+<span>  <span class="va">Flim</span>,</span>
+<span>  zone_labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Critical Zone"</span>, <span class="st">"Cautious Zone"</span>, <span class="st">"Healthy Zone"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -71,7 +78,7 @@ Used internally by <code><a href="plot_PA_leaf.html">plot_PA_leaf()</a></code> b
 </ul><p>Optional columns:</p><ul><li><p><code>Blwr</code>, <code>Bupr</code>: biomass uncertainty bounds</p></li>
 <li><p><code>Flwr</code>, <code>Fupr</code>: F uncertainty bounds</p></li>
 <li><p><code>scenario</code>: projection scenario for linetype distinction and legend</p></li>
-<li><p><code>label_just</code>: justification for year label ("left", "center", "right")</p></li>
+<li><p><code>label_just</code>: justification for year label (<code>"left"</code>, <code>"center"</code>, <code>"right"</code>)</p></li>
 </ul></dd>
 
 
@@ -89,6 +96,12 @@ Used internally by <code><a href="plot_PA_leaf.html">plot_PA_leaf()</a></code> b
 
 <dt id="arg-flim">Flim<a class="anchor" aria-label="anchor" href="#arg-flim"></a></dt>
 <dd><p>Fishing mortality limit</p></dd>
+
+
+<dt id="arg-zone-labels">zone_labels<a class="anchor" aria-label="anchor" href="#arg-zone-labels"></a></dt>
+<dd><p>PA zone labels. Defaults may need to be modified to keep
+the text inside the zone (e.g., supply <code>"Cautious"</code> rather than <code>"Cautious Zone"</code>).
+An empty character may also be supplied if the zone is too narrow to label.</p></dd>
 
 </dl></div>
     <div id="value">
