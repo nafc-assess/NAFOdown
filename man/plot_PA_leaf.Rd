@@ -4,7 +4,14 @@
 \alias{plot_PA_leaf}
 \title{Plot the Precautionary Approach (PA) Leaf with Historical or Projection Scenario Data}
 \usage{
-plot_PA_leaf(data, Blim, Btrigger, Ftarget, Flim)
+plot_PA_leaf(
+  data,
+  Blim,
+  Btrigger,
+  Ftarget,
+  Flim,
+  zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone")
+)
 }
 \arguments{
 \item{data}{A data frame with the following required columns:
@@ -19,7 +26,7 @@ Optional columns:
 \item \code{Blwr}, \code{Bupr}: biomass uncertainty bounds
 \item \code{Flwr}, \code{Fupr}: F uncertainty bounds
 \item \code{scenario}: projection scenario for linetype distinction and legend
-\item \code{label_just}: justification for year label ("left", "center", "right")
+\item \code{label_just}: justification for year label (\code{"left"}, \code{"center"}, \code{"right"})
 }}
 
 \item{Blim}{Biomass limit reference point}
@@ -29,6 +36,10 @@ Optional columns:
 \item{Ftarget}{Target fishing mortality}
 
 \item{Flim}{Fishing mortality limit}
+
+\item{zone_labels}{PA zone labels. Defaults may need to be modified to keep
+the text inside the zone (e.g., supply \code{"Cautious"} rather than \code{"Cautious Zone"}).
+An empty character may also be supplied if the zone is too narrow to label.}
 }
 \value{
 A \code{ggplot} object showing the PA leaf, and biomass-F trajectories.

@@ -79,17 +79,21 @@ F_upper <- function(B, Blim, Btrigger, Ftarget, k = 1, Fmin = 0) {
 #'   - `Blwr`, `Bupr`: biomass uncertainty bounds
 #'   - `Flwr`, `Fupr`: F uncertainty bounds
 #'   - `scenario`: projection scenario for linetype distinction and legend
-#'   - `label_just`: justification for year label ("left", "center", "right")
+#'   - `label_just`: justification for year label (`"left"`, `"center"`, `"right"`)
 #'
 #' @inheritParams F_linear
 #' @param Flim Fishing mortality limit
+#' @param zone_labels PA zone labels. Defaults may need to be modified to keep
+#' the text inside the zone (e.g., supply `"Cautious"` rather than `"Cautious Zone"`).
+#' An empty character may also be supplied if the zone is too narrow to label.
 #'
 #' @seealso [plot_PA_leaf], [F_linear], [F_upper], [F_lower], [F_sigmoid]
 #'
 #' @return A list with components: `data`, `Bseq`, `leaf_linear`, `leaf_low`, `leaf_high`, `xhigh`, `yhigh`
 #'
 #' @export
-make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim) {
+make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim,
+                         zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone")) {
     if (is.null(data)) {
         data <- data.frame(year = -1, Btrend = -1, Ftrend = -1)
     }
@@ -134,9 +138,11 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim) {
 #' @import ggrepel
 #'
 #' @export
-plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
+plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim,
+                         zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone")) {
 
-    PA_data <- make_PA_data(data, Blim, Btrigger, Ftarget, Flim)
+    PA_data <- make_PA_data(data, Blim, Btrigger, Ftarget, Flim,
+                            zone_labels = zone_labels)
 
     with(PA_data, {
         ggplot() +
@@ -154,21 +160,20 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim) {
             geom_vline(aes(xintercept = Blim), color = "indianred", , linewidth = .nafo_lwd * 1.5) +
             geom_vline(aes(xintercept = Btrigger), color = "khaki", , linewidth = .nafo_lwd * 1.5) +
 
-            annotate("text", x = Blim / 2, y = I(0.97), label = "Critical Zone",
-                     vjust = 1, size = 3, family = "Cambria") +
-            annotate("text", x = mean(c(Blim, Btrigger)), y = I(0.97), label = "Cautious Zone",
-                     vjust = 1, size = 3, family = "Cambria") +
-            annotate("text", x = mean(c(Btrigger, xhigh)), y = I(0.97), label = "Healthy Zone",
-                     vjust = 1, size = 3, family = "Cambria") +
+            geom_text(aes(x = c(Blim / 2, mean(c(Blim, Btrigger)), mean(c(Btrigger, xhigh))),
+                          y = I(rep(0.97, 3)), label = zone_labels),
+                      vjust = 1, size = 3, family = "Cambria") +
 
-            annotate("text", x = Blim, y = I(0.97), label = expression(B[lim]~~~phantom("x")),
-                     vjust = -0.2, hjust = 1, size = 3, family = "Cambria", angle = 90) +
-            annotate("text", x = Btrigger, y = I(0.97), label = expression(B[trigger]~~~phantom("x")),
-                     vjust = -0.2, hjust = 1, size = 3, family = "Cambria", angle = 90) +
-            annotate("text", x = I(0.99), y = Flim, label = expression(F[lim]),
-                     vjust = -0.2, hjust = 1, size = 3, family = "Cambria") +
-            annotate("text", x = I(0.99), y = Ftarget, label = expression(F[target]),
-                     vjust = -0.2, hjust = 1, size = 3, family = "Cambria") +
+            geom_text_repel(aes(x = c(Blim, Btrigger), y = I(rep(0.97, 2)),
+                                label = c("B[lim]~~~phantom('x')", "B[trigger]~~~phantom('x')")),
+                            vjust = -0.2, hjust = "right", size = 3, angle = 90,
+                            parse = TRUE, family = "Cambria",
+                            min.segment.length = Inf, direction = "y") +
+            geom_text_repel(aes(x = I(rep(0.99, 2)), y = c(Ftarget,  Flim),
+                                label = c("F[target]",  "F[lim]")),
+                            vjust = 0, hjust = "right", size = 3,
+                            parse = TRUE, family = "Cambria",
+                            min.segment.length = Inf, direction = "y") +
 
             geom_path(data = data[is.na(data$scenario), ], aes(x = Btrend, y = Ftrend),
                       color = "grey40", linewidth = .nafo_lwd) +
