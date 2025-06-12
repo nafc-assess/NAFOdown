@@ -104,7 +104,7 @@ NAFOdown also includes a [ggplot2](https://ggplot2.tidyverse.org/) theme, `NAFOd
 
 A helper function for creating NAFO Precautionary Approach plots are also included with the package (see `?NAFOdown::plot_PA_leaf`), which can be used to generate standardized plots like this:
 
-```{r pa-leaf, fig.asp = 1, fig.width = NAFOdown::.nafo_width, dpi = 600}
+```{r pa-leaf, fig.height = NAFOdown::.nafo_height * 1.5, fig.width = NAFOdown::.nafo_width, dpi = 600}
 Bmsy <- 1
 Blim <- 0.3 * Bmsy
 Btrigger <- 0.75 * Bmsy
@@ -152,7 +152,7 @@ While there is an initial cost to building these documents, they will be much ea
 
 ---
 nocite: | 
-  @scr20-005, @scr20-042, @scr20-050, @scs20-14a, @scs20-14b, @scs20-011, @scr21-020, @scr21-026, @scr22-013, @scr22-015, @scr22-016, @scr22-042, @scr22-043, @scr23-001, @scr23-007, @scr23-014
+  @scr20-005, @scr20-042, @scr20-050, @scs20-14a, @scs20-14b, @scs20-011, @scr21-020, @scr21-026, @scr22-013, @scr22-015, @scr22-016, @scr22-042, @scr22-043, @scr23-001, @scr23-007, @scr23-014, @scr24-002REV2, @scr24-013
 ...
 
 <div id="refs"></div>

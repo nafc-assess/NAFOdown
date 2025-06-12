@@ -231,6 +231,11 @@ Scientific Council, 28 May -12 June 2020, By correspondence*</span>.
 *NAFO SCS Doc*, *20/14*, Pages 221–223.
 <https://www.nafo.int/Portals/0/PDFs/sc/2020/scs20-14.pdf>
 
+Nogueira, A., and Estevez-Barcia, D. (2024). Results for greenland
+halibut survey in NAFO divisions 1C–1D for the period 1997–2017, 2019
+and 2022–2023. *NAFO SCR Doc*, *24/013*.
+<https://www.nafo.int/Portals/0/PDFs/sc/2024/scr24-013.pdf>
+
 Perreault, A. M. J., Wheeland, L., and Cadigan, N. G. (2021).
 <span class="nocase">Updated state-space model for American plaice
 (*Hippoglossoides platessoides*) in Div. 3LNO</span>. *NAFO SCR Doc*,
@@ -293,6 +298,12 @@ Regular, P. M., Rogers, B., and Morgan, M. J. (2021).
 in NAFO Subarea 2 and Divisions 3KLMNO: stock trends based on annual
 Canadian research vessel survey results</span>. *NAFO SCR Doc*,
 *21/026*. <https://www.nafo.int/Portals/0/PDFs/sc/2021/scr21-026.pdf>
+
+Regular, P.  M., Varkey, D., Gullage, N., and Kumar, R. (2024). Review
+and update of the state-space management strategy evaluation for
+greenland halibut in NAFO subarea 2 and divisions 3KLMNO with mseSurv.
+*NAFO SCR Doc*, *24/002REV2*.
+<https://www.nafo.int/Portals/0/PDFs/sc/2024/scr24-002REV2.pdf>
 
 Rogers, B., Perreault, A., Simpson, M., and Varkey, D. (2022).
 <span class="nocase">Assessment of 3LN redfish using the ASPIC model in
