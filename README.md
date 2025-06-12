@@ -146,6 +146,30 @@ components to suit the specific requirements of the author though
 modification of individual theme elements within the ggplot2 framework
 (e.g. font size, legend formatting).
 
+A helper function for creating NAFO Precautionary Approach plots are
+also included with the package (see `?NAFOdown::plot_PA_leaf`), which
+can be used to generate standardized plots like this:
+
+``` r
+Bmsy <- 1
+Blim <- 0.3 * Bmsy
+Btrigger <- 0.75 * Bmsy
+Fmsy <- 1
+Flim <- Fmsy
+Ftarget <- 0.85 * Fmsy
+
+sim_data <- with(toy_stock, data.frame(year = year, Btrend = Brel, Ftrend = Frel,
+                                       Blwr = Brel_lwr, Bupr = Brel_upr,
+                                       Flwr = Frel_lwr, Fupr = Frel_upr))
+
+trends_leaf <- plot_PA_leaf(sim_data, Blim = Blim, Btrigger = Btrigger,
+                            Ftarget = Ftarget, Flim = Flim, 
+                            zone_labels = c("Critical", "Cautious", "Healthy Zone"))
+trends_leaf
+```
+
+![](README_files/figure-markdown_github/pa-leaf-1.png)
+
 ## Meeting-to-meeting writing
 
 As noted above, several of the files need to be populated with content.
@@ -207,8 +231,8 @@ Scientific Council, 28 May -12 June 2020, By correspondence*</span>.
 *NAFO SCS Doc*, *20/14*, Pages 221–223.
 <https://www.nafo.int/Portals/0/PDFs/sc/2020/scs20-14.pdf>
 
-Perreault, A. M. J., Wheeland, L., and Cadigan, N. G. (2021). <span
-class="nocase">Updated state-space model for American plaice
+Perreault, A. M. J., Wheeland, L., and Cadigan, N. G. (2021).
+<span class="nocase">Updated state-space model for American plaice
 (*Hippoglossoides platessoides*) in Div. 3LNO</span>. *NAFO SCR Doc*,
 *21/020*. <https://www.nafo.int/Portals/0/PDFs/sc/2021/scr21-020.pdf>
 
@@ -218,10 +242,10 @@ for 3LN redfish in preparation for an updated management strategy
 evaluation</span>. *NAFO SCR Doc*, *22/016*.
 <https://www.nafo.int/Portals/0/PDFs/sc/2022/scr22-016.pdf>
 
-Perreault, A., Rogers, B., and Varkey, D. (2023). <span
-class="nocase">Data selection for 3LN redfish in preparation for an
-updated management strategy evaluation</span>. *NAFO SCR Doc*, *23/001*.
-<https://www.nafo.int/Portals/0/PDFs/sc/2023/scr23-001.pdf>
+Perreault, A., Rogers, B., and Varkey, D. (2023).
+<span class="nocase">Data selection for 3LN redfish in preparation for
+an updated management strategy evaluation</span>. *NAFO SCR Doc*,
+*23/001*. <https://www.nafo.int/Portals/0/PDFs/sc/2023/scr23-001.pdf>
 
 Regular, P. M. (2020). <span class="nocase">Update of Base Case SSM for
 Greenland Halibut in NAFO Subarea 2 and Divisions 3KLMNO</span>. *NAFO
@@ -234,10 +258,10 @@ Greenland Halibut in NAFO Subarea 2 and Divisions 3KLMNO</span>. *NAFO
 SCR Doc*, *23/007*.
 <https://www.nafo.int/Portals/0/PDFs/sc/2023/scr23-007.pdf>
 
-Regular, P. M., Butterworth, D., and Rademeyer, R. (2022). <span
-class="nocase">Effect of missing values from the Canadian spring and
-fall surveys of NAFO Divisions 3LNO on the calculation of the TAC using
-the Greenland halibut HCR</span>. *NAFO SCR Doc*, *22/015*.
+Regular, P. M., Butterworth, D., and Rademeyer, R. (2022).
+<span class="nocase">Effect of missing values from the Canadian spring
+and fall surveys of NAFO Divisions 3LNO on the calculation of the TAC
+using the Greenland halibut HCR</span>. *NAFO SCR Doc*, *22/015*.
 <https://www.nafo.int/Portals/0/PDFs/sc/2022/scr22-015.pdf>
 
 Regular, P. M., Koen-Alonso, M., Yalcin, S., Perreault, A. M. J., and
@@ -252,27 +276,27 @@ disparate survey indices of Greenland halibut (*Reinhardtius
 hippoglossoides*) in NAFO divisions 2+3KLMNO</span>. *NAFO SCR Doc*,
 *22/042*. <https://www.nafo.int/Portals/0/PDFs/sc/2022/scr22-042.pdf>
 
-Regular, P. M., Rademeyr, R., D., V., D., B., and C., F. (2020). <span
-class="nocase">Correcting mis-calculated values of
+Regular, P. M., Rademeyr, R., D., V., D., B., and C., F. (2020).
+<span class="nocase">Correcting mis-calculated values of
 *J*<sub>*t**a**r**g**e**t*</sub> for use in the Greenland halibut
 HCR</span>. *NAFO SCR Doc*, *20/042*.
 <https://www.nafo.int/Portals/0/PDFs/sc/2020/scr20-042%20.pdf>
 
-Regular, P. M., Rideout, R. M., and W., I. D. (2020). <span
-class="nocase">Impact of missed strata on abundance-at-age estimates of
-Greenland halibut from the Canadian fall 2J3K and spring 3LNO surveys in
-2018</span>. *NAFO SCR Doc*, *20/005 REV*.
+Regular, P. M., Rideout, R. M., and W., I. D. (2020).
+<span class="nocase">Impact of missed strata on abundance-at-age
+estimates of Greenland halibut from the Canadian fall 2J3K and spring
+3LNO surveys in 2018</span>. *NAFO SCR Doc*, *20/005 REV*.
 <https://www.nafo.int/Portals/0/PDFs/sc/2020/scr20-005REV.pdf>
 
-Regular, P. M., Rogers, B., and Morgan, M. J. (2021). <span
-class="nocase">Greenland halibut (*Reinhardtius hippoglossoides*) in
-NAFO Subarea 2 and Divisions 3KLMNO: stock trends based on annual
+Regular, P. M., Rogers, B., and Morgan, M. J. (2021).
+<span class="nocase">Greenland halibut (*Reinhardtius hippoglossoides*)
+in NAFO Subarea 2 and Divisions 3KLMNO: stock trends based on annual
 Canadian research vessel survey results</span>. *NAFO SCR Doc*,
 *21/026*. <https://www.nafo.int/Portals/0/PDFs/sc/2021/scr21-026.pdf>
 
-Rogers, B., Perreault, A., Simpson, M., and Varkey, D. (2022). <span
-class="nocase">Assessment of 3LN redfish using the ASPIC model in 2022
-(*Sebastes mentella* and *S. fasciatus*)</span>. *NAFO SCR Doc*,
+Rogers, B., Perreault, A., Simpson, M., and Varkey, D. (2022).
+<span class="nocase">Assessment of 3LN redfish using the ASPIC model in
+2022 (*Sebastes mentella* and *S. fasciatus*)</span>. *NAFO SCR Doc*,
 *22/013*. <https://www.nafo.int/Portals/0/PDFs/sc/2022/scr22-013.pdf>
 
 Rogers, B., and Simpson, M. (2020). <span class="nocase">Canadian

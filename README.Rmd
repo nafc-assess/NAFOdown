@@ -17,8 +17,9 @@ knitr::opts_chunk$set(
 ```
 
 
-```{r setup, echo = FALSE}
+```{r setup, echo = FALSE, message = FALSE}
 library(NAFOdown)
+showtext::showtext_opts(dpi = 600)
 word_out <- knitr::opts_knit$get("rmarkdown.pandoc.to") == "docx"
 ```
 
@@ -100,6 +101,26 @@ Tables included in NAFO documents are often extensive and, as such, we recommend
 `r if(!word_out) "###" else "##"` Figures
 
 NAFOdown also includes a [ggplot2](https://ggplot2.tidyverse.org/) theme, `NAFOdown::theme_nafo()` to aid the consistent formatting of figures. The theme is specific to the ggplot2 package because it is a widely used package that is extremely flexible and capable of producing figures typically used in NAFO documents. While `theme_nafo()` provides a consistent base format, the flexibility remains to customize components to suit the specific requirements of the author though modification of individual theme elements within the ggplot2 framework (e.g. font size, legend formatting).
+
+A helper function for creating NAFO Precautionary Approach plots are also included with the package (see `?NAFOdown::plot_PA_leaf`), which can be used to generate standardized plots like this:
+
+```{r pa-leaf, fig.asp = 1, fig.width = NAFOdown::.nafo_width, dpi = 600}
+Bmsy <- 1
+Blim <- 0.3 * Bmsy
+Btrigger <- 0.75 * Bmsy
+Fmsy <- 1
+Flim <- Fmsy
+Ftarget <- 0.85 * Fmsy
+
+sim_data <- with(toy_stock, data.frame(year = year, Btrend = Brel, Ftrend = Frel,
+                                       Blwr = Brel_lwr, Bupr = Brel_upr,
+                                       Flwr = Frel_lwr, Fupr = Frel_upr))
+
+trends_leaf <- plot_PA_leaf(sim_data, Blim = Blim, Btrigger = Btrigger,
+                            Ftarget = Ftarget, Flim = Flim, 
+                            zone_labels = c("Critical", "Cautious", "Healthy Zone"))
+trends_leaf
+```
 
 `r if(!word_out) "##" else "#"` Meeting-to-meeting writing
 
