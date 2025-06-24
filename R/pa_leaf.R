@@ -106,7 +106,10 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim,
         data$scenario <- NA
     } else {
         if (length(unique(data$scenario)) > 3) {
-            stop("The PA plot was not built to display more than three projection scenarios.")
+            warning("The PA plot was not designed to display more than three projection scenarios.")
+            if (length(unique(data$scenario)) > 5) {
+                stop("There are insufficient line types to display more than five projection scenarios.")
+            }
         }
     }
 
@@ -209,7 +212,7 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim,
             labs(x = "Biomass", y = "Fishing mortality") +
             scale_x_continuous(limits = c(0, xhigh), expand = c(0, 0)) +
             scale_y_continuous(limits = c(0, yhigh), expand = c(0, 0)) +
-            scale_linetype_manual(values = c(5, 2, 3)) +
+            scale_linetype_manual(values = c(5, 2, 3, 6, 4)) +
             NAFOdown::theme_nafo() +
             theme(
                 plot.margin = margin(t = 10, r = 10, b = 10, l = 10),
