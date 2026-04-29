@@ -37,7 +37,8 @@ Imports:
     officer,
     sysfonts,
     showtext,
-    lifecycle
+    lifecycle,
+    devtools
 Suggests:
     patchwork,
     testthat (>= 3.0.0)
