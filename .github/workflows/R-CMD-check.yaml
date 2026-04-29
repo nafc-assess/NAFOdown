@@ -15,6 +15,15 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v2
 
+      - name: Attempt to install Cambria font
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            fontconfig \
+            ttf-mscorefonts-installer || true
+          fc-cache -f -v
+          fc-list | grep -i "Cambria" || true
+
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: any::rcmdcheck
