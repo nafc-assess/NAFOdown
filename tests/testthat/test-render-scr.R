@@ -15,19 +15,6 @@ test_that("default SCR template renders", {
   index_file <- file.path(workdir, "index.Rmd")
   expect_true(file.exists(index_file))
 
-  cambria_match <- systemfonts::match_font("Cambria")
-  has_cambria <- nzchar(cambria_match$path) &&
-    grepl("^cambria($|\\s)", tolower(cambria_match$family))
-
-  if (!has_cambria) {
-    index_lines <- readLines(index_file)
-    index_lines <- index_lines[
-      !grepl('flextable::set_flextable_defaults\(font\.family = "Cambria"\)', index_lines, fixed = FALSE) &
-        !grepl("theme_set\(theme_nafo\(\)\)", index_lines, fixed = FALSE)
-    ]
-    writeLines(index_lines, index_file)
-  }
-
   output <- bookdown::render_book()
 
   expect_true(file.exists(output))
