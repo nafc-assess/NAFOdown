@@ -12,12 +12,7 @@ test_that("default SCR template renders", {
   NAFOdown::draft("SCR", create_dir = FALSE, edit = FALSE)
   expect_true(file.exists(file.path(workdir, "index.Rmd")))
 
-  output <- rmarkdown::render(
-    input = file.path(workdir, "index.Rmd"),
-    output_format = "NAFOdown::word_scr",
-    quiet = TRUE,
-    envir = new.env(parent = globalenv())
-  )
+  output <- bookdown::render_book()
 
   expect_true(file.exists(output))
   expect_match(tolower(tools::file_ext(output)), "docx")
