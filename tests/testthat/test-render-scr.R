@@ -16,6 +16,7 @@ test_that("default SCR template renders", {
   expect_true(file.exists(index_file))
 
   output <- bookdown::render_book()
+  # system(paste("open", output))
 
   expect_true(file.exists(output))
   expect_match(tolower(tools::file_ext(output)), "docx")
