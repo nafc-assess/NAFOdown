@@ -23,6 +23,21 @@ ggplot(d) +
     geom_point(aes(x = SSB, y = Recruitment))
 ```
 
+The template can also include publication-ready tables. For example, see Table \@ref(tab:example-flextable):
+
+```{r example-flextable, tab.cap = "Example table created with flextable."}
+example_tbl <- data.frame(
+    Year = 2021:2025,
+    Catch_t = c(1240, 1310, 1195, 1430, 1385),
+    Index = c(0.92, 1.01, 0.97, 1.08, 1.04)
+)
+
+flextable::flextable(example_tbl) |>
+    flextable::colformat_num(j = c("Catch_t", "Index"), digits = 2) |>
+    NAFOdown::theme_nafotabs()
+```
+
+
 # Discussion
 
 Discuss!
