@@ -8,5 +8,5 @@ This version of the document was generated on `r Sys.time()` using the R markdow
 The computational environment that was used to generate this version is as follows:
 
 ```{r echo = FALSE}
-devtools::session_info()
+devtools::session_info(pkgs = c("attached"))
 ```
