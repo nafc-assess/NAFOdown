@@ -101,12 +101,12 @@ may aso be utilized to define facets using the rows and cols arguments.</p></dd>
 
 
 <dt id="arg-scale-color">scale_color<a class="anchor" aria-label="anchor" href="#arg-scale-color"></a></dt>
-<dd><p>Function such as ggplot2::scale_colour_viridis_d for defining line
+<dd><p>Function such as <a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">ggplot2::scale_colour_viridis_d</a> for defining line
 colours to use across years.</p></dd>
 
 
 <dt id="arg-scale-fill">scale_fill<a class="anchor" aria-label="anchor" href="#arg-scale-fill"></a></dt>
-<dd><p>Function such as ggplot2::scale_fill_viridis_d for defining fill
+<dd><p>Function such as <a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">ggplot2::scale_fill_viridis_d</a> for defining fill
 colours to use across years.</p></dd>
 
 
@@ -138,8 +138,6 @@ colours to use across years.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Using defaults</span></span></span>
 <span class="r-in"><span><span class="fu">plot_lengths</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The `margin` argument should be constructed using the `margin()` function.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The `margin` argument should be constructed using the `margin()` function.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>font family 'Cambria' not found, will use 'sans' instead</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>font family 'Cambria' not found, will use 'sans' instead</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>font family 'Cambria' not found, will use 'sans' instead</span>
@@ -292,8 +290,6 @@ colours to use across years.</p></dd>
 <span class="r-in"><span><span class="fu">plot_lengths</span><span class="op">(</span><span class="va">data</span>, alpha <span class="op">=</span> <span class="fl">0.1</span>, scale <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_color_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"grey30"</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="st">"grey30"</span>, <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">year</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The `margin` argument should be constructed using the `margin()` function.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The `margin` argument should be constructed using the `margin()` function.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Scale for <span style="color: #00BB00;">colour</span> is already present.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Adding another scale for <span style="color: #00BB00;">colour</span>, which will replace the existing scale.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Scale for <span style="color: #00BB00;">fill</span> is already present.</span>
