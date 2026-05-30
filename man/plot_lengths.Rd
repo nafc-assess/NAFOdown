@@ -33,10 +33,10 @@ may aso be utilized to define facets using the rows and cols arguments.}
 
 \item{alpha}{Value controling the transparancy of the ridges.}
 
-\item{scale_color}{Function such as \link[ggplot2:scale_viridis]{ggplot2::scale_colour_viridis_d} for defining line
+\item{scale_color}{Function such as \link[ggplot2:scale_colour_viridis_d]{ggplot2::scale_colour_viridis_d} for defining line
 colours to use across years.}
 
-\item{scale_fill}{Function such as \link[ggplot2:scale_viridis]{ggplot2::scale_fill_viridis_d} for defining fill
+\item{scale_fill}{Function such as \link[ggplot2:scale_fill_viridis_d]{ggplot2::scale_fill_viridis_d} for defining fill
 colours to use across years.}
 
 \item{drop_zeros}{Should zeros be replaced by NA values? (i.e., impose blank space in ridge plot).}

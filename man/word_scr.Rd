@@ -22,7 +22,7 @@ word_scs(...)
 word_scs2(...)
 }
 \arguments{
-\item{...}{arguments to pass to \code{\link[bookdown:html_document2]{bookdown::word_document2()}} or \code{\link[officedown:rdocx_document]{officedown::rdocx_document()}}
+\item{...}{arguments to pass to \code{\link[bookdown:word_document2]{bookdown::word_document2()}} or \code{\link[officedown:rdocx_document]{officedown::rdocx_document()}}
 for functions with 2 as a suffix.}
 }
 \value{

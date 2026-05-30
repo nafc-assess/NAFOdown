@@ -98,5 +98,5 @@ if (interactive()) {
 
 }
 \seealso{
-\link[ggplot2:ggtheme]{ggplot2::theme_minimal}
+\link[ggplot2:theme_minimal]{ggplot2::theme_minimal}
 }

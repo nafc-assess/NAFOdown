@@ -6,7 +6,7 @@
 \alias{NAFOdown-package}
 \title{NAFOdown: An R Markdown Template for Producing NAFO Scientific Council Documents}
 \description{
-\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+\if{html}{\figure{logo.svg}{options: style='float: right' alt='logo' width='120'}}
 
 NAFOdown uses the bookdown package to create NAFO documents, such as SCRs or STACFIS reports, in Word format. The goal of this package is to encourage reproducible research using simple Markdown syntax and embedded R code, and facilitate the process of producing or updating scientific documents that consistently follow NAFO formatting guidelines. This package is based on Sean Anderson's csasdown and Chester Ismay's thesisdown.
 }
@@ -23,6 +23,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Paul Regular \email{Paul.Regular@dfo-mpo.gc.ca}
   \item Bob Rogers
 }
 
