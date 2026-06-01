@@ -1,8 +1,8 @@
 
 
-.advice_title_tab_openxml <- "`<w:r><w:tab/></w:r>`{=openxml}"
+.scs_title_tab_openxml <- "`<w:r><w:tab/></w:r>`{=openxml}"
 
-.inject_advice_title_tabs <- function(lines) {
+.inject_scs_title_tabs <- function(lines) {
     in_title_div <- FALSE
 
     vapply(lines, function(line) {
@@ -18,7 +18,7 @@
 
         if (in_title_div && grepl(" Advice", line, fixed = TRUE) &&
             !grepl("<w:tab\\s*/>|\\tAdvice", line, perl = TRUE)) {
-            line <- sub(" Advice", paste0(.advice_title_tab_openxml, "Advice"),
+            line <- sub(" Advice", paste0(.scs_title_tab_openxml, "Advice"),
                         line, fixed = TRUE)
         }
 
@@ -26,13 +26,13 @@
     }, character(1), USE.NAMES = FALSE)
 }
 
-.inject_advice_title_tabs_file <- function(input_file) {
+.inject_scs_title_tabs_file <- function(input_file) {
     if (!file.exists(input_file)) {
         return(invisible(FALSE))
     }
 
     lines <- readLines(input_file, warn = FALSE)
-    updated_lines <- .inject_advice_title_tabs(lines)
+    updated_lines <- .inject_scs_title_tabs(lines)
 
     if (!identical(lines, updated_lines)) {
         writeLines(updated_lines, input_file, useBytes = TRUE)
@@ -42,12 +42,12 @@
     invisible(FALSE)
 }
 
-.add_advice_title_tab_pre_processor <- function(format) {
+.add_scs_title_tab_pre_processor <- function(format) {
     pre_processor <- format$pre_processor
 
     format$pre_processor <- function(metadata, input_file, runtime, knit_meta,
                                      files_dir, output_dir) {
-        .inject_advice_title_tabs_file(input_file)
+        .inject_scs_title_tabs_file(input_file)
 
         if (is.function(pre_processor)) {
             pre_processor(metadata, input_file, runtime, knit_meta, files_dir,
@@ -57,6 +57,7 @@
 
     format
 }
+
 .make_word_function <- function(format_function, reference_docx) {
     function(...) {
         base <- format_function(...,
@@ -64,7 +65,7 @@
                                 reference_docx = system.file("docx", reference_docx, package = "NAFOdown")
         )
         base$knitr$opts_chunk$comment <- NA
-        .add_advice_title_tab_pre_processor(base)
+        .add_scs_title_tab_pre_processor(base)
     }
 }
 
