@@ -1,7 +1,13 @@
 
+::: {custom-style="Title"}
+
+__Species X in Divs. Y__`<w:r><w:tab/></w:r>`{=openxml}Advice XXXX for YYYY
+
+:::
+
 # Species (*Species name*) in Division XX 
 
-> Recommendation for 	  
+> **Recommendation for YYYY**	  
 >
 
 ## Managment objectives
