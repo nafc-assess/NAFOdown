@@ -1,13 +1,10 @@
-<!-- Note: change X below to the proper number for the SCS report. Also change X in the _bookdown.yml file to generate the appropriate figure numbering. -->
 
-# X. Species (*Species name*) in Division XX 
+# Species (*Species name*) in Division XX 
 
->Recommendation for 	  
+> Recommendation for 	  
 >
 
 ## Managment objectives
-
-<!-- Insert a table using the nafo_summary_table() function here -->
 
 ## Managment unit
 

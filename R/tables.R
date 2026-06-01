@@ -19,7 +19,7 @@
 #' d <- data.frame(SSB = rlnorm(10), Recruitment = rlnorm(10))
 #' flextable(d) %>%
 #'   theme_nafotabs()
-theme_nafotabs <- function(x, fontsize = 11, fontname = "Cambria") {
+theme_nafotabs <- function(x, fontsize = 10, fontname = "Cambria") {
 
     if (!inherits(x, "flextable")) stop("theme_nafotabs supports only flextable objects.")
     big_border <- officer::fp_border(width = 1)

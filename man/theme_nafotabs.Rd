@@ -4,7 +4,7 @@
 \alias{theme_nafotabs}
 \title{flextable theme for styling tables for NAFO docuemtns}
 \usage{
-theme_nafotabs(x, fontsize = 11, fontname = "Cambria")
+theme_nafotabs(x, fontsize = 10, fontname = "Cambria")
 }
 \arguments{
 \item{x}{A flextable object}
