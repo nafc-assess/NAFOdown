@@ -1,7 +1,7 @@
 
 ::: {custom-style="Title"}
 
-__Species X in Divs. Y__`<w:r><w:tab/></w:r>`{=openxml}Advice XXXX for YYYY
+__Species X in Divs. Y__ Advice XXXX for YYYY
 
 :::
 
