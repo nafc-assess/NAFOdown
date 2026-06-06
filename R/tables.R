@@ -100,7 +100,7 @@ theme_nafotabs <- function(x, fontsize = 10, fontname = "Cambria") {
 #' @description Produces summary tables for NAFO stock summary sheets
 #'
 #' @param comments  A vector of length 5 elaborating on the status the status of each 'Convention General Principle'
-#' @param status    A vector of length 5 decribing the status of each 'Convention General Principle'. Must be one of: 'OK', 'Intermediate','Not accomplished', 'Unknown'
+#' @param status    A vector of length 5 describing the status of each 'Convention General Principle'. Must be one of: 'OK', 'Intermediate','Not accomplished', 'Unknown'
 #' @param parse     Parse comments with markdown like syntax (experimental!)
 #'
 #' @export

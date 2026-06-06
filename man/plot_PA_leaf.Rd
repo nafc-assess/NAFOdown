@@ -10,7 +10,8 @@ plot_PA_leaf(
   Btrigger,
   Ftarget,
   Flim,
-  zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone")
+  zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone"),
+  year_label_fill = NA
 )
 }
 \arguments{
@@ -27,6 +28,7 @@ Optional columns:
 \item \code{Flwr}, \code{Fupr}: F uncertainty bounds
 \item \code{scenario}: projection scenario for linetype distinction and legend
 \item \code{label_just}: justification for year label (\code{"left"}, \code{"center"}, \code{"right"})
+\item \code{year_label_fill}: fill colour for year labels
 }}
 
 \item{Blim}{Biomass limit reference point}
@@ -40,14 +42,15 @@ Optional columns:
 \item{zone_labels}{PA zone labels. Defaults may need to be modified to keep
 the text inside the zone (e.g., supply \code{"Cautious"} rather than \code{"Cautious Zone"}).
 An empty character may also be supplied if the zone is too narrow to label.}
+
+\item{year_label_fill}{Default fill colour for year labels. The default, \code{NA},
+produces transparent labels.}
 }
 \value{
 A \code{ggplot} object showing the PA leaf, and biomass-F trajectories.
 }
 \description{
-Generates a stylized Precautionary Approach (PA) "leaf" plot using the NAFO Precautionary Approach Framework (COM Doc. 24-25).
-The plot displays background management zones (Critical, Cautious, Healthy), HCR curves, and
-overlays of biomass and fishing mortality trends or projections across years.
+Generates a stylized Precautionary Approach (PA) "leaf" plot using the NAFO Precautionary Approach Framework.
 }
 \examples{
 
@@ -110,6 +113,14 @@ proj_leaf <- plot_PA_leaf(proj_data, Blim = Blim, Btrigger = Btrigger,
 proj_leaf
 ggsave("PA_leaf_with_projections.png", dpi = 300,
        width = .nafo_width, height = .nafo_height * 1.5)
+
+## Need year labels to be more visible? ----------
+
+trends_leaf_with_bbox <- plot_PA_leaf(sim_data, Blim = Blim, Btrigger = Btrigger,
+                                      Ftarget = Ftarget, Flim = Flim, year_label_fill = "white")
+trends_leaf_with_bbox
+ggsave("PA_leaf_with_history_bbox_labels.png", dpi = 300,
+       width = .nafo_width * 1.5, height = .nafo_height * 1.5)
 
 
 ## Need to zoom in? ----------

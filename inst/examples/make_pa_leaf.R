@@ -59,6 +59,14 @@ proj_leaf
 ggsave("PA_leaf_with_projections.png", dpi = 300,
        width = .nafo_width, height = .nafo_height * 1.5)
 
+## Need year labels to be more visible? ----------
+
+trends_leaf_with_bbox <- plot_PA_leaf(sim_data, Blim = Blim, Btrigger = Btrigger,
+                                      Ftarget = Ftarget, Flim = Flim, year_label_fill = "white")
+trends_leaf_with_bbox
+ggsave("PA_leaf_with_history_bbox_labels.png", dpi = 300,
+       width = .nafo_width * 1.5, height = .nafo_height * 1.5)
+
 
 ## Need to zoom in? ----------
 

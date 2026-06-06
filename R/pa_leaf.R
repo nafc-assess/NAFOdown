@@ -80,20 +80,25 @@ F_upper <- function(B, Blim, Btrigger, Ftarget, k = 1, Fmin = 0) {
 #'   - `Flwr`, `Fupr`: F uncertainty bounds
 #'   - `scenario`: projection scenario for linetype distinction and legend
 #'   - `label_just`: justification for year label (`"left"`, `"center"`, `"right"`)
+#'   - `year_label_fill`: fill colour for year labels
 #'
 #' @inheritParams F_linear
 #' @param Flim Fishing mortality limit
 #' @param zone_labels PA zone labels. Defaults may need to be modified to keep
 #' the text inside the zone (e.g., supply `"Cautious"` rather than `"Cautious Zone"`).
 #' An empty character may also be supplied if the zone is too narrow to label.
+#' @param year_label_fill Default fill colour for year labels. The default, `NA`,
+#' produces transparent labels.
 #'
 #' @seealso [plot_PA_leaf], [F_linear], [F_upper], [F_lower], [F_sigmoid]
 #'
-#' @return A list with components: `data`, `Bseq`, `leaf_linear`, `leaf_low`, `leaf_high`, `xhigh`, `yhigh`
+#' @return A list of objects used by [plot_PA_leaf()].
 #'
 #' @export
 make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim,
-                         zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone")) {
+                         zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone"),
+                         year_label_fill = NA) {
+
     if (is.null(data)) {
         data <- data.frame(year = -1, Btrend = -1, Ftrend = -1)
     }
@@ -102,6 +107,7 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim,
     if (is.null(data$Flwr)) data$Flwr <- -1
     if (is.null(data$Fupr)) data$Fupr <- -1
     if (is.null(data$label_just)) data$label_just <- "center"
+    if (is.null(data$year_label_fill)) data$year_label_fill <- year_label_fill
     if (is.null(data$scenario)) {
         data$scenario <- NA
     } else {
@@ -127,13 +133,12 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim,
     leaf_high <- F_upper(Bseq, Blim, Btrigger, Ftarget)
 
     as.list(environment())
+
 }
 
 #' Plot the Precautionary Approach (PA) Leaf with Historical or Projection Scenario Data
 #'
-#' Generates a stylized Precautionary Approach (PA) "leaf" plot using the NAFO Precautionary Approach Framework (COM Doc. 24-25).
-#' The plot displays background management zones (Critical, Cautious, Healthy), HCR curves, and
-#' overlays of biomass and fishing mortality trends or projections across years.
+#' Generates a stylized Precautionary Approach (PA) "leaf" plot using the NAFO Precautionary Approach Framework.
 #'
 #' @inheritParams make_PA_data
 #'
@@ -147,10 +152,12 @@ make_PA_data <- function(data, Blim, Btrigger, Ftarget, Flim,
 #'
 #' @export
 plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim,
-                         zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone")) {
+                         zone_labels = c("Critical Zone", "Cautious Zone", "Healthy Zone"),
+                         year_label_fill = NA) {
 
     PA_data <- make_PA_data(data, Blim, Btrigger, Ftarget, Flim,
-                            zone_labels = zone_labels)
+                            zone_labels = zone_labels,
+                            year_label_fill = year_label_fill)
 
     with(PA_data, {
         ggplot() +
@@ -165,28 +172,28 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim,
 
             geom_hline(aes(yintercept = Flim), color = "grey75", linewidth = .nafo_lwd) +
             geom_hline(aes(yintercept = Ftarget), linetype = 2, color = "grey75", linewidth = .nafo_lwd) +
-            geom_vline(aes(xintercept = Blim), color = "indianred", , linewidth = .nafo_lwd * 1.5) +
-            geom_vline(aes(xintercept = Btrigger), color = "khaki", , linewidth = .nafo_lwd * 1.5) +
+            geom_vline(aes(xintercept = Blim), color = "indianred", linewidth = .nafo_lwd * 1.5) +
+            geom_vline(aes(xintercept = Btrigger), color = "khaki", linewidth = .nafo_lwd * 1.5) +
 
             geom_text(aes(x = c(Blim / 2, mean(c(Blim, Btrigger)), mean(c(Btrigger, xhigh))),
                           y = I(rep(0.97, 3)), label = zone_labels),
                       vjust = 1, size = 3, family = "Cambria") +
 
-            geom_text_repel(aes(x = c(Blim, Btrigger), y = I(rep(0.97, 2)),
-                                label = c("B[lim]~~~phantom('x')", "B[trigger]~~~phantom('x')")),
-                            vjust = -0.2, hjust = "right", size = 3, angle = 90,
-                            parse = TRUE, family = "Cambria",
-                            min.segment.length = Inf, direction = "y") +
-            geom_text_repel(aes(x = I(rep(0.99, 2)), y = c(Ftarget,  Flim),
-                                label = c("F[target]",  "F[lim]")),
-                            vjust = 0, hjust = "right", size = 3,
-                            parse = TRUE, family = "Cambria",
-                            min.segment.length = Inf, direction = "y") +
+            ggrepel::geom_text_repel(aes(x = c(Blim, Btrigger), y = I(rep(0.97, 2)),
+                                         label = c("B[lim]~~~phantom('x')", "B[trigger]~~~phantom('x')")),
+                                     vjust = -0.2, hjust = "right", size = 3, angle = 90,
+                                     parse = TRUE, family = "Cambria",
+                                     min.segment.length = Inf, direction = "y") +
+            ggrepel::geom_text_repel(aes(x = I(rep(0.99, 2)), y = c(Ftarget,  Flim),
+                                         label = c("F[target]",  "F[lim]")),
+                                     vjust = 0, hjust = "right", size = 3,
+                                     parse = TRUE, family = "Cambria",
+                                     min.segment.length = Inf, direction = "y") +
 
             geom_path(data = data[is.na(data$scenario), ], aes(x = Btrend, y = Ftrend),
-                      color = "grey40", linewidth = .nafo_lwd) +
+                      color = "grey50", linewidth = .nafo_lwd) +
             geom_point(data = data[is.na(data$scenario), ], aes(x = Btrend, y = Ftrend),
-                       color = "grey40", size = .nafo_pts * 0.5) +
+                       color = "grey50", size = .nafo_pts * 0.5) +
             geom_path(data = data[!is.na(data$scenario), ], aes(x = Btrend, y = Ftrend, linetype = scenario),
                       color = "black", linewidth = .nafo_lwd) +
             geom_point(data = data[!is.na(data$scenario), ], aes(x = Btrend, y = Ftrend),
@@ -195,19 +202,33 @@ plot_PA_leaf <- function(data, Blim, Btrigger, Ftarget, Flim,
                       aes(x = Btrend, y = Ftrend),
                       color = "black", linewidth = .nafo_lwd * 0.5) +
 
-            ggrepel::geom_text_repel(data = head(data[data$year == min(data$year), ], 1),
-                                     aes(x = Btrend, y = Ftrend, label = unique(year),
-                                         hjust = label_just),
-                                     size = 2) +
-            ggrepel::geom_text_repel(data = data[data$year == max(data$year), ],
-                                     aes(x = Btrend, y = Ftrend, label = unique(year),
-                                         hjust = label_just),
-                                     size = 2) +
+            geom_segment(data = data[is.na(data$scenario) &
+                                         data$year == max(data$year[is.na(data$scenario)]), ],
+                         aes(x = Blwr, y = Ftrend, xend = Bupr, yend = Ftrend),
+                         linewidth = .nafo_lwd * 2) +
+            geom_segment(data = data[is.na(data$scenario) &
+                                         data$year == max(data$year[is.na(data$scenario)]), ],
+                         aes(x = Btrend, y = Flwr, xend = Btrend, yend = Fupr),
+                         linewidth = .nafo_lwd * 2) +
+            geom_point(data = data[is.na(data$scenario) &
+                                       data$year == min(data$year[is.na(data$scenario)]), ],
+                       aes(x = Btrend, y = Ftrend),
+                       size = .nafo_pts * 1.5) +
+            geom_point(data = data[is.na(data$scenario) &
+                                       data$year == max(data$year[is.na(data$scenario)]), ],
+                       aes(x = Btrend, y = Ftrend),
+                       size = .nafo_pts * 1.5) +
 
-            geom_segment(data = data[data$year == max(data$year), ],
-                         aes(x = Blwr, y = Ftrend, xend = Bupr, yend = Ftrend), linewidth = .nafo_lwd * 1.5) +
-            geom_segment(data = data[data$year == max(data$year), ],
-                         aes(x = Btrend, y = Flwr, xend = Btrend, yend = Fupr), linewidth = .nafo_lwd * 1.5) +
+            ggrepel::geom_label_repel(data = head(data[data$year == min(data$year), ], 1),
+                                      aes(x = Btrend, y = Ftrend, label = unique(year),
+                                          hjust = label_just, fill = I(year_label_fill)),
+                                      size = 2, min.segment.length = Inf, label.padding = 0.1,
+                                      linewidth = 0, box.padding = 0.01, point.padding = 0.01) +
+            ggrepel::geom_label_repel(data = data[data$year == max(data$year), ],
+                                      aes(x = Btrend, y = Ftrend, label = unique(year),
+                                          hjust = label_just, fill = I(year_label_fill)),
+                                      size = 2, min.segment.length = Inf, label.padding = 0.1,
+                                      linewidth = 0, box.padding = 0.01, point.padding = 0.01) +
 
             labs(x = "Biomass", y = "Fishing mortality") +
             scale_x_continuous(limits = c(0, xhigh), expand = c(0, 0)) +
